@@ -1,0 +1,46 @@
+<template>
+    <div class="thika-details">
+        <Upper/>
+        <CityImg/>
+        <div class="cities-details-minor">
+            <p class="cities-desc-head">We are in Thika!</p>
+            <p class="cities-desc-body">Now offering door-to-door delivery services in Thika and between cities.</p>
+        <button class="cities-sign-up-button" type="button" onclick="location.href='https://app.sendyit.com/biz/auth/page/location';">SIGN UP</button>
+        </div>
+        <Lower/>
+        <div class="kitenge-divider"></div>
+    </div>
+</template>
+
+<script>
+import Upper from './Upper';
+import Lower from './Lower';
+import CityImg from './CityImg';
+export default {
+components: {
+    Upper,
+    Lower,
+    CityImg
+},
+data() {
+    return {
+    parentName: 'Thika'
+    }
+},
+computed: {
+        nameDisplayer() {
+            return this.$store.state.parentName;
+        }
+},
+created() {
+    this.$store.commit({
+        type: 'changeParentName',
+            pName: this.parentName
+        }); 
+    }
+}
+</script>
+
+<style>
+
+</style>
