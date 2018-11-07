@@ -38,7 +38,9 @@
         </div>
     <span class= "arrows-biz"><img src="https://images.sendyit.com/website/driver/right_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="next" class="arrow-right"></span>
     </div>
-    <button class="get-started-button-bottom" type="button" onclick="location.href='https://apptest.sendyit.com/get_started';">GET STARTED</button>
+    <button v-if="windowWidth > '768'" class="get-started-button-bottom" type="button" onclick="location.href='https://apptest.sendyit.com/get_started';">GET STARTED</button>
+    <img v-if="windowWidth <= '768' && android == true" src="https://images.sendyit.com/website/home/googleplayicon.png" class="lower-playstore-button">
+    <img v-if="windowWidth <= '768' && IOS == true" src="https://images.sendyit.com/website/home/appstoreicon.png" class="lower-appstore-button">
     </div>
 </template>
 
@@ -69,8 +71,10 @@ export default {
         ],
         state: true,
         direction: 'slide-fade',
-        
-        pos: 1
+        windowWidth: null,
+        pos: 1,
+        android: null,
+        IOS: null,
         }
         },
     methods: {
@@ -87,7 +91,7 @@ export default {
             var self = this;
             setTimeout(function(){
                 self.state = true
-            }, 100) 
+            }, 200) 
         },
         previous() {
             this.direction = 'slide-fade-right'
@@ -102,14 +106,44 @@ export default {
             var self = this;
             setTimeout(function(){
                 self.state = true
-            }, 100) 
+            }, 200) 
             
         },
-        counter(){
-            
-            
-        
+        handleResize() {
+        this.windowWidth = window.innerWidth;
+        },
+        detectAndroid() { 
+        if( navigator.userAgent.match(/Android/i)){
+        this.android = true
+        this.IOS = false
         }
+        },
+        detectIOS() { 
+        if( navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i)){
+        this.IOS = true
+        this.android = false
+        }
+        },
+        runall(){
+            this.detectAndroid();
+            this.detectIOS();
+        }
+    },
+    computed: {
+        nameDisplayer() {
+            return this.$store.state.parentName
+            
+        }
+    },
+    created() {
+        this.parentName = this.nameDisplayer
+        window.addEventListener('resize', this.handleResize)
+            this.handleResize(); 
+            this.detectAndroid();
+            this.detectIOS();            
+    },
+    destroyed() {
+        window.removeEventListener('resize', this.handleResize)
     }
 }
 </script>

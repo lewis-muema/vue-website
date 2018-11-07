@@ -2,9 +2,11 @@
     <div class="estimations-section">
         <div class="estimate-container" id="loc-auto">
             <p class="price-header">Get a price estimate</p>
-            <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="pickup-box" placeholder="Enter the pick up location">
-            <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="dest-box" placeholder="Enter the destination">
+            <div class="form-container">
+            <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input" placeholder="Enter the pick up location">
+            <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input" placeholder="Enter the destination">
             <button class="price-submit" @click="getDistance">Get Price</button>
+            </div>
             <div class="display-dist">
                 <p class="dist" v-if="distance">{{ distance }} Kms</p>
                 <p class= "price" v-if="!distance == '0'">{{ getPrice }} Ksh</p>

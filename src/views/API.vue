@@ -11,6 +11,7 @@
         </div>
     </div>
     <Lower/>
+    <div class="kitenge-divider"></div>
 </div>    
 </template>
 
