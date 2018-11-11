@@ -3,20 +3,28 @@
     <div class="partners-carousel">
    
             <div :class="{'none': pos == '1'}" class="partner-imgholder">
-            <img v-if="parentName == 'Partners'" :src= "imgs1" class="partner-img" :style= "{width: windowWidth + 'px'}">
-            <img v-if="parentName == 'Careers'" :src= "img1" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs1" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz1" class="partner-img" :style= "{width: lessWidth + 'px' , marginLeft: '-40px'}">
+            <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img1" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Careers' && actualWidth <= 430" :src= "img1" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-394px'}">
             </div>
             <div :class="{'none': pos == '2'}" class="partner-imgholder">
-            <img v-if="parentName == 'Partners'" :src= "imgs2" class="partner-img" :style= "{width: windowWidth + 'px'}">
-            <img v-if="parentName == 'Careers'" :src= "img2" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs2" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz2" class="partner-img" :style= "{width: lessWidth + 'px'}">
+            <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img2" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Careers' && actualWidth <= 430" :src= "img2" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-890px'}">
             </div>
             <div :class="{'none': pos == '3'}" class="partner-imgholder">
-            <img v-if="parentName == 'Partners'" :src= "imgs3" class="partner-img" :style= "{width: windowWidth + 'px'}">
-            <img v-if="parentName == 'Careers'" :src= "img3" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs3" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz3" class="partner-img" :style= "{width: lessWidth + 'px'}">
+            <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img3" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Careers' && actualWidth <= 430" :src= "img3" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-200px'}">
             </div>
             <div :class="{'none': pos == '4'}" class="partner-imgholder">
-            <img v-if="parentName == 'Partners'" :src= "imgs4" class="partner-img" :style= "{width: windowWidth + 'px'}">
-            <img v-if="parentName == 'Careers'" :src= "img4" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs4" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz4" class="partner-img" :style= "{width: lessWidth + 'px' , marginLeft: '-100px'}">
+            <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img4" class="partner-img" :style= "{width: windowWidth + 'px'}">
+            <img v-if="parentName == 'Careers'&& actualWidth <= 430" :src= "img4" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-140px'}">
             </div>
             <div class="slideshow-comments">
             <p class="slideshow-comments-head" v-if="parentName == 'Partners'">Make More Money</p>
@@ -49,12 +57,18 @@ export default {
     state: true,
     direction: 'slide-fade-left-car',
     pos: 1,
+    imgz1: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/driver/driver_mobile_slider_5.jpg',
+    imgz2: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/driver/driver_mobile_slider_2.jpg',
+    imgz3: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/driver/driver_mobile_slider_4.jpg',
+    imgz4: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/driver/driver_mobile_slider_3.jpg',
     windowWidth: null,
     carouselWidth: null,
     img1: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/careers_slider_01.jpg',
     img2: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/careers_slider_02.jpg',
     img3: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/careers_slider_16.jpg',
     img4: 'https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/careers_slider_04.jpg',
+    actualWidth: null,
+    lessWidth: 450
     }
 },
 computed: {
@@ -85,10 +99,11 @@ created() {
     },
     methods: {
     handleResize() {
+        this.actualWidth = window.innerWidth
         if (window.innerWidth > 430){
             this.windowWidth = window.innerWidth + 20; 
         }else{
-            this.windowWidth = 900
+            this.windowWidth = 1275
         }
         
         this.carouselWidth = this.windowWidth;     

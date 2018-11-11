@@ -40,7 +40,9 @@
             <option value="6 months">6 months</option>
             <option value="1 year">1 year</option>
         </select>
+        <div class="selector-4">
         <button class="calculate-earnings">calculate</button>
+        </div>
         </div>
         </div>
     </div>
@@ -55,7 +57,7 @@
         <div class="FAQ-content-holder">
            <p class="FAQ-head">FAQS</p>
            <p class="FAQ-body-bold">What are the requirements to join Sendy?</p>
-               <ul class="FAQ-body-light">
+               <ul class="FAQ-body-light" v-if="windowWidth > 430">
                     <li>National ID/Passport</li>
                     <li>Valid Certificate of Good Conduct</li>
                     <li>Valid Driver’s License</li>
@@ -63,6 +65,14 @@
                     <li>Motor Vehicle Log Book/Proof of Ownership</li>
                     <li>GPS enabled Android smartphone</li>
                </ul>
+               <div class="FAQ-body-light" v-if="windowWidth <= 430">
+                   <p>National ID/Passport<br>
+                      Valid Certificate of Good Conduct<br>
+                      Valid Driver’s License<br>
+                      Motor Vehicle Insurance<br>
+                      Motor Vehicle Log Book/Proof of Ownership<br>
+                      GPS enabled Android smartphone</p>
+               </div>
             <p class="FAQ-body-bold">How much do I pay Sendy?</p> 
             <p class="FAQ-body-light">Sign up is free. Sendy works on a small service fee and 20% commission per delivery.</p>
             <p class="FAQ-body-bold">How will I be paid?</p>
@@ -104,7 +114,8 @@ data() {
     state: true,
     direction: 'slide-fade-left-car',
     pos: 1,
-    windowWidth: null
+    windowWidth: null,
+    newLeft: null
     }
 },
 computed: {
@@ -139,6 +150,15 @@ created() {
     methods: {
     handleResize() {
       this.windowWidth = window.innerWidth - 20;
+      var range = 2560 - window.innerWidth
+      var quotient = (range * 35)/1120
+      var newWidth = 45 + quotient
+      if (window.innerWidth > 1440){
+          this.newLeft = 80
+      }
+      else{
+          this.newLeft = newWidth
+      }
     },
     first(){
         this.pos = 1

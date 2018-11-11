@@ -84,7 +84,8 @@ export default {
             web: null,
             parentName: null,
             sectionTitle: null,
-            windowWidth: null
+            windowWidth: null,
+            newWidth: null
         }
     },
     computed: {
@@ -120,6 +121,9 @@ export default {
     methods: {
     handleResize() {
       this.windowWidth = window.innerWidth;
+      var range = 2560 - this.windowWidth
+        var quotient = (range * 13.5)/1536
+        this.newWidth = 100 - (19 - quotient)
     },
     detectAndroid() { 
     if( navigator.userAgent.match(/Android/i)){

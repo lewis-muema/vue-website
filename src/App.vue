@@ -11,18 +11,18 @@
 
 <style>
 #app {
-  font-family: 'Roboto';
+  font-family: 'Open sans';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #000;
-  
+
 }
 </style>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Roboto:400');
-@import url('https://fonts.googleapis.com/css?family=Roboto:700');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
-@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+@import url('https://fonts.googleapis.com/css?family=Open sans:400');
+@import url('https://fonts.googleapis.com/css?family=Open sans:700');
+@import url('https://fonts.googleapis.com/css?family=Open sans:300');
+@import url('https://fonts.googleapis.com/css?family=Open sans:100');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 </style>

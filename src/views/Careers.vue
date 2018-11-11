@@ -67,7 +67,7 @@
                 <p class="jobs-head">Jobs</p>
                     <p class="jobs-bold">Position</p>
                     <p class="jobs-bold" id="jobs-loc" v-if="windowWidth > 430">Location</p>
-                    <div class="jobs-bold" v-if="windowWidth > 430" ><p class="job-dept">Department</p></div>
+                    <div class="jobs-bold" v-if="windowWidth > 430"><p class="job-dept">Department</p></div>
                     <div class="jobs-row" v-for="job in jobs" :key="job.position">
                     <span class="jobs-col">
                     <router-link :to="job.path" id="jobs-link">{{ job.position }}</router-link>

@@ -2,7 +2,7 @@
     <div class="all-cities">
         <Upper/>
         <CityImg/>
-        <div class="cities-details">
+        <div class="cities-details" :style= "{ width: newWidth + '%', marginLeft: newLeft + '%'}">
             <p class="cities-details-head">Connecting you to Delivery Service Partners across Kenya</p>
             <div class="cities-row">
             <div class="cities-tab">
@@ -57,7 +57,10 @@ components: {
 },
 data() {
     return {
-    parentName: 'AllCities'
+    parentName: 'AllCities',
+    windowWidth: null,
+    newWidth: null,
+    newLeft: null
     }
 },
 computed: {
@@ -69,7 +72,21 @@ created() {
     this.$store.commit({
         type: 'changeParentName',
             pName: this.parentName
-        }); 
+        });
+    window.addEventListener('resize', this.handleResize)
+            this.handleResize(); 
+    },
+    destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+    },
+    methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+      var range = 2560 - this.windowWidth
+        var quotient = (range * 13.5)/1536
+        this.newWidth = 100 - (2 *(19 - quotient))
+        this.newLeft = 19 - quotient
+    }
     }
 }
 </script>

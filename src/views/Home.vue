@@ -6,15 +6,27 @@
     <homeVideo/>
      <!--start of partners section-->
     <div class="partners-sect">
-        <p class="vehicle" >Got a vehicle?</p>
-            <button class="become-partner-button" type="button" onclick="location.href='https://sendyit.com/partners?_ga=2.130357068.293005447.1538032536-678579193.1537173565';">BECOME A PARTNER</button>
-        <img v-if="windowWidth > '768'" class="partners-img" src="https://images.sendyit.com/website/got_vehicle.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16">
+        <div class="partner-col">
+        <div class="partner-row">
+        <table class="partner-details" :style= "{position: 'absolute' , left : newLeft + '%'}">
+            <tr><td>
+            <p class="vehicle" >Got a vehicle?</p>
+            </td></tr>
+            <tr><td>
+            <button class="become-partner-button" v-if="windowWidth > '768'" type="button" onclick="location.href='https://sendyit.com/partners?_ga=2.130357068.293005447.1538032536-678579193.1537173565';">BECOME A PARTNER</button>
+            </td></tr>
+        </table>
+        </div>
+        <div class="partner-row">
+        <button class="become-partner-button" v-if="windowWidth <= '768'" type="button" onclick="location.href='https://sendyit.com/partners?_ga=2.130357068.293005447.1538032536-678579193.1537173565';">BECOME A PARTNER</button>
+        <img v-if="windowWidth > '768'" :style= "{position: 'absolute' , right: newLeft + '%' , height: imgWidth + 'px'}" class="partners-img" src="https://images.sendyit.com/website/got_vehicle.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16">
+        </div>
+        </div>
     </div>
     <!--start of enterprise section-->
     <div class="kitenge-divider"></div>
-    <table class="enterprise-section">
-        <tr>
-            <td class="enterprise-desc">
+    <div class="enterprise-section" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%' , width: secWidth + '%'}">
+            <div class="enterprise-desc">
                 <p class="enterprise-desc-head">Grow your business with Sendy</p>
                 <p class="enterprise-desc-par">Logistics is fundamental to the success of a business. Whether you run an online shop or a manufacturing business, Sendy is the preferred logistics platform for helping you grow your business.</p>
                 <div class="img-row">
@@ -29,21 +41,28 @@
                 <img src="../assets/Kenafric.png" class="enterprise-clients">
                 <img src="../assets/Crown.png" class="enterprise-clients">
                 </div>
-            </td>
-            <td class="e-commerce-category">
+            </div>
+            <div class="e-commerce-category">
+                <router-link to="/enterprise">
+                <div class="boundary">
                 <img src="../assets/E-Commerce.png" class="enterprise-category-image">
                 <p class="enterprise-head">E-commerce</p>
                 <p class="enterprise-par">Focus on your core business, and let us handle the stress of deliveries. Sendy is the platform for e-commerce door-to-door deliveries.</p>
-                <p><a href="" class="enterprise-link">Learn More</a></p>
-            </td>
-            <td class="enterprise-category">
-                <img src="../assets/Enterprise.png" class="enterprise-category-image">
+                <p><router-link to="/merchant" class="enterprise-link">Learn More</router-link></p>
+                </div>
+                </router-link>
+            </div>
+            <div class="enterprise-category">
+                <router-link to="/enterprise">
+                <div class="boundary">
+                <img src="../assets/Enterprise-sect.png" class="enterprise-category-image">
                 <p class="enterprise-head">Enterprise</p>
                 <p class="enterprise-par">Sendy's technology helps Manufacturers and Distributors to optimize their logistics, bringing down the cost of moving your goods.</p>
-                <p><a href="" class="enterprise-link">Learn More</a></p>
-            </td>
-        </tr>
-    </table>
+                <p><router-link to="/enterprise" class="enterprise-link">Learn More</router-link></p>
+                </div>
+                </router-link>
+            </div>
+    </div>
     <div class="kitenge-divider"></div>
     <!--start of services section-->
     <div class="services">
@@ -198,7 +217,8 @@ data() {
     IOS: null,
     newWidth: null,
     newLeft: null,
-    secWidth: null
+    secWidth: null,
+    imgWidth: null
     }
 },
 computed: {
@@ -234,6 +254,8 @@ computed: {
         else{
         this.newWidth = 33
         }
+        var quotient3 = (range * 55)/1536
+        this.imgWidth = 215 - quotient3
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"
