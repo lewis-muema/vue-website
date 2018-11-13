@@ -20,9 +20,14 @@
 </style>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Open sans:400');
+@import url('https://fonts.googleapis.com/css?family=Open sans:900');
+@import url('https://fonts.googleapis.com/css?family=Open sans:800');
 @import url('https://fonts.googleapis.com/css?family=Open sans:700');
+@import url('https://fonts.googleapis.com/css?family=Open sans:600');
+@import url('https://fonts.googleapis.com/css?family=Open sans:500');
+@import url('https://fonts.googleapis.com/css?family=Open sans:400');
 @import url('https://fonts.googleapis.com/css?family=Open sans:300');
+@import url('https://fonts.googleapis.com/css?family=Open sans:200');
 @import url('https://fonts.googleapis.com/css?family=Open sans:100');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 </style>
