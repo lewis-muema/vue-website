@@ -2,18 +2,18 @@
     <div class="business-page">
     <Upper/>
     <div class="platform-home">
-        <div class="platform-home-left">
+        <div class="platform-home-left" :style= "{marginLeft: newLeft + '%'}">
             <p class="platform-home-left-head">Move more goods securely and efficiently.</p>
             <p class="platform-home-left-par">The cost of moving goods in East Africa can be up to 60% of the customer price. Sendy helps lower the cost of logistics by leveraging technology and optimizing deliveries.</p>
         </div>
         <div class="platform-home-right">
-            <img src="../assets/Enterprise.png" class="platform-home-img">
+            <img src="../assets/Enterprise-home.png" class="platform-home-img">
         </div>
     </div>
     <div class="platform">
         <p class="platform-head">Africa's most advanced delivery platform</p>
         <p class="platform-par">Customers expectations on turnaround times are increasing. Let Sendy optimize your deliveries so you can focus on your core business.</p>
-        <div class="platform-row">
+        <div class="platform-row" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
             <div class="platform-column">
                 <img class="platform-thumb" src="https://www.johnson-travels.com/library/images/stops.png">
                 <p class="platform-column-head">Multiple delivery stops</p>
@@ -39,7 +39,7 @@
             <p class="cp-head">Why our customers prefer Sendy</p>
             <p class="cp-par">Sendy has many features that make all your deliveries simple, transparent and secure. 
             See how we compare to others.</p>
-            <table class="cp-table">
+            <table class="cp-table" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
                 <tr class="cp-table-top-row">
                     <td class="col1">Features</td>
                     <td class="col2">Sendy</td>
@@ -59,21 +59,19 @@
         <div class="growth">
             <p class="growth-head">Still have more questions?</p>
             <p class="growth-par1">Kindly provide us with your name and email and a Sendy representative will contact you.</p>
-            <table class="growth-table">
-                <tr>
-                    <td class="growth-name">
+            <div class="growth-table">
+                    <div class="growth-name">
                         <p>Name</p>
                         <input type="text" class="growth-field">
-                    </td>
-                    <td class="growth-email">
+                    </div>
+                    <div class="growth-email">
                         <p>Email-Address</p>
                         <input type="text" class="growth-field">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="growth-submit">
                         <button class="price-submit" id="growth-submit" type="button" onclick="location.href='';">SUBMIT</button>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+            </div>
         </div>
     </div>
     <Lower/>
@@ -94,6 +92,7 @@ data() {
     parentName: 'Enterprise',
     windowWidth: null,
     baseUrl: 'https://www.johnson-travels.com/library/images/',
+    newLeft: null,
     tables: [
         {name: 'Insurance on delivery', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
         {name: 'Unlimited parallel orders', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
@@ -125,6 +124,9 @@ created() {
     methods: {
     handleResize() {
       this.windowWidth = window.innerWidth - 20;
+      var range = 2560 - window.innerWidth
+        var quotient = (range * 13.5)/1536
+        this.newLeft = 19 - quotient
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"
