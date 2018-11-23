@@ -5,60 +5,60 @@
      <!--start of home video section--> 
     <homeVideo/>
      <!--start of partners section-->
-    <div class="partners-sect">
-        <div class="partner-col">
-        <div class="partner-row">
+    <div class="partners-sect overflow bg-orange">
+        <div class="partner-col grid">
+        <div class="partner-row flex centerY">
         <table class="partner-details" :style= "{position: 'absolute' , left : newLeft + '%'}">
             <tr><td>
-            <p class="vehicle" >Got a vehicle?</p>
+            <p class="vehicle relative color-white" >Got a vehicle?</p>
             </td></tr>
             <tr><td>
-            <button class="become-partner-button" v-if="windowWidth > '768'" type="button" onclick="location.href='https://sendyit.com/partners?_ga=2.130357068.293005447.1538032536-678579193.1537173565';">BECOME A PARTNER</button>
+            <button class="become-partner-button bg-orange flex centerX bottomY relative open-sans color-white bc-white" v-if="windowWidth > '768'" type="button"><router-link to="/partners" class="color-white">BECOME A PARTNER</router-link></button>
             </td></tr>
         </table>
         </div>
-        <div class="partner-row">
-        <button class="become-partner-button" v-if="windowWidth <= '768'" type="button" onclick="location.href='https://sendyit.com/partners?_ga=2.130357068.293005447.1538032536-678579193.1537173565';">BECOME A PARTNER</button>
-        <img v-if="windowWidth > '768'" :style= "{position: 'absolute' , right: newLeft + '%' , height: imgWidth + 'px'}" class="partners-img" src="https://images.sendyit.com/website/got_vehicle.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16">
+        <div class="partner-row flex centerY">
+        <button class="become-partner-button bg-orange flex centerX bottomY relative open-sans color-white bc-white" v-if="windowWidth <= '768'" type="button"><router-link to="/partners" class="color-white">BECOME A PARTNER</router-link></button>
+        <img v-if="windowWidth > '768'" :style= "{position: 'absolute' , right: newLeft + '%' , height: imgWidth + 'px'}" class="partners-img relative" src="https://images.sendyit.com/website/got_vehicle.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16">
         </div>
         </div>
     </div>
     <!--start of enterprise section-->
     <div class="kitenge-divider"></div>
-    <div class="enterprise-section" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%' , width: secWidth + '%'}">
+    <div class="enterprise-section grid centerY" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%' , width: secWidth + '%'}">
             <div class="enterprise-desc">
                 <p class="enterprise-desc-head">Grow your business with Sendy</p>
                 <p class="enterprise-desc-par">Logistics is fundamental to the success of a business. Whether you run an online shop or a manufacturing business, Sendy is the preferred logistics platform for helping you grow your business.</p>
                 <div class="img-row">
-                <img src="../assets/Chandaria.png" class="enterprise-clients">
-                <img src="../assets/Safaricom.png" class="enterprise-clients">
-                <img src="../assets/Copia.png" class="enterprise-clients">
-                <img src="../assets/Highlands.png" class="enterprise-clients">
+                <img :src="baseURL + '/Chandaria.png'" class="enterprise-clients">
+                <img :src="baseURL + '/Safaricom.png'" class="enterprise-clients">
+                <img :src="baseURL + '/Copia.png'" class="enterprise-clients">
+                <img :src="baseURL + '/Highlands.png'" class="enterprise-clients">
                 </div>
                 <div class="img-row">
-                <img src="../assets/Unilever.png" class="enterprise-clients">
-                <img src="../assets/Bidco.png" class="enterprise-clients">
-                <img src="../assets/Kenafric.png" class="enterprise-clients">
-                <img src="../assets/Crown.png" class="enterprise-clients">
+                <img :src="baseURL + '/Unilever.png'" class="enterprise-clients">
+                <img :src="baseURL + '/Bidco.png'" class="enterprise-clients">
+                <img :src="baseURL + '/Kenafric.png'" class="enterprise-clients">
+                <img :src="baseURL + '/Crown.png'" class="enterprise-clients">
                 </div>
             </div>
             <div class="e-commerce-category">
-                <router-link to="/enterprise">
+                <router-link to="/merchant">
                 <div class="boundary">
-                <img src="../assets/E-Commerce.png" class="enterprise-category-image">
-                <p class="enterprise-head">E-commerce</p>
-                <p class="enterprise-par">Focus on your core business, and let us handle the stress of deliveries. Sendy is the platform for e-commerce door-to-door deliveries.</p>
-                <p><router-link to="/merchant" class="enterprise-link">Learn More</router-link></p>
+                <img :src="baseURL + '/E-Commerce.png'" class="enterprise-category-image center-block block center-text">
+                <p class="enterprise-head center-block block center-text open-sans">E-commerce</p>
+                <p class="enterprise-par center-block block center-text open-sans">Focus on your core business, and let us handle the stress of deliveries. Sendy is the platform for e-commerce door-to-door deliveries.</p>
+                <p><router-link to="/merchant" class="enterprise-link center-block block center-text color-orange">Learn More</router-link></p>
                 </div>
                 </router-link>
             </div>
             <div class="enterprise-category">
                 <router-link to="/enterprise">
                 <div class="boundary">
-                <img src="../assets/Enterprise-sect.png" class="enterprise-category-image">
-                <p class="enterprise-head">Enterprise</p>
-                <p class="enterprise-par">Sendy's technology helps Manufacturers and Distributors to optimize their logistics, bringing down the cost of moving your goods.</p>
-                <p><router-link to="/enterprise" class="enterprise-link">Learn More</router-link></p>
+                <img :src="baseURL + '/Enterprise-sect.png'" class="enterprise-category-image center-block block center-text">
+                <p class="enterprise-head center-block block center-text">Enterprise</p>
+                <p class="enterprise-par center-block block center-text">Sendy's technology helps Manufacturers and Distributors to optimize their logistics, bringing down the cost of moving your goods.</p>
+                <p><router-link to="/enterprise" class="enterprise-link center-block block center-text color-orange">Learn More</router-link></p>
                 </div>
                 </router-link>
             </div>
@@ -66,33 +66,33 @@
     <div class="kitenge-divider"></div>
     <!--start of services section-->
     <div class="services">
-        <div class="services-container" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%' , width: secWidth + '%'}">
-            <div class="services-row">
-                <div class="services-column" id="services-cols" align="center">
+        <div class="services-container flex centerY" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%' , width: secWidth + '%'}">
+            <div class="services-row grid">
+                <div class="services-column services-cols" align="center">
                       <span>
                         <img src="https://images.sendyit.com/frontend_apps/time_orange.jpg?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" alt="" style="width:100px;">
                       </span>
                       <div class="personal-text-content personal-text-content-pricing">
-                        <p id="serv-heading">Deliver anywhere. Anytime.</p>
-                        <p id="serv-body">Push a button and a driver will come to you in less than an hour. Whenever you’re delivering goods to your customers or loved ones, bank on Sendy to deliver on a bike, van or a truck.</p>
+                        <p class="serv-heading">Deliver anywhere. Anytime.</p>
+                        <p class="serv-body">Push a button and a driver will come to you in less than an hour. Whenever you’re delivering goods to your customers or loved ones, bank on Sendy to deliver on a bike, van or a truck.</p>
                       </div>
                 </div>
-                <div class="services-column" id="services-cols" align="center">
+                <div class="services-column services-cols" align="center">
                       <span>
                       <img src="https://images.sendyit.com/frontend_apps/reduce_cost_orange.jpg?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" alt="" style="width:100px;">
                       </span>
                       <div class="personal-text-content personal-text-content-pricing">
-                        <p id="serv-heading">Reduce costs</p>
-                        <p id="serv-body">Manage all your deliveries from one spot, where you can see spending, access reporting tools, and save on logistics costs.</p>
+                        <p class="serv-heading">Reduce costs</p>
+                        <p class="serv-body">Manage all your deliveries from one spot, where you can see spending, access reporting tools, and save on logistics costs.</p>
                       </div>
                 </div>
-                <div class="services-column" id="services-cols" align="center">
+                <div class="services-column services-cols" align="center">
                       <span>
                           <img src="https://images.sendyit.com/frontend_apps/secure_orange.jpg?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" alt="" style="width:100px;">
                       </span>
                       <div class="personal-text-content personal-text-content-pricing">
-                        <p id="serv-heading">Your goods are protected</p>
-                        <p id="serv-body">Each Sendy delivery is backed by an insurance policy from the moment your goods are in our hands.</p>
+                        <p class="serv-heading">Your goods are protected</p>
+                        <p class="serv-body">Each Sendy delivery is backed by an insurance policy from the moment your goods are in our hands.</p>
                       </div>
                 </div>
                 </div>
@@ -106,18 +106,18 @@
     <div class="kitenge-divider"></div>
     <!--start of slides section-->
     <div class="slides-section">
-        <div class="slides-container">
+        <div class="slides-container grid center-block center-text">
             <div class="slides-column">
-                <p class="slides-header">Pick a <br>vehicle</p>
+                <p class="slides-header open-sans">Pick a <br>vehicle</p>
                     <div class="home-steps-des">
                         <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://images.sendyit.com/website/screen_vehicle.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" alt="pick a vehicle">
-                            <div class="personal-text-content-body">
+                            <div class="personal-text-content-body open-sans">
                                 <p>Deliver goods via motorcycle, pickup, van or truck.</p>
                             </div>
                     </div>
             </div>
             <div class="slides-column" v-if="windowWidth <= '1200'">
-            <div class="kitenge-divider" id="kitenge-fit"></div>
+            <div class="kitenge-divider kitenge-fit"></div>
             </div>
             <div class="slides-column">
                 <p class="slides-header">Book a <br>delivery</p>
@@ -129,7 +129,7 @@
                     </div>
             </div>
             <div class="slides-column" v-if="windowWidth <= '1200'">
-            <div class="kitenge-divider" id="kitenge-fit"></div>
+            <div class="kitenge-divider kitenge-fit"></div>
             </div>
             <div class="slides-column">
                 <p class="slides-header">Track your <br>Driver</p>
@@ -147,36 +147,36 @@
     <!--divider-->
         <div class="kitenge-divider"></div>
     <!--start of qualities section-->
-    <div class = "qualities-section">
-    <div class="qualities-row" id="tab1">
-        <div class="qualities-column-7" id="img-kid">
+    <div class = "qualities-section overflow">
+    <div class="qualities-row tab1 grid">
+        <div class="qualities-column-7 img-kid">
 
         </div>
-        <div class="qualities-column-5" id="tab-blue">
+        <div class="qualities-column-5 qualities-tab bg-blue flex centerX centerY">
             <div class="qualities-text-container">
-                <p class="qualities-heading">Simple</p>
-                <p class="qualities-body">One platform for all <br>your delivery needs.</p>
+                <p class="qualities-heading open-sans color-white">Simple</p>
+                <p class="qualities-body open-sans color-white">One platform for all <br>your delivery needs.</p>
             </div>
         </div>
     </div>
-    <div class="qualities-row" id="tab1">
-        <div v-if="windowWidth <= '1200'" class="qualities-column-7" id="img-senior"></div>
-        <div class="qualities-column-5" id="tab-orange">   
+    <div class="qualities-row tab1 grid">
+        <div v-if="windowWidth <= '1200'" class="qualities-column-7 img-senior"></div>
+        <div class="qualities-column-5 qualities-tab bg-orange flex centerX centerY">   
         <div class="qualities-text-container">
-            <p class="qualities-heading">Transparent</p>
-            <p class="qualities-body">Know where your <br>delivery is at all times.</p>
+            <p class="qualities-heading open-sans color-white">Transparent</p>
+            <p class="qualities-body open-sans color-white">Know where your <br>delivery is at all times.</p>
         </div> 
         </div>
-        <div v-if="windowWidth > '1200'" class="qualities-column-7" id="img-senior"></div>
+        <div v-if="windowWidth > '1200'" class="qualities-column-7 img-senior"></div>
     </div>
-        <div class="qualities-row" id="tab1">
-                <div class="qualities-column-7" id="img-supply">
+        <div class="qualities-row tab1 grid">
+                <div class="qualities-column-7 img-supply">
 
                 </div>
-                <div class="qualities-column-5" id="tab-blue">
+                <div class="qualities-column-5 qualities-tab bg-blue flex centerX centerY">
                 <div class="qualities-text-container">
-                    <p class="qualities-heading">User-Focused</p>
-                    <p class="qualities-body">Payment, pricing, and <br>platform options <br>tailored for your <br>business.</p>
+                    <p class="qualities-heading open-sans color-white">User-Focused</p>
+                    <p class="qualities-body open-sans color-white">Payment, pricing, and <br>platform options <br>tailored for your <br>business.</p>
                 </div> 
                 </div>
         </div>
@@ -218,7 +218,8 @@ data() {
     newWidth: null,
     newLeft: null,
     secWidth: null,
-    imgWidth: null
+    imgWidth: null,
+    baseURL: 'https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2'
     }
 },
 computed: {
@@ -254,7 +255,7 @@ computed: {
         else{
         this.newWidth = 33
         }
-        var quotient3 = (range * 55)/1536
+        var quotient3 = (range * 10)/1536
         this.imgWidth = 215 - quotient3
     },
     redirect(){

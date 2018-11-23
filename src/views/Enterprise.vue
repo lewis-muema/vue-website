@@ -1,75 +1,74 @@
 <template>
     <div class="business-page">
     <Upper/>
-    <div class="platform-home">
+    <div class="platform-home flex centerY overflow bg-blue bottomY">
         <div class="platform-home-left" :style= "{marginLeft: newLeft + '%'}">
-            <p class="platform-home-left-head">Move more goods securely and efficiently.</p>
-            <p class="platform-home-left-par">The cost of moving goods in East Africa can be up to 60% of the customer price. Sendy helps lower the cost of logistics by leveraging technology and optimizing deliveries.</p>
+            <p class="platform-home-left-head color-white">Move more goods securely and efficiently.</p>
+            <p class="platform-home-left-par color-white">The cost of moving goods in East Africa can be up to 60% of the customer price. Sendy helps lower the cost of logistics by leveraging technology and optimizing deliveries.</p>
         </div>
         <div class="platform-home-right">
-            <img src="../assets/Enterprise-home.png" class="platform-home-img">
+            <img :src="baseURL + '/Enterprise-home.png'" class="platform-home-img center-block block">
         </div>
     </div>
     <div class="platform">
-        <p class="platform-head">Africa's most advanced delivery platform</p>
-        <p class="platform-par">Customers expectations on turnaround times are increasing. Let Sendy optimize your deliveries so you can focus on your core business.</p>
-        <div class="platform-row" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
+        <p class="platform-head center-text color-blue">Africa's most advanced delivery platform</p>
+        <p class="platform-par center-block center-text block">Customers expectations on turnaround times are increasing. Let Sendy optimize your deliveries so you can focus on your core business.</p>
+        <div class="platform-row center-text grid" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
             <div class="platform-column">
-                <img class="platform-thumb" src="https://www.johnson-travels.com/library/images/stops.png">
-                <p class="platform-column-head">Multiple delivery stops</p>
-                <p class="platform-column-par">Deliver goods to multiple customers under one delivery request - increasing Driver efficiency and reducing per delivery costs.</p>
+                <img class="platform-thumb center-block block" :src="baseURL + '/stops.png'">
+                <p class="platform-column-head color-blue">Multiple delivery stops</p>
+                <p class="platform-column-par center-block block">Deliver goods to multiple customers under one delivery request - increasing Driver efficiency and reducing per delivery costs.</p>
             </div>
             <div class="platform-column">
-                <img class="platform-thumb" src="https://www.johnson-travels.com/library/images/Track-p.png">
-                <p class="platform-column-head">Order tracking</p>
-                <p class="platform-column-par">Track all your deliveries in real time from the comfort of your office. No need to stress anymore when monitoring the deliveries.</p>
+                <img class="platform-thumb center-block block" :src="baseURL + '/Track-p.png'">
+                <p class="platform-column-head color-blue">Order tracking</p>
+                <p class="platform-column-par center-block block">Track all your deliveries in real time from the comfort of your office. No need to stress anymore when monitoring the deliveries.</p>
             </div>
             <div class="platform-column">
-                <img class="platform-thumb" src="https://www.johnson-travels.com/library/images/analytics.png">
-                <p class="platform-column-head">Analytics dashboard</p>
-                <p class="platform-column-par">Data is the fuel of any business. Sendy's platform collects critical delivery data points that can be used to optimise your delivery process.</p>
+                <img class="platform-thumb center-block block" :src="baseURL + '/analytics.png'">
+                <p class="platform-column-head color-blue">Analytics dashboard</p>
+                <p class="platform-column-par center-block block">Data is the fuel of any business. Sendy's platform collects critical delivery data points that can be used to optimise your delivery process.</p>
             </div>
         </div>
-        <div class="growth">
+        <div class="growth bg-blue">
             <p class="growth-head">Get in touch</p>
-            <p class="growth-par">Click on the link below and a Sendy representative will contact you. Time to increase delivery efficiency and lower costs.</p>
-            <button class="get-started-button" type="button" id="get-started-center" onclick="location.href='';">CONTACT SALES</button>
+            <p class="growth-par center-text color-white">Click on the link below and a Sendy representative will contact you. Time to increase delivery efficiency and lower costs.</p>
+            <button class="get-started-button bg-orange bc-orange color-white open-sans center-block block button-font" type="button" onclick="location.href='';">CONTACT SALES</button>
         </div>
         <div class="customer-prefer">
-            <p class="cp-head">Why our customers prefer Sendy</p>
-            <p class="cp-par">Sendy has many features that make all your deliveries simple, transparent and secure. 
-            See how we compare to others.</p>
+            <p class="cp-head color-blue center-text">Why businesses prefer Sendy</p>
+            <p class="cp-par center-text center-block block">Sendy has unique features that support your delivery process better than other service providers.</p>
             <table class="cp-table" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
-                <tr class="cp-table-top-row">
+                <tr class="cp-table-top-row bg-blue color-white center-text">
                     <td class="col1">Features</td>
                     <td class="col2">Sendy</td>
-                    <td class="col3">Boda-Boda</td>
+                    <td class="col3">Informal Couriers</td>
                     <td class="col4">Small Couriers</td>
-                    <td class="col5">Large International Couriers</td>
+                    <td class="col5">Global Couriers</td>
                 </tr>
                 <tr class="cp-table-row" v-for="table in tables" :key="table.name">
-                    <td class="col1"><p>{{table.name}}<img class="info-marker" :src="table.url1"></p></td>
-                    <td class="col2"><img class="marker" :src="table.url2"></td>
-                    <td class="col3"><img class="marker" :src="table.url3"></td>
-                    <td class="col4"><img class="marker" :src="table.url4"></td>
-                    <td class="col5"><img class="marker" :src="table.url5"></td>
+                    <td class="col1"><p>{{table.name}}<img class="info-marker" :src="baseURL + table.url1"></p></td>
+                    <td class="col2"><img class="marker" :src="baseURL + table.url2"></td>
+                    <td class="col3"><img class="marker" :src="baseURL + table.url3"></td>
+                    <td class="col4"><img class="marker" :src="baseURL + table.url4"></td>
+                    <td class="col5"><img class="marker" :src="baseURL + table.url5"></td>
                 </tr>
             </table>
         </div>
-        <div class="growth">
+        <div class="growth bg-blue">
             <p class="growth-head">Still have more questions?</p>
-            <p class="growth-par1">Kindly provide us with your name and email and a Sendy representative will contact you.</p>
-            <div class="growth-table">
+            <p class="growth-par1 center-text color-white">Kindly provide us with your name and email and a Sendy representative will contact you.</p>
+            <div class="growth-table center-block color-white grid">
                     <div class="growth-name">
-                        <p>Name</p>
+                        <p class="margins">Name</p>
                         <input type="text" class="growth-field">
                     </div>
                     <div class="growth-email">
-                        <p>Email-Address</p>
+                        <p class="margins">Email-Address</p>
                         <input type="text" class="growth-field">
                     </div>
                     <div class="growth-submit">
-                        <button class="price-submit" id="growth-submit" type="button" onclick="location.href='';">SUBMIT</button>
+                        <button class="price-submit growth-sub bc-orange color-white bg-orange open-sans block center-block open-sans" type="button" onclick="location.href='';">SUBMIT</button>
                     </div>
             </div>
         </div>
@@ -91,17 +90,17 @@ data() {
     return {
     parentName: 'Enterprise',
     windowWidth: null,
-    baseUrl: 'https://www.johnson-travels.com/library/images/',
     newLeft: null,
+    baseURL: 'https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2',
     tables: [
-        {name: 'Insurance on delivery', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
-        {name: 'Unlimited parallel orders', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
-        {name: 'Android and IOS apps', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
-        {name: 'Real-time tracking', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
-        {name: 'E-commerce intergration', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/xmark.png'},
-        {name: 'All vehicle types(bikes, pickups, vans & trucks)', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/question.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
-        {name: 'Direct M-pesa intergration', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'},
-        {name: 'Driver rating', url1: 'https://www.johnson-travels.com/library/images/info.png', url2: 'https://www.johnson-travels.com/library/images/tick.png', url3: 'https://www.johnson-travels.com/library/images/xmark.png', url4: 'https://www.johnson-travels.com/library/images/xmark.png', url5: 'https://www.johnson-travels.com/library/images/question.png'}
+        {name: 'Deliveries', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'},
+        {name: 'Multiple deliveries at a time', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'},
+        {name: 'Android, IOS and Web App', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'},
+        {name: 'Real-time tracking', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'},
+        {name: 'API intergration', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/xmark.png'},
+        {name: 'All vehicle types', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/question.png', url5: '/question.png'},
+        {name: 'Payment after fullfilment', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'},
+        {name: 'Ratings', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'}
     ]
     }
 },

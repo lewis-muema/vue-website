@@ -23,40 +23,40 @@
         </div>
         <div class="benefits">
             <p class="benefits-head">Benefits</p>
-            <div class="benefits-row">
-                <div class="benefits-column">
+            <div class="benefits-row center-block grid">
+                <div class="benefits-column block center-block">
                 <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/design-9.png">
                 <p class="benefits-par">Educational Stipend</p>
                 </div>
                 <div class="benefits-column">
-                <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_08.png">
+                <img class="benefits-thumb block center-block" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_08.png">
                 <p class="benefits-par">Yummy Food</p>
                 </div>
                 <div class="benefits-column">
-                <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_07.png">
+                <img class="benefits-thumb block center-block" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_07.png">
                 <p class="benefits-par">Cool Swag</p>
                 </div>
                 <div class="benefits-column">
-                <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_03.png">
+                <img class="benefits-thumb block center-block" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_03.png">
                 <p class="benefits-par">Health Insurance</p>
                 </div>
             </div>
 
-            <div class="benefits-row">
+            <div class="benefits-row center-block grid">
                 <div class="benefits-column">
-                <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_05.png">
+                <img class="benefits-thumb block center-block" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_05.png">
                 <p class="benefits-par">Free Deliveries</p>
                 </div>
                 <div class="benefits-column">
-                <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_04.png">
+                <img class="benefits-thumb block center-block" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_04.png">
                 <p class="benefits-par">Creative Space</p>
                 </div>
                 <div class="benefits-column">
-                <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_06.png">
+                <img class="benefits-thumb block center-block" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_06.png">
                 <p class="benefits-par">Sports Session</p>
                 </div>
                 <div class="benefits-column">
-                <img class="benefits-thumb" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_01.png">
+                <img class="benefits-thumb block center-block" src="https://s3-eu-west-1.amazonaws.com/sendy-web-apps-assets/website/careers/benefits_01.png">
                 <p class="benefits-par">New Tools</p>
                 </div>
             </div>
@@ -65,18 +65,18 @@
             
             <div class="jobs-container">
                 <p class="jobs-head">Jobs</p>
-                    <p class="jobs-bold">Position</p>
-                    <p class="jobs-bold" id="jobs-loc" v-if="windowWidth > 430">Location</p>
-                    <div class="jobs-bold" v-if="windowWidth > 430"><p class="job-dept">Department</p></div>
-                    <div class="jobs-row" v-for="job in jobs" :key="job.position">
+                    <p class="jobs-bold flex centerY">Position</p>
+                    <p class="jobs-bold flex centerY jobs-loc" v-if="windowWidth > 430">Location</p>
+                    <div class="jobs-bold flex centerY" v-if="windowWidth > 430"><p class="job-dept">Department</p></div>
+                    <div class="jobs-row flex centerY" v-for="job in jobs" :key="job.position">
                     <span class="jobs-col">
-                    <router-link :to="job.path" id="jobs-link">{{ job.position }}</router-link>
+                    <router-link :to="job.path" class="jobs-link">{{ job.position }}</router-link>
                     </span>
                     <span class="jobs-col" v-if="windowWidth > 430">
-                    <p id="jobs-loc">{{ job.location }}</p>
+                    <p class="jobs-loc">{{ job.location }}</p>
                     </span>
                     <span class="jobs-col" v-if="windowWidth > 430">
-                    <p id="jobs-dept">{{ job.department }}</p>
+                    <p class="jobs-dept">{{ job.department }}</p>
                     </span>
                     </div>
                     

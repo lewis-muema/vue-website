@@ -1,8 +1,8 @@
 <template>
 <div class = 'API-page'>
     <Upper/>
-    <div class="center-api">
-        <div class="desc-api">
+    <div class="center-api centerX centerY flex">
+        <div class="desc-api center-text color-white">
             <p class="api-head">Delivery for Platforms and E-commerce</p>
             <p class="api-par">A set of unified APIs and tools to instantly enable you to request and manage package delivery for your <br>platforms with integrated code samples, debugging and automated testing.</p>
             <span class="">
@@ -21,7 +21,7 @@ import Lower from './Lower';
 export default {
     data() {
         return {
-        parentName: 'API'
+        parentName: 'API',
         }
     },
     components: {

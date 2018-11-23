@@ -1,35 +1,35 @@
 <template>
     <div :class="sectionTitle">
-        <table class="tabs-table">
+        <table class="section">
             <tr><td>
-        <div class="tabs-container">
+        <div class="tabs-container grid">
         <div class="lower-cols">
-            <p class="lower-headers">Info</p>
+            <p class="lower-headers color-white open-sans">Info</p>
             <router-link to="/" class="lower-links">Home</router-link><br>
             <router-link to="/API" class="lower-links">API</router-link><br>
             <router-link to="/cities" class="lower-links">Cities</router-link><br>
             <router-link to="/merchant" class="lower-links">Merchant</router-link><br>
             <router-link to="/enterprise" class="lower-links">Enterprise</router-link><br>
-            <p class="copyright" v-if="windowWidth > '768'">© Sendy 2018. All rights reserved.</p>
+            <p class="copyright color-white relative" v-if="windowWidth > '768'">© Sendy 2018. All rights reserved.</p>
         </div>
         <div class="lower-cols">
-            <p class="lower-headers">Company</p>
+            <p class="lower-headers color-white open-sans">Company</p>
             <router-link to="/careers" class="lower-links">Careers</router-link><br>
-            <a href="" class="lower-links">Blog</a><br>
+            <router-link to="/blog" class="lower-links">Blog</router-link><br>
             <router-link to="/partners" class="lower-links">Drivers</router-link><br>
-            <a href="" class="lower-links">Driver login</a>
+            <router-link to="/driverslogin" class="lower-links">Driver login</router-link>
         </div>
         <div class="lower-cols">
-            <p class="lower-headers">Contact</p>
-            <a href="" class="lower-links">Help & Support</a><br>
-            <a href="" class="lower-links">Facebook</a><br>
-            <a href="" class="lower-links">Twitter</a><br>
-            <a href="" class="lower-links">LinkedIn</a><br>
-            <a href="" class="lower-links">Medium</a>
-            <p class="copyright" v-if="windowWidth <= '768'">© Sendy 2018. All rights reserved.</p>
+            <p class="lower-headers color-white open-sans">Contact</p>
+            <router-link to="/help&support" class="lower-links">Help & Support</router-link><br>
+            <router-link to="/facebook" class="lower-links">Facebook</router-link><br>
+            <router-link to="/twitter" class="lower-links">Twitter</router-link><br>
+            <router-link to="/linkedin" class="lower-links">LinkedIn</router-link><br>
+            <router-link to="/medium" class="lower-links">Medium</router-link>
+            <p class="copyright color-white relative" v-if="windowWidth <= '768'">© Sendy 2018. All rights reserved.</p>
         </div>
         <div class="lower-cols">
-            <p class="lower-headers">Policies</p>
+            <p class="lower-headers color-white open-sans">Policies</p>
             <router-link to="/terms" class="lower-links">Terms of Service</router-link><br>
             <router-link to="/privacy" class="lower-links">Privacy</router-link><br>
             <router-link to="/driverprivacy" class="lower-links">Driver Privacy</router-link><br>
@@ -38,20 +38,20 @@
         <td class="apps-row">
         <div class="apps-bar" v-if="windowWidth > '768'">
             <span class="">
-                    <a onclick="mixpane_register_on_personal('Google Play Link')" href="https://play.google.com/store/apps/details?id=com.sendy.co.ke.sendyy&amp;hl=en">
-                        <img class="playstore_home_view" id="lower-playstore" src="https://images.sendyit.com/website/home/googleplayicon.png">
-                    </a>
+                    <router-link to="/playstore">
+                        <img class="playstore_home_view lower-playstore" src="https://images.sendyit.com/website/home/googleplayicon.png">
+                    </router-link>
                     </span>
                     <span class="">
-                        <a onclick="mixpane_register_on_personal('Apple App Store Link')" href="https://itunes.apple.com/us/app/sendy-delivery-app/id1088688361?ls=1&amp;mt=8">
+                        <router-link to="/appstore">
                             <img class="appstore_home_view" src="https://images.sendyit.com/website/home/appstoreicon.png">
-                        </a>
+                        </router-link>
                     </span>
             <div class="social-btns">
-            <iframe id="fbton" src="https://www.facebook.com/plugins/like.php?href=https://web.facebook.com/Sendyit/&amp;layout=button&amp;show_faces=false&amp;share=false&amp;width=50&amp;action=like&amp;font=verdana&amp;colorscheme=light" allowtransparency="true" frameborder="0" scrolling="no">
+            <iframe class="fbton" src="https://www.facebook.com/plugins/like.php?href=https://web.facebook.com/Sendyit/&amp;layout=button&amp;show_faces=false&amp;share=false&amp;width=50&amp;action=like&amp;font=verdana&amp;colorscheme=light" allowtransparency="true" frameborder="0" scrolling="no">
             </iframe>
             <div class="twitter-btn">
-            <a id="twitter-btn" href="https://twitter.com/SendyMobile?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-show-count="false">Follow @SendyMobile</a>
+            <router-link to="/follow" class="twitter-follow-button twitter-btn" data-show-screen-name="false" data-show-count="false">Follow @SendyMobile</router-link>
             </div>
             </div>
             
@@ -60,14 +60,14 @@
             <tr><td>
         <div class="apps-bar" v-if="windowWidth <= '430' && parentName == 'API'">
             <span class="" v-if="android == true">
-                    <a onclick="mixpane_register_on_personal('Google Play Link')" href="https://play.google.com/store/apps/details?id=com.sendy.co.ke.sendyy&amp;hl=en">
-                        <img class="playstore_home_view" id="lower-playstore" src="https://images.sendyit.com/website/home/googleplayicon.png">
-                    </a>
+                    <router-link to="/playstore">
+                        <img class="playstore_home_view lower-playstore" src="https://images.sendyit.com/website/home/googleplayicon.png">
+                    </router-link>
                     </span>
                     <span class="" v-if="IOS == true">
-                        <a onclick="mixpane_register_on_personal('Apple App Store Link')" href="https://itunes.apple.com/us/app/sendy-delivery-app/id1088688361?ls=1&amp;mt=8">
+                        <router-link to="/appstore">
                             <img class="appstore_home_view" src="https://images.sendyit.com/website/home/appstoreicon.png">
-                        </a>
+                        </router-link>
                     </span>
         </div>
             </td></tr>

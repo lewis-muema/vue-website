@@ -1,9 +1,9 @@
 <template>
     <div class="businesses-section">
-        <p class="biz-header">Over 50k+ users and 3k+ businesses trust Sendy</p>
-    <div class="businesses-container">
-    <span class= "arrows-biz"><img src="https://images.sendyit.com/website/driver/left_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="previous" class="arrow-left"></span>
-        <div class="biz-tabs-holder">
+        <p class="biz-header center-text open-sans">Over 50k+ users and 3k+ businesses trust Sendy</p>
+    <div class="businesses-container flex centerX centerY">
+    <span class= "arrows-biz relative flex centerX"><img src="https://images.sendyit.com/website/driver/left_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="previous" class="arrow-left"></span>
+        <div class="biz-tabs-holder relative overflow">
         
         <span class="biz-carousel">
         <transition :name ="direction">   
@@ -36,11 +36,11 @@
         </span>
         
         </div>
-    <span class= "arrows-biz"><img src="https://images.sendyit.com/website/driver/right_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="next" class="arrow-right"></span>
+    <span class= "arrows-biz relative flex centerX"><img src="https://images.sendyit.com/website/driver/right_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="next" class="arrow-right"></span>
     </div>
-    <button v-if="windowWidth > '768'" class="get-started-button-bottom" type="button" onclick="location.href='https://apptest.sendyit.com/get_started';">GET STARTED</button>
-    <img v-if="windowWidth <= '768' && android == true" src="https://images.sendyit.com/website/home/googleplayicon.png" class="lower-playstore-button">
-    <img v-if="windowWidth <= '768' && IOS == true" src="https://images.sendyit.com/website/home/appstoreicon.png" class="lower-appstore-button">
+    <router-link to="/getstarted" v-if="windowWidth > '768'"><button class="get-started-button-bottom bg-orange bc-orange open-sans block color-white center-block" type="button">GET STARTED</button></router-link>
+    <img v-if="windowWidth <= '768' && android == true" src="https://images.sendyit.com/website/home/googleplayicon.png" class="lower-playstore-button center-block block">
+    <img v-if="windowWidth <= '768' && IOS == true" src="https://images.sendyit.com/website/home/appstoreicon.png" class="lower-appstore-button center-block block">
     </div>
 </template>
 

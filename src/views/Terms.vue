@@ -1,7 +1,7 @@
 <template>
     <div class="terms-of-service">
         <Upper/>
-        <div class="job-desc">
+        <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
             <p class="job-desc-par">SENDY TERMS & CONDITIONS</p>
             <p class="job-desc-par">In order to use the SENDY Application (the "SENDY application" or "Website"), access the information contained on the SENDY application or website (the "Website") or make use of the services provided through the SENDY APP (the "Service" or "Services"), you (hereinafter referred to as "You") must first read this agreement (the "Agreement") and accept it. By using or receiving any services supplied to you by the Company (collectively, the "Service"), and downloading, installing or using any associated software supplied by the Company which purpose is to enable you to use the Service (collectively, the "Software"), you hereby expressly acknowledge and agree to be bound by the terms and conditions of the Agreement, and any future amendments and additions to this Agreement as published from time to time at <a @click="redirect2">http://sendy.co.ke/terms</a> or through the Service.</p><br><br>
             <p class="job-desc-par">The Company reserves the right to modify the terms and conditions of this Agreement or its policies relating to the Service or Software at any time, effective upon posting of an updated version of this Agreement on the Service or Software. You are responsible for regularly reviewing this Agreement. Continued use of the Service or Software after any such changes shall constitute your consent to such changes.</p><br><br>
@@ -10,35 +10,35 @@
             <p class="job-desc-par">By using the Software or Services, you expressly represent and warrant that you are legally entitled to enter this Agreement. The Service and Software are not available to children (persons under the age of 18). By using the Software or Services, you represent and warrant that you are at least 18 years old. By using the Software or the Services, you represent and warrant that you have the right, authority and capacity to enter into this Agreement and to abide by the terms and conditions of this Agreement. Your participation in using the Service and/or Software is for your sole, personal use. You may not authorize others to use your user status, and you may not assign or otherwise transfer your user account to any other person or entity. When using the Software or Service you agree to comply with all applicable laws of the Republic of Kenya. You may only access the Services using authorized means. It is your responsibility to check to ensure you download the correct Software for your device. The Company is not liable if you do not have a compatible handset or if you have downloaded the wrong version of the Software for your handset. The Company reserves the right to terminate this Agreement should you be using the Service or Software with an incompatible or unauthorized device.</p>
             <p class="job-desc-par">By using the Software or the Services, you agree that:</p>
             <ul class="job-desc-par">
-                <li id="jobs-listing">You will only use the Service or Software for lawful purposes; you will not use the<br>Services for sending or storing any unlawful material or for fraudulent purposes. Any packages tendered for delivery shall be subject to random checks for restricted and illegal substances upon reasonable suspicion by the courier service provider. Where the checks reveal any potentially corrosive, poisonous or explosive contents or unlawful material the courier service provider shall decline delivery of the package and immediately notify the Company.</li>
-                <li id="jobs-listing">You will not use the Service or Software to cause nuisance, annoyance or inconvenience.</li>
-                <li id="jobs-listing">You will not impair the proper operation of the network.</li>
-                <li id="jobs-listing">You will not copy, or distribute the Software or other content without written permission from the Company.</li>
-                <li id="jobs-listing">You will only use the Software and Service for your own use and will not resell it to a third party.</li>
-                <li id="jobs-listing">You will keep secure and confidential your account password or any identification we provide you which allows access to the Service.</li>
-                <li id="jobs-listing">You will provide us with whatever proof of identity we may reasonably request.</li>
+                <li class="jobs-listing">You will only use the Service or Software for lawful purposes; you will not use the<br>Services for sending or storing any unlawful material or for fraudulent purposes. Any packages tendered for delivery shall be subject to random checks for restricted and illegal substances upon reasonable suspicion by the courier service provider. Where the checks reveal any potentially corrosive, poisonous or explosive contents or unlawful material the courier service provider shall decline delivery of the package and immediately notify the Company.</li>
+                <li class="jobs-listing">You will not use the Service or Software to cause nuisance, annoyance or inconvenience.</li>
+                <li class="jobs-listing">You will not impair the proper operation of the network.</li>
+                <li class="jobs-listing">You will not copy, or distribute the Software or other content without written permission from the Company.</li>
+                <li class="jobs-listing">You will only use the Software and Service for your own use and will not resell it to a third party.</li>
+                <li class="jobs-listing">You will keep secure and confidential your account password or any identification we provide you which allows access to the Service.</li>
+                <li class="jobs-listing">You will provide us with whatever proof of identity we may reasonably request.</li>
             </ul><br><br>
             <p class="job-desc-par">License Grant & Restrictions</p><br><br>
             <p class="job-desc-par">The Company hereby grants you a non‐exclusive, non‐transferable, right to use the Software solely for your own personal, non‐commercial purposes, subject to the terms and conditions of this Agreement. All rights not expressly granted to you are reserved by the Company and its licensors. You shall not:</p>
             <ol type="i" class="job-desc-par">
-                <li id="jobs-listing">license, sublicense, sell, resell, transfer, assign, distribute or otherwise commercially exploit or make available to any third party the Service or the Software in any way;</li>
-                <li id="jobs-listing">modify or make derivative works based upon the Service or the Software;</li>
-                <li id="jobs-listing">create Internet "links" to the Service or "frame" or "mirror" any Software on any other server or wireless or Internet‐based device;</li>
-                <li id="jobs-listing">reverse engineer or access the Software in order to;</li>
+                <li class="jobs-listing">license, sublicense, sell, resell, transfer, assign, distribute or otherwise commercially exploit or make available to any third party the Service or the Software in any way;</li>
+                <li class="jobs-listing">modify or make derivative works based upon the Service or the Software;</li>
+                <li class="jobs-listing">create Internet "links" to the Service or "frame" or "mirror" any Software on any other server or wireless or Internet‐based device;</li>
+                <li class="jobs-listing">reverse engineer or access the Software in order to;</li>
                         <ol type="a" class="job-desc-par">
-                            <li id="jobs-listing">build a competitive product or service;</li>
-                            <li id="jobs-listing">build a product using similar ideas, features, functions or graphics of the Service or Software, or</li>
-                            <li id="jobs-listing">copy any ideas, features, functions or graphics of the Service or Software, or</li>
-                            <li id="jobs-listing">launch an automated program or script, including, but not limited to, web spiders, web crawlers, web robots, web ants, web indexers, bots, viruses or worms, or any program which may make multiple server requests per second, or unduly burdens or hinders the operation and/or performance of the Service or Software.</li>
+                            <li class="jobs-listing">build a competitive product or service;</li>
+                            <li class="jobs-listing">build a product using similar ideas, features, functions or graphics of the Service or Software, or</li>
+                            <li class="jobs-listing">copy any ideas, features, functions or graphics of the Service or Software, or</li>
+                            <li class="jobs-listing">launch an automated program or script, including, but not limited to, web spiders, web crawlers, web robots, web ants, web indexers, bots, viruses or worms, or any program which may make multiple server requests per second, or unduly burdens or hinders the operation and/or performance of the Service or Software.</li>
                         </ol>
             </ol>
-            <p class="job-desc-par" id="indent-par">You may use the Software only for your personal, non‐commercial purposes and shall not:
+            <p class="job-desc-par indent-par">You may use the Software only for your personal, non‐commercial purposes and shall not:
             <ol type="i" class="job-desc-par">
-                <li id="jobs-listing">send spam or otherwise duplicative or unsolicited messages in violation of applicable laws;</li>
-                <li id="jobs-listing">send or store infringing, obscene, threatening, libelous, or otherwise unlawful or tortious material, including material harmful to children or violative of third party privacy rights;</li>
-                <li id="jobs-listing">send or store material containing software viruses, worms, Trojan horses or other harmful computer code, files, scripts, agents or programs;</li>
-                <li id="jobs-listing">interfere with or disrupt the integrity or performance of the Software or Service or the data contained therein;</li>
-                <li id="jobs-listing">attempt to gain unauthorized access to the Software or Service or its related systems or networks.</li>
+                <li class="jobs-listing">send spam or otherwise duplicative or unsolicited messages in violation of applicable laws;</li>
+                <li class="jobs-listing">send or store infringing, obscene, threatening, libelous, or otherwise unlawful or tortious material, including material harmful to children or violative of third party privacy rights;</li>
+                <li class="jobs-listing">send or store material containing software viruses, worms, Trojan horses or other harmful computer code, files, scripts, agents or programs;</li>
+                <li class="jobs-listing">interfere with or disrupt the integrity or performance of the Software or Service or the data contained therein;</li>
+                <li class="jobs-listing">attempt to gain unauthorized access to the Software or Service or its related systems or networks.</li>
             </ol>
             </p><br><br>
             <p class="job-desc-par">Payment Terms</p><br><br>
@@ -71,9 +71,9 @@
             <p class="job-desc-par">Any Agreement with the Company may not be assigned by You without the prior written approval of the Company and any such purported assignment in violation of this section shall be void.</p><br>
             <p class="job-desc-par">The Agreement may be assigned without your consent by the Company to:</p>
             <ol type="a" class="job-desc-par">
-                <li id="jobs-listing">a parent or subsidiary</li>
-                <li id="jobs-listing">an acquirer of assets</li>
-                <li id="jobs-listing">a successor by merger</li>
+                <li class="jobs-listing">a parent or subsidiary</li>
+                <li class="jobs-listing">an acquirer of assets</li>
+                <li class="jobs-listing">a successor by merger</li>
             </ol><br><br>
             <p class="job-desc-par">Miscellaneous Provisions</p>
             <p class="job-desc-par"><u>Responsibility</u> . If You authorize, assist, encourage or facilitate another person or entity to take any action related to the subject matter of Your Agreement with the Company and/or these Terms and Conditions, You shall be deemed to have taken the action Yourself.</p><br>
@@ -102,8 +102,8 @@ components: {
 data() {
     return {
     parentName: 'Terms',
-    windowWidth: null
-    
+    windowWidth: null,
+    newLeft: null
     }
 },
 computed: {
@@ -125,6 +125,14 @@ created() {
     methods: {
     handleResize() {
       this.windowWidth = window.innerWidth - 20;
+        var range = 2560 - this.windowWidth
+        var quotient = (range * 13.5)/1536
+        if(window.innerWidth > 768){
+            this.newLeft = 19 - quotient
+        }
+        else{
+            this.newLeft = 19 - (quotient - 5)
+        }
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"

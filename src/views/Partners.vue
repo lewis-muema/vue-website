@@ -2,16 +2,16 @@
     <div class="partners-page">
     <Upper/>
     <Slideshow/>
-    <div class = "sendy-intro">
+    <div class = "sendy-intro bg-orange color-white center-text">
         <p class="sendy-intro-head">What is Sendy?</p>
         <p class="sendy-intro-body">Sendy connects Customers with Drivers to help deliver goods simply and transparently. Customers place orders through the Sendy platform, and Sendy dispatches these orders in real time to available Sendy Drivers.<br><br>
         As a Sendy Partner, we empower you to make more money with your vehicle. Put your vehicle on our platform, and we'll connect you to more delivery opportunities and access to carrier liablity and Driver accident insurance. Partner with Sendy to increase your income. Let's Deliver!</p>
     
     </div>
-    <div class = "earnings">
+    <div class = "earnings flex centerX centerY">
         <div class="earnings-container">
-        <p class="earnings-head">How much can you make with sendy?</p>
-        <div class="selectors">
+        <p class="earnings-head center-text">How much can you make with sendy?</p>
+        <div class="selectors grid">
         <select class="selector-1">
             <option value="City">City</option>
             <option value="Nairobi">Nairobi</option>
@@ -41,13 +41,13 @@
             <option value="1 year">1 year</option>
         </select>
         <div class="selector-4">
-        <button class="calculate-earnings">calculate</button>
+        <button class="calculate-earnings color-white bg-orange bc-orange block center-block">calculate</button>
         </div>
         </div>
         </div>
     </div>
     <div class="how-it-works">
-        <p class="how-head">
+        <p class="how-head center-text">
             How does it work
         </p>
         <Slider/>

@@ -1,35 +1,31 @@
 <template>
-    <div class="reviews-section">
-        <div class="partnerships">
+    <div class="reviews-section bg-orange">
+        <div class="partnerships center-text relative open-sans color-white">
             <p class="partner-head" v-if ="parentName == 'Home'">Partnerships</p>
             <p class="partner-head" v-if ="parentName == 'Partners'">Testimonials</p>
             <p class="partner-body" v-if ="parentName == 'Home'">We believe in the power of partnership. Together we will unlock Africa’s potential.</p>
         </div>
-        <div class="reviews-container">
-        <span class= "arrows"><img src="https://images.sendyit.com/website/driver/left_scroll_white.png" @click="previous" class="arrow-left"></span>
-        <div class="tabs-holder">
+        <div class="reviews-container center-block block relative">
+        <span class= "arrows relative centerX flex"><img src="https://images.sendyit.com/website/driver/left_scroll_white.png" @click="previous" class="arrow-left"></span>
+        <div class="tabs-holder overflow">
         <transition :name ="direction">
-        <span class="carousel-images-left" v-if="state == true" >
-            <div class="imgholder-left">
+        <span class="carousel-images-left absolute center-text" v-if="state == true" >
+            <div class="imgholder-left bg-white relative">
             <img v-if ="parentName == 'Home'" :src= "imgs[0].url" class="review-left">
             <img v-if ="parentName == 'Partners'" :src= "imgs1[0].url" class="review-left">
-            <div class="blinder"></div>
+            <div class="blinder absolute"></div>
             </div>
-        <div class="description">
+        <div class="description relative bg-white">
         </div>
         </span>
         </transition>
         <transition :name="direction">
-        <span class="carousel-images-center" v-if="state == true">
-            <div class="gradient-top"></div>
-            <div class="gradient-bottom"></div>
-            <div class="gradient-left"></div>
-            <div class="gradient-rignt"></div>
-            <div class="imgholder-center">
+        <span class="carousel-images-center absolute center-text" v-if="state == true">
+            <div class="imgholder-center bg-white relative">
             <img v-if ="parentName == 'Home'" :src= "imgs[1].url" class="review-center">
             <img v-if ="parentName == 'Partners'" :src= "imgs1[1].url" class="review-center">
             </div>
-            <div class="description-center">
+            <div class="description-center relative center-block block open-sans bg-white">
                 <p class="desc" v-if="parentName == 'Home'"> {{ imgs[1].name }} </p>
                 <p class="desc" v-if="parentName == 'Home'">Customer</p>
                 <p class="desc-par" v-if="parentName == 'Home'"> {{ imgs[1].desc }} </p>
@@ -41,18 +37,18 @@
         </span>
         </transition>
         <transition :name="direction" >
-        <span class="carousel-images-right" v-if="state == true">
-            <div class="imgholder-right">
+        <span class="carousel-images-right absolute center-text" v-if="state == true">
+            <div class="imgholder-right bg-white relative">
             <img v-if ="parentName == 'Home'" :src= "imgs[2].url" class="review-right">
             <img v-if ="parentName == 'Partners'" :src= "imgs1[2].url" class="review-right">
-            <div class="blinder"></div>
+            <div class="blinder absolute"></div>
             </div>
-            <div class="description">
+            <div class="description relative bg-white">
             </div>
         </span>
         </transition>
         </div>
-        <span class= "arrows"><img src="https://images.sendyit.com/website/driver/right_scroll_white.png" @click="next" class="arrow-right"></span>
+        <span class= "arrows relative centerX flex"><img src="https://images.sendyit.com/website/driver/right_scroll_white.png" @click="next" class="arrow-right"></span>
         
         </div>
     </div>

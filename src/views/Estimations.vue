@@ -1,15 +1,15 @@
 <template>
-    <div class="estimations-section">
-        <div class="estimate-container" id="loc-auto">
-            <p class="price-header">Get a price estimate</p>
-            <div class="form-container">
+    <div class="estimations-section bg-blue">
+        <div class="estimate-container center-block block center-text bg-blue">
+            <p class="price-header relative open-sans color-white text-center">Get a price estimate</p>
+            <div class="form-container relative open-sans grid">
             <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input" placeholder="Enter the pick up location">
             <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input" placeholder="Enter the destination">
-            <button class="price-submit" @click="getDistance">Get Price</button>
+            <button class="price-submit bg-orange bc-orange open-sans center-block block relative color-white" @click="getDistance">Get Price</button>
             </div>
             <div class="display-dist">
-                <p class="dist" v-if="distance">{{ distance }} Kms</p>
-                <p class= "price" v-if="!distance == '0'">{{ getPrice }} Ksh</p>
+                <p class="dist relative color-white" v-if="distance">{{ distance }} Kms</p>
+                <p class= "price color-white relative" v-if="!distance == '0'">{{ getPrice }} Ksh</p>
             </div>
         </div>
     </div>

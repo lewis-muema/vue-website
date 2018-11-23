@@ -6,7 +6,7 @@
             <p class="cities-desc-head">Our Headquarters!</p>
             <p class="cities-desc-body">From Gitaru to Rongai and Kiambu, we cover all of Greater Nairobi.<br>
 Request a delivery with any of our different service providers!</p>
-            <button class="cities-sign-up-button" type="button" onclick="location.href='https://app.sendyit.com/biz/auth/page/location';">SIGN UP</button>
+            <button class="cities-sign-up-button color-white bg-orange bc-orange open-sans block center-block" type="button" onclick="location.href='https://app.sendyit.com/biz/auth/page/location';">SIGN UP</button>
         </div>
         <Lower/>
         <div class="kitenge-divider"></div>
