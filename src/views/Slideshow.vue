@@ -1,40 +1,40 @@
 <template>
-    <div class="carousel-holder">
-    <div class="partners-carousel">
+    <div class="carousel-holder overflow section">
+    <div class="partners-carousel relative section">
    
-            <div :class="{'none': pos == '1'}" class="partner-imgholder">
+            <div :class="{'none': pos == '1'}" class="partner-imgholder absolute">
             <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs1" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz1" class="partner-img" :style= "{width: lessWidth + 'px' , marginLeft: '-40px'}">
             <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img1" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Careers' && actualWidth <= 430" :src= "img1" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-394px'}">
             </div>
-            <div :class="{'none': pos == '2'}" class="partner-imgholder">
+            <div :class="{'none': pos == '2'}" class="partner-imgholder absolute">
             <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs2" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz2" class="partner-img" :style= "{width: lessWidth + 'px'}">
             <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img2" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Careers' && actualWidth <= 430" :src= "img2" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-890px'}">
             </div>
-            <div :class="{'none': pos == '3'}" class="partner-imgholder">
+            <div :class="{'none': pos == '3'}" class="partner-imgholder absolute">
             <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs3" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz3" class="partner-img" :style= "{width: lessWidth + 'px'}">
             <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img3" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Careers' && actualWidth <= 430" :src= "img3" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-200px'}">
             </div>
-            <div :class="{'none': pos == '4'}" class="partner-imgholder">
+            <div :class="{'none': pos == '4'}" class="partner-imgholder absolute">
             <img v-if="parentName == 'Partners' && actualWidth > 430" :src= "imgs4" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Partners' && actualWidth <= 430" :src= "imgz4" class="partner-img" :style= "{width: lessWidth + 'px' , marginLeft: '-100px'}">
             <img v-if="parentName == 'Careers' && actualWidth > 430" :src= "img4" class="partner-img" :style= "{width: windowWidth + 'px'}">
             <img v-if="parentName == 'Careers'&& actualWidth <= 430" :src= "img4" class="partner-img" :style= "{width: windowWidth + 'px' , position: 'absolute' , left: '-140px'}">
             </div>
-            <div class="slideshow-comments">
-            <p class="slideshow-comments-head" v-if="parentName == 'Partners'">Make More Money</p>
-            <p class="slideshow-comments-head" v-if="parentName == 'Careers'">Ready To Step Up?</p>
-            <p class="slideshow-comments-par" v-if="parentName == 'Partners'">Partner with Sendy!</p>
-            <p class="slideshow-comments-par" v-if="parentName == 'Careers'">Exceed expectations, one<br> delivery at a time.</p>
-            <button class="slideshow-comments-button" id="sbtn" v-if="parentName == 'Partners'" onclick="location.href='https://partner.sendyit.com/onboarding_portal/';">APPLY NOW</button>
-            <button class="slideshow-comments-button" id="sbtn" v-if="parentName == 'Careers'" @click="scrollDown">JOIN</button>
+            <div class="slideshow-comments absolute">
+            <p class="slideshow-comments-head color-white" v-if="parentName == 'Partners'">Make More Money</p>
+            <p class="slideshow-comments-head color-white" v-if="parentName == 'Careers'">Ready To Step Up?</p>
+            <p class="slideshow-comments-par color-white" v-if="parentName == 'Partners'">Partner with Sendy!</p>
+            <p class="slideshow-comments-par color-white" v-if="parentName == 'Careers'">Exceed expectations, one<br> delivery at a time.</p>
+            <button class="slideshow-comments-button bc-orange bg-orange bottomY centerX flex open-sans color-white sbtn" v-if="parentName == 'Partners'" onclick="location.href='https://partner.sendyit.com/onboarding_portal/';">APPLY NOW</button>
+            <button class="slideshow-comments-button bc-orange bg-orange bottomY centerX flex open-sans color-white sbtn" v-if="parentName == 'Careers'" @click="scrollDown">JOIN</button>
             </div>
-            <div class="pointer-holder">
+            <div class="pointer-holder absolute flex centerX">
                 <div class="pointer" @click="first"><div class="filler" v-if="pos == '1'" ></div></div>
                 <div class="pointer" @click="second"><div class="filler" v-if="pos == '2'" ></div></div>
                 <div class="pointer" @click="third"><div class="filler" v-if="pos == '3'" ></div></div>

@@ -1,30 +1,30 @@
 <template>
-        <div class="businesses-container">
+        <div class="businesses-container flex centerX centerY">
     <span class= "arrows-biz"><img src="https://images.sendyit.com/website/driver/left_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="previous" class="arrow-left"></span>
-        <div class="slider-holder">
+        <div class="slider-holder overflow">
         
         <span class="slider-carousel">
             
             <div class="slider-imgholder">
             <div class="partner-imgholder1" :style= "{left: leftDist + '%'}">
-            <img :src= "imgs1[0].url" class="partner-img1" :style= "{width : newLeft + '%'}">
-            <p class= "slider-par">{{ imgs1[0].name }}</p>
+            <img :src= "imgs1[0].url" class="partner-img1 block center-block" :style= "{width : newLeft + '%'}">
+            <p class= "slider-par center-text">{{ imgs1[0].name }}</p>
             </div>
             <div class="partner-imgholder1" :style= "{left: leftDist + '%'}">
-            <img :src= "imgs1[1].url" class="partner-img1" :style= "{width : newLeft + '%'}">
-            <p class= "slider-par">{{ imgs1[1].name }}</p>
+            <img :src= "imgs1[1].url" class="partner-img1 block center-block" :style= "{width : newLeft + '%'}">
+            <p class= "slider-par center-text">{{ imgs1[1].name }}</p>
             </div>
             <div class="partner-imgholder1" :style= "{left: leftDist + '%'}">
-            <img :src= "imgs1[2].url" class="partner-img1" :style= "{width : newLeft + '%'}">
-            <p class= "slider-par">{{ imgs1[2].name }}</p>
+            <img :src= "imgs1[2].url" class="partner-img1 block center-block" :style= "{width : newLeft + '%'}">
+            <p class= "slider-par center-text">{{ imgs1[2].name }}</p>
             </div>
             <div class="partner-imgholder1" :style= "{left: leftDist + '%'}">
-            <img :src= "imgs1[3].url" class="partner-img1" :style= "{width : newLeft + '%'}">
-            <p class= "slider-par">{{ imgs1[3].name }}</p>
+            <img :src= "imgs1[3].url" class="partner-img1 block center-block" :style= "{width : newLeft + '%'}">
+            <p class= "slider-par center-text">{{ imgs1[3].name }}</p>
             </div>
             <div class="partner-imgholder1" :style= "{left: leftDist + '%'}">
-            <img :src= "imgs1[4].url" class="partner-img1" :style= "{width : newLeft + '%'}">
-            <p class= "slider-par">{{ imgs1[4].name }}</p>
+            <img :src= "imgs1[4].url" class="partner-img1 block center-block" :style= "{width : newLeft + '%'}">
+            <p class= "slider-par center-text">{{ imgs1[4].name }}</p>
             </div>
             </div>
             

@@ -153,7 +153,55 @@ export default new Router({
       path: '/enterprise',
       name: 'enterprise',
       component: Enterprise
-    }
+    },
+    {
+      path: '/signup',
+      beforeEnter() {location.href = 'https://app.sendyit.com/biz/sendy'}
+    },
+    {
+      path: '/getstarted',
+      beforeEnter() {location.href = 'https://apptest.sendyit.com/get_started'}
+    },
+    {
+      path: '/playstore',
+      beforeEnter() {location.href = 'https://play.google.com/store/apps/details?id=com.sendy.co.ke.sendyy&amp;hl=en'}
+    },
+    {
+      path: '/appstore',
+      beforeEnter() {location.href = 'https://itunes.apple.com/us/app/sendy-delivery-app/id1088688361?ls=1&mt=8'}
+    },
+    {
+      path: '/Help&support',
+      beforeEnter() {location.href = 'https://support.sendyit.com'}
+    },
+    {
+      path: '/facebook',
+      beforeEnter() {location.href = 'https://www.facebook.com/pages/SENDY/843869815628934'}
+    },
+    {
+      path: '/twitter',
+      beforeEnter() {location.href = 'https://twitter.com/SendyMobile'}
+    },
+    {
+      path: '/linkedin',
+      beforeEnter() {location.href = 'https://www.linkedin.com/company/9341771?trk=ppro_cprof'}
+    },
+    {
+      path: '/medium',
+      beforeEnter() {location.href = 'https://sendyit.com/blog'}
+    },
+    {
+      path: '/blog',
+      beforeEnter() {location.href = 'https://sendyit.com/blog'}
+    },
+    {
+      path: '/driverslogin',
+      beforeEnter() {location.href = 'https://sendyit.com/partner'}
+    },
+    {
+      path: '/follow',
+      beforeEnter() {location.href = 'https://twitter.com/SendyMobile?ref_src=twsrc%5Etfw'}
+    }   
   ],
   mode: 'history'
 });

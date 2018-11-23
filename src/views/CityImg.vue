@@ -1,12 +1,12 @@
 <template>
     <div class="cities-head">
-            <p v-if="parentName == 'AllCities'" class="cities-title">Sendy Cities</p>
-            <p v-if="parentName == 'Nairobi'" class="cities-title">Nairobi</p>
-            <p v-if="parentName == 'Kisumu'" class="cities-title">Kisumu</p>
-            <p v-if="parentName == 'Mombasa'" class="cities-title">Mombasa</p>
-            <p v-if="parentName == 'Thika'" class="cities-title">Thika</p>
+            <p v-if="parentName == 'AllCities'" class="cities-title relative center-text color-white">Sendy Cities</p>
+            <p v-if="parentName == 'Nairobi'" class="cities-title relative center-text color-white">Nairobi</p>
+            <p v-if="parentName == 'Kisumu'" class="cities-title relative center-text color-white">Kisumu</p>
+            <p v-if="parentName == 'Mombasa'" class="cities-title relative center-text color-white">Mombasa</p>
+            <p v-if="parentName == 'Thika'" class="cities-title relative center-text color-white">Thika</p>
         <div :class="cityName">
-            <div class="marquee">
+            <div class="marquee flex bottomY overflow">
                 <div class="lineage-9">
                     <img class="vehicles" src="https://apptest.sendyit.com/image/white_tton.png" alt="3 ton">
                 </div>
