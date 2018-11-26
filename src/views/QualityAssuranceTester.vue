@@ -88,6 +88,9 @@ created() {
      destroyed() {
     window.removeEventListener('resize', this.handleResize)
     },
+    mounted(){
+    window.scrollTo(0, 0);
+    },
     methods: {
     handleResize() {
       this.windowWidth = window.innerWidth - 20;

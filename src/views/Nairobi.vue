@@ -34,6 +34,9 @@ computed: {
             return this.$store.state.parentName;
         }
 },
+mounted(){
+    window.scrollTo(0, 0);
+},
 created() {
     this.$store.commit({
         type: 'changeParentName',

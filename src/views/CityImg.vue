@@ -8,19 +8,19 @@
         <div :class="cityName">
             <div class="marquee flex bottomY overflow">
                 <div class="lineage-9">
-                    <img class="vehicles" src="https://apptest.sendyit.com/image/white_tton.png" alt="3 ton">
+                    <img class="vehicles" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/white_tton.png" alt="3 ton">
                 </div>
                 <div class="lineage-2">
-                    <img class="vehicles" src="https://apptest.sendyit.com/image/white_tuk.png" alt="tuk" >
+                    <img class="vehicles" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/white_tuk.png" alt="tuk" >
                 </div>
                 <div class="lineage-3">
-                    <img class="vehicles" src="https://apptest.sendyit.com/image/white_rider.png" alt="rider" >
+                    <img class="vehicles" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/white_rider.png" alt="rider" >
                 </div>
                 <div class="lineage-4">
-                    <img class="vehicles" src="https://apptest.sendyit.com/image/white_pickup.png" alt="pickup">
+                    <img class="vehicles" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/white_pickup.png" alt="pickup">
                 </div>
                 <div class="lineage-3">
-                    <img class="vehicles" src="https://apptest.sendyit.com/image/white_rider.png" alt="bike" >
+                    <img class="vehicles" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/white_rider.png" alt="bike" >
                 </div>
             </div>
         </div>

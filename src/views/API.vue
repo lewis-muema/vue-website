@@ -41,7 +41,10 @@ export default {
                 type: 'changeParentName',
                 pName: this.parentName
             }); 
-    }
+    },
+    mounted(){
+    window.scrollTo(0, 0);
+    },
 }
 </script>
 
