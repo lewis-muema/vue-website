@@ -41,7 +41,7 @@
             <button class="cities-sign-up-button color-white bg-orange bc-orange open-sans block center-block" type="button" onclick="location.href='https://app.sendyit.com/biz/auth/page/location';">SIGN UP</button>
         </div>
         <Lower/>
-        <div class="kitenge-divider"></div>
+        <div class="kitenge-divider" @click="scroll"></div>
     </div>
 </template>
 
@@ -78,6 +78,9 @@ created() {
     },
     destroyed() {
     window.removeEventListener('resize', this.handleResize)
+    },
+    mounted(){
+    window.scrollTo(0, -40);
     },
     methods: {
     handleResize() {

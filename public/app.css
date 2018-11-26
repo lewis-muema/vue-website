@@ -12,6 +12,9 @@ body{
 .section{
     width: 100%;
 }
+.no-borders{
+    border-style: none;
+}
 .margins{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -331,12 +334,38 @@ a:hover {
     width: 100%;
     min-height: 300px;
     margin-top: -45px;
+    transition: all .5s ease-in-out;
 }
 
 .estimate-container{
     width: 80%;
-    height: 260px;
     border-radius: 15px;
+    min-height: 260px;
+}
+
+.price-request-column {
+    grid-column: span 4;
+    border-style: solid;
+    border-radius: 20px;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    border-width: 5px;
+    height: 160px;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+  }
+
+.vendor{
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .price-header {
@@ -379,10 +408,47 @@ a:hover {
     top: 40px;
 }
 
-.price{
+.img-height{
+    height: 50px;
+}
+
+.price {
     z-index: 500;
-    font-size: 43px;
-    top: 20px;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-end;
+    grid-column: span 12;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.kes {
+    display: flex;
+    justify-content: flex-end;
+    grid-column: span 12;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.price-holder{
+    width: 40%;
+    float: right;
+    margin-right: 10px;
+    bottom: -18px;
+}
+
+.price-request-row{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.bold{
+    font-weight: 800;
+}
+
+.vendor-img{
+    margin-left: 15px;
 }
 
 .slides-container{
@@ -803,23 +869,23 @@ a:hover {
 }
 
 .cities-head-img{
-    background-image: url(https://apptest.sendyit.com/image/cities_skyline_85.png);
+    background-image: url('https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/cities_skyline_85.png');
 }
 
 .cities-head-img-mombasa{
-    background-image: url('https://apptest.sendyit.com/image/mombasa_sky.png');
+    background-image: url('https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/mombasa_sky.png');
 }
 
 .cities-head-img-nairobi{
-    background-image: url('https://apptest.sendyit.com/image/nairobi_sky.png');
+    background-image: url('https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/nairobi_sky.png');
 }
 
 .cities-head-img-thika{
-    background-image: url('https://apptest.sendyit.com/image/Thika_skyline_85.png');
+    background-image: url('https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/Thika_skyline_85.png');
 }
 
 .cities-head-img-kisumu{
-    background-image: url('https://apptest.sendyit.com/image/kisumu_sky.png');
+    background-image: url('https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/kisumu_sky.png');
 }
 
 .cities-details-head{
@@ -1070,7 +1136,7 @@ a:hover {
 
 .earnings{
     width: 100%;
-    height: 250px;
+    min-height: 250px;
 }
 
 .earnings-head{
@@ -1090,10 +1156,25 @@ a:hover {
     height: 45px;
     font-weight: 300;
     font-size: 18px;
-    border-style: none;
-    background-color: #e0ecf7;
+    border-style: solid;
+    background-color: #fdfdfd;
     grid-column: span 3;
-    width: 80%;
+    width: 90%;
+    border-color: #63a5a578;
+    border-radius: 5px;
+
+}
+
+.riders-pay{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.riders-pay-light{
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .selector-4{
@@ -1954,7 +2035,9 @@ a:hover {
         }
     }
     @media only screen and (max-width: 1200px) {
-        
+        .price-request-column {
+            grid-column: span 12;
+        }
         .slides-column{
             grid-column: span 12;
         } 
@@ -2548,5 +2631,8 @@ a:hover {
         }
         .link {
             font-size: 10px;
+        }
+        .img-height {
+            height: 40px;
         }
     }
