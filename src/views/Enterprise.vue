@@ -11,36 +11,36 @@
         </div>
     </div>
     <div class="platform">
-        <p class="platform-head center-text color-blue">Africa's most advanced delivery platform</p>
+        <p class="platform-head center-text color-black">Africa's most advanced delivery platform</p>
         <p class="platform-par center-block center-text block">Customers expectations on turnaround times are increasing. Let Sendy optimize your deliveries so you can focus on your core business.</p>
         <div class="platform-row center-text grid" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
             <div class="platform-column">
                 <img class="platform-thumb center-block block" :src="baseURL + '/stops.png'">
-                <p class="platform-column-head color-blue">Multiple delivery stops</p>
+                <p class="platform-column-head color-black">Multiple delivery stops</p>
                 <p class="platform-column-par center-block block">Deliver goods to multiple customers under one delivery request - increasing Driver efficiency and reducing per delivery costs.</p>
             </div>
             <div class="platform-column">
                 <img class="platform-thumb center-block block" :src="baseURL + '/Track-p.png'">
-                <p class="platform-column-head color-blue">Order tracking</p>
+                <p class="platform-column-head color-black">Order tracking</p>
                 <p class="platform-column-par center-block block">Track all your deliveries in real time from the comfort of your office. No need to stress anymore when monitoring the deliveries.</p>
             </div>
             <div class="platform-column">
                 <img class="platform-thumb center-block block" :src="baseURL + '/analytics.png'">
-                <p class="platform-column-head color-blue">Analytics dashboard</p>
+                <p class="platform-column-head color-black">Analytics dashboard</p>
                 <p class="platform-column-par center-block block">Data is the fuel of any business. Sendy's platform collects critical delivery data points that can be used to optimise your delivery process.</p>
             </div>
         </div>
         <div class="growth bg-blue">
             <p class="growth-head">Get in touch</p>
-            <p class="growth-par center-text color-white">Click on the link below and a Sendy representative will contact you. Time to increase delivery efficiency and lower costs.</p>
+            <p class="growth-par center-text color-white">Click on the link below and a Sendy representative will contact you. Time to increase delivery<br> efficiency and lower costs.</p>
             <button class="get-started-button bg-orange bc-orange color-white open-sans center-block block button-font" type="button" onclick="location.href='';">CONTACT SALES</button>
         </div>
         <div class="customer-prefer">
-            <p class="cp-head color-blue center-text">Why businesses prefer Sendy</p>
+            <p class="cp-head color-black center-text">Why businesses prefer Sendy</p>
             <p class="cp-par center-text center-block block">Sendy has unique features that support your delivery process better than other service providers.</p>
-            <table class="cp-table" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
+            <table class="cp-table" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%' , width: newWidth + '%'}">
                 <tr class="cp-table-top-row bg-blue color-white center-text">
-                    <td class="col1">Features</td>
+                    <td class="col1 colx">Features</td>
                     <td class="col2">Sendy</td>
                     <td class="col3">Informal Couriers</td>
                     <td class="col4">Small Couriers</td>
@@ -91,6 +91,7 @@ data() {
     parentName: 'Enterprise',
     windowWidth: null,
     newLeft: null,
+    newWidth: null,
     baseURL: 'https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2',
     tables: [
         {name: 'Deliveries', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'},
@@ -129,6 +130,7 @@ created() {
       var range = 2560 - window.innerWidth
         var quotient = (range * 13.5)/1536
         this.newLeft = 19 - quotient
+        this.newWidth = 100 - (this.newLeft * 2)
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"

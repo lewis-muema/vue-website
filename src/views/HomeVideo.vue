@@ -6,24 +6,24 @@
         <p class="home-text-regular relative">Move anything<br>from point A to B at the<br>touch of a button.<br>Simply. Transparently.</p>
             <div class="get-started-button bg-orange bc-orange bottomY centerX flex">
                 <span class="">
-                    <router-link to="/getstarted"><button class="get-started-button bg-orange bc-orange bottomY centerX flex open-sans color-white" type="button">GET STARTED</button></router-link>
+                    <router-link to="/getstarted"><div class="get-started-button bg-orange bc-orange centerY centerX flex open-sans color-white" type="button">GET STARTED</div></router-link>
                 </span>
             </div>
             <div class="app-links">
                 <p class="app-links-text">Experience Sendy on any device</p>                
                     <span class="">
                         <router-link to="/playstore">
-                            <img class="playstore_home_view" src="https://images.sendyit.com/website/home/googleplayicon.png">
+                            <img class="playstore_home_view height" src="https://images.sendyit.com/website/home/googleplayicon.png">
                         </router-link>
                     </span>
                     <span class="">
                         <router-link to="/appstore">
-                            <img class="appstore_home_view" src="https://images.sendyit.com/website/home/appstoreicon.png">
+                            <img class="appstore_home_view height" src="https://images.sendyit.com/website/home/appstoreicon.png">
                         </router-link>
                     </span>
                     <span class="">
                         <router-link to="/signup">
-                            <img class="webplatform_home_view" src="https://images.sendyit.com/website/home/browsericon.png">
+                            <img class="webplatform_home_view height" src="https://images.sendyit.com/website/home/browsericon.png">
                         </router-link>
                     </span>  
             </div>
@@ -43,7 +43,7 @@
 <div class="text-section-mobile block center-block relative center-text color-white" v-if="windowWidth <= '768'">
     <h3 class="home-text-bold bold-mobile color-white">The Solution for <br>All your deliveries</h3>
     <p class="home-text-regular relative regular-mobile section">Move anything from point A to B at<br>the touch of a button.<br>Simply. Transparently.</p>
-    <router-link to="/getstarted"><button class="get-started-button open-sans block center-block bg-white color-black bc-white button-mobile" type="button">GET STARTED</button></router-link>
+    <router-link to="/getstarted"><div class="get-started-button centerY flex centerX open-sans center-block bg-white color-black bc-white button-mobile" type="button">GET STARTED</div></router-link>
 </div>
 </div>
 </template>

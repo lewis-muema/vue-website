@@ -31,8 +31,8 @@
             <p class="slideshow-comments-head color-white" v-if="parentName == 'Careers'">Ready To Step Up?</p>
             <p class="slideshow-comments-par color-white" v-if="parentName == 'Partners'">Partner with Sendy!</p>
             <p class="slideshow-comments-par color-white" v-if="parentName == 'Careers'">Exceed expectations, one<br> delivery at a time.</p>
-            <button class="slideshow-comments-button bc-orange bg-orange bottomY centerX flex open-sans color-white sbtn" v-if="parentName == 'Partners'" onclick="location.href='https://partner.sendyit.com/onboarding_portal/';">APPLY NOW</button>
-            <button class="slideshow-comments-button bc-orange bg-orange bottomY centerX flex open-sans color-white sbtn" v-if="parentName == 'Careers'" @click="scrollDown">JOIN</button>
+            <router-link to="/onboarding" ><div class="slideshow-comments-button bc-orange bg-orange centerY centerX flex open-sans color-white sbtn" v-if="parentName == 'Partners'" >APPLY NOW</div></router-link>
+            <div class="slideshow-comments-button bc-orange bg-orange  centerX centerY flex open-sans color-white sbtn" v-if="parentName == 'Careers'" @click="scrollDown">JOIN</div>
             </div>
             <div class="pointer-holder absolute flex centerX">
                 <div class="pointer" @click="first"><div class="filler" v-if="pos == '1'" ></div></div>

@@ -7,13 +7,13 @@
             BECOME A PARTNER</router-link>
             <router-link v-if="(parentName == 'AllCities' || parentName == 'Nairobi' || parentName == 'Mombasa' || parentName == 'Kisumu' || parentName == 'Thika') && windowWidth <= '768'" to="/partners" class='link' >
             BECOME A PARTNER</router-link>
-            <router-link to="/signup" class="link-margin" v-if="parentName == 'API'"><button class='button button__link bg-blue bc-blue orange-white'>
-            SIGN UP</button></router-link>
+            <!--<router-link to="/signup" class="link-margin" v-if="parentName == 'API'"><div class='button button__link bg-blue bc-blue orange-white flex centerX centerY' type ="button">
+            SIGN UP</div></router-link>-->
             <router-link v-if="parentName == 'API' || parentName == 'Partners' || parentName == 'Careers' || parentName == 'SeniorPortManager' || parentName == 'ClientRelationsManager'  || parentName == 'AndroidEngineer'  ||  parentName == 'DataAnalyst' || parentName == 'QualityAssuranceTester' || parentName == 'HeadOfFinance' || parentName == 'KisumuCityManager'  || parentName == 'Terms' || parentName == 'Privacy' || parentName == 'DriverPrivacy' || parentName == 'HeadOfPartnerOperations' || parentName == 'JuniorOperationsAssociate'" to="/" class='link'>HOME</router-link>
             <router-link v-if="windowWidth > '768'" to="/signup" class='link upper__link'>
             LOG IN</router-link>
-            <router-link to="/signup" class="link-margin" v-if="parentName == 'Home' || parentName == 'Partners' || parentName == 'Careers' || parentName == 'SeniorPortManager' || parentName == 'ClientRelationsManager'  || parentName == 'AndroidEngineer' || parentName == 'DataAnalyst'  || parentName == 'QualityAssuranceTester' || parentName == 'HeadOfFinance' || parentName == 'KisumuCityManager'  || parentName == 'Terms' || parentName == 'Privacy' || parentName == 'DriverPrivacy' || parentName == 'HeadOfPartnerOperations' || parentName == 'JuniorOperationsAssociate'  || parentName == 'Merchant' || parentName == 'Enterprise'"><button class='button button__link bg-blue bc-blue orange-white'>
-            SIGN UP</button></router-link>
+            <router-link to="/signup" class="link-margin" v-if="parentName == 'API' || parentName == 'Home' || parentName == 'Partners' || parentName == 'Careers' || parentName == 'SeniorPortManager' || parentName == 'ClientRelationsManager'  || parentName == 'AndroidEngineer' || parentName == 'DataAnalyst'  || parentName == 'QualityAssuranceTester' || parentName == 'HeadOfFinance' || parentName == 'KisumuCityManager'  || parentName == 'Terms' || parentName == 'Privacy' || parentName == 'DriverPrivacy' || parentName == 'HeadOfPartnerOperations' || parentName == 'JuniorOperationsAssociate'  || parentName == 'Merchant' || parentName == 'Enterprise'"><div class='button button__link bg-blue bc-blue orange-white flex centerX centerY' type="button">
+            SIGN UP</div></router-link>
             <img v-if="windowWidth <= '768'" @click="toggleMenu" class="section__upper_dropdown" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/menu-blue.png">
             </div>
             <div class="section dropdown-container absolute overflow" v-if="showTable == true">

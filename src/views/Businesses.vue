@@ -38,7 +38,7 @@
         </div>
     <span class= "arrows-biz relative flex centerX"><img src="https://images.sendyit.com/website/driver/right_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="next" class="arrow-right"></span>
     </div>
-    <router-link to="/getstarted" v-if="windowWidth > '768'"><button class="get-started-button-bottom bg-orange bc-orange open-sans block color-white center-block" type="button">GET STARTED</button></router-link>
+    <router-link to="/getstarted" v-if="windowWidth > '768'"><div class="get-started-button-bottom bg-orange bc-orange open-sans color-white center-block flex centerX centerY" type="button">GET STARTED</div></router-link>
     <img v-if="windowWidth <= '768' && android == true" src="https://images.sendyit.com/website/home/googleplayicon.png" class="lower-playstore-button center-block block">
     <img v-if="windowWidth <= '768' && IOS == true" src="https://images.sendyit.com/website/home/appstoreicon.png" class="lower-appstore-button center-block block">
     </div>
