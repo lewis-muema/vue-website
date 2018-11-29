@@ -163,6 +163,8 @@ body{
 }
 .section__upper_container{
     width: 60%;
+    font-weight: 600;
+    font-size: 14px;
 }
 .upper__link{
     margin-left: 5%; 
@@ -273,7 +275,7 @@ a:hover {
     border-radius: 8px;
     width: 95%;
     height: 55px;
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 100;
 }
 
@@ -301,7 +303,6 @@ a:hover {
 }
 
 .vehicle{
-    text-transform: uppercase;
     font-weight: bold;
     font-size: 26px;
     letter-spacing: 1px;
@@ -492,18 +493,21 @@ a:hover {
 }
 
 
-.slides-header{
-    font-weight: 600;
-    font-size: 40px;
+.slides-header {
+    font-weight: 700;
+    font-size: 35px;
     line-height: 43px;
     margin-top: 0px;
     margin-bottom: -20px;
 }
 
-.personal-text-content-body{
+.personal-text-content-body {
     font-weight: 300;
-    font-size: 23px;
+    font-size: 20px;
     margin-top: -20px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .tab1{
@@ -865,6 +869,10 @@ a:hover {
     background-color: #f7f5f4;
     border-style: solid;
     border-color: #f8f9f9;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    display: grid;
 }
 
 .get-started-api:hover {
@@ -1623,8 +1631,8 @@ a:hover {
     margin-right: 50px;
     position: relative;
     width: 90px;
-    height: 72px;
-    top: 10px;
+    height: 62px;
+    top: 8px;
     z-index: 1000;
 }
 
@@ -1644,7 +1652,7 @@ a:hover {
     background-color: rgb(255,255,255,0.7);
     position: absolute;
     left: -31px;
-    top: 66px;
+    top: 63px;
     padding-left: 30px;
 }
 
@@ -2018,9 +2026,10 @@ a:hover {
         }
         .home-video-show-desktop-video {
             position: absolute;
-            bottom: 32px;
+            bottom: 30px;
             width: 609px;
             left: 103px;
+            height: 356px;
         }
         .home-text-bold {
             font-size: 42px;
