@@ -11,37 +11,36 @@
         </div>
     </div>
     <div class="platform">
-        <p class="platform-head center-text color-blue">Grow your business with the most efficient delivery service</p>
-        <p class="platform-par center-block center-text block">Sendy takes away the uncertainty of conventional delivery methods and makes the process simple, transparent and secure.</p>
+        <p class="platform-head center-text color-black">Grow your business with the most efficient delivery service</p>
+        <p class="platform-par center-block center-text block">Sendy takes away the uncertainty of conventional delivery methods and makes the process simple,<br> transparent and secure.</p>
         <div class="platform-row center-text grid" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
             <div class="platform-column">
                 <img class="platform-thumb center-block block" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/Transparent-Price.png">
-                <p class="platform-column-head color-blue">One fixed price across the city</p>
+                <p class="platform-column-head color-black">One fixed price across the city</p>
                 <p class="platform-column-par center-block block">Sendy offers you one price for all your Nairobi deliveries. No zones or maximum distance. Know exactly what it's going to cost.</p>
             </div>
             <div class="platform-column">
                 <img class="platform-thumb center-block block" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/Connect.png">
-                <p class="platform-column-head color-blue">Insurance</p>
+                <p class="platform-column-head color-black">Insurance</p>
                 <p class="platform-column-par center-block block">All goods are insured against loss or damage while in transit. Enjoy peace of mind when delivering to your customers.</p>
             </div>
             <div class="platform-column">
                 <img class="platform-thumb center-block block" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/Multiple-Stops.png">
-                <p class="platform-column-head color-blue">Share arrival time</p>
+                <p class="platform-column-head color-black">Share arrival time</p>
                 <p class="platform-column-par center-block block">Keep your customer in the know by sharing the expected delivery time. This will impr/ove your client's experience.</p>
             </div>
         </div>
         <div class="growth bg-orange">
             <p class="growth-head">Ready?</p>
             <button class="get-started-button-blue center-block block centerX bottomY bg-blue bc-blue color-white open-sans" type="button" onclick="location.href='https://apptest.sendyit.com/get_started';">GET STARTED</button>
-            <p class="login-par">Already have an account? <a @click="redirect2">Login</a></p>
+            <p class="login-par">Already have an account? <router-link to="partners" class="color-white">Login</router-link></p>
         </div>
         <div class="customer-prefer">
-            <p class="cp-head color-blue center-text">Why E-Commerce businesses prefer Sendy</p>
-            <p class="cp-par center-text center-block block">Sendy has unique features thatmake us the best delivery service for your E-Commerce business. 
-            See how we compare to others.</p>
-            <table class="cp-table" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%'}">
+            <p class="cp-head color-black center-text">Why E-Commerce businesses prefer Sendy</p>
+            <p class="cp-par center-text center-block block">Sendy has unique features that make us the best delivery service for your E-Commerce business.</p>
+            <table class="cp-table" :style= "{marginLeft: newLeft + '%', marginRight: newLeft + '%' , width: newWidth + '%'}">
                 <tr class="cp-table-top-row bg-blue color-white center-text">
-                    <td class="col1">Features</td>
+                    <td class="col1 colx">Features</td>
                     <td class="col2">Sendy</td>
                     <td class="col3">Boda-Boda</td>
                     <td class="col4">Small Couriers</td>
@@ -92,6 +91,7 @@ data() {
     parentName: 'Merchant',
     windowWidth: null,
     newLeft: null,
+    newWidth: null,
     baseURL: 'https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2',
     tables: [
         {name: 'Deliveries', url1: '/info.png', url2: '/tick.png', url3: '/xmark.png', url4: '/xmark.png', url5: '/question.png'},
@@ -130,6 +130,7 @@ created() {
       var range = 2560 - window.innerWidth
         var quotient = (range * 13.5)/1536
         this.newLeft = 19 - quotient
+        this.newWidth = 100 - (this.newLeft * 2)
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"

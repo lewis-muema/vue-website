@@ -3,27 +3,37 @@
         <div class ='section section__upper flex centerY'>
             <img class ='section__upper_img relative' src='https://sendyit.com/include/bits/Sendy_logo_3.png' :style= "{left: newLeft + '%'}">
             <div class="section__upper_container flex rightX absolute centerY" :style= "{ width: newWidth + '%' , right : newLeft + '%'}">
+            <div class="solutions-link">
+            <p class="sols-text color-blue">SOLUTIONS </p>
+            <div class="solutions-menu centerX centerY">
+            <router-link to= "/e-commerce" class="sols-links color-blue">E-COMMERCE</router-link>
+            <router-link to= "/enterprise" class="sols-links color-blue">ENTERPRISE</router-link>
+            </div>
+            </div>
             <router-link v-if="(parentName == 'Home' || parentName == 'AllCities' || parentName == 'Nairobi' || parentName == 'Mombasa' || parentName == 'Kisumu' || parentName == 'Thika' || parentName == 'Merchant' || parentName == 'Enterprise')  && windowWidth > '768'" to="/partners" class='link' >
             BECOME A PARTNER</router-link>
             <router-link v-if="(parentName == 'AllCities' || parentName == 'Nairobi' || parentName == 'Mombasa' || parentName == 'Kisumu' || parentName == 'Thika') && windowWidth <= '768'" to="/partners" class='link' >
             BECOME A PARTNER</router-link>
-            <router-link to="/signup" class="link-margin" v-if="parentName == 'API'"><button class='button button__link bg-blue bc-blue orange-white'>
-            SIGN UP</button></router-link>
+            <!--<router-link to="/signup" class="link-margin" v-if="parentName == 'API'"><div class='button button__link bg-blue bc-blue orange-white flex centerX centerY' type ="button">
+            SIGN UP</div></router-link>-->
             <router-link v-if="parentName == 'API' || parentName == 'Partners' || parentName == 'Careers' || parentName == 'SeniorPortManager' || parentName == 'ClientRelationsManager'  || parentName == 'AndroidEngineer'  ||  parentName == 'DataAnalyst' || parentName == 'QualityAssuranceTester' || parentName == 'HeadOfFinance' || parentName == 'KisumuCityManager'  || parentName == 'Terms' || parentName == 'Privacy' || parentName == 'DriverPrivacy' || parentName == 'HeadOfPartnerOperations' || parentName == 'JuniorOperationsAssociate'" to="/" class='link'>HOME</router-link>
             <router-link v-if="windowWidth > '768'" to="/signup" class='link upper__link'>
             LOG IN</router-link>
-            <router-link to="/signup" class="link-margin" v-if="parentName == 'Home' || parentName == 'Partners' || parentName == 'Careers' || parentName == 'SeniorPortManager' || parentName == 'ClientRelationsManager'  || parentName == 'AndroidEngineer' || parentName == 'DataAnalyst'  || parentName == 'QualityAssuranceTester' || parentName == 'HeadOfFinance' || parentName == 'KisumuCityManager'  || parentName == 'Terms' || parentName == 'Privacy' || parentName == 'DriverPrivacy' || parentName == 'HeadOfPartnerOperations' || parentName == 'JuniorOperationsAssociate'  || parentName == 'Merchant' || parentName == 'Enterprise'"><button class='button button__link bg-blue bc-blue orange-white'>
-            SIGN UP</button></router-link>
+            <router-link to="/signup" class="link-margin" v-if="parentName == 'API' || parentName == 'Home' || parentName == 'Partners' || parentName == 'Careers' || parentName == 'SeniorPortManager' || parentName == 'ClientRelationsManager'  || parentName == 'AndroidEngineer' || parentName == 'DataAnalyst'  || parentName == 'QualityAssuranceTester' || parentName == 'HeadOfFinance' || parentName == 'KisumuCityManager'  || parentName == 'Terms' || parentName == 'Privacy' || parentName == 'DriverPrivacy' || parentName == 'HeadOfPartnerOperations' || parentName == 'JuniorOperationsAssociate'  || parentName == 'Merchant' || parentName == 'Enterprise'"><div class='button button__link bg-blue bc-blue orange-white flex centerX centerY' type="button">
+            SIGN UP</div></router-link>
             <img v-if="windowWidth <= '768'" @click="toggleMenu" class="section__upper_dropdown" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/menu-blue.png">
             </div>
             <div class="section dropdown-container absolute overflow" v-if="showTable == true">
             <table :class="dropName" v-if="showTable == true">
-            <tr><td class="dropdown-upper-rows" v-if="parentName == 'API'" >HOME</td><td v-if="parentName !== 'API'" class="dropdown-upper-rows" >BECOME A PARTNER</td></tr>
-            <tr><td class="dropdown-upper-rows">LOG IN</td></tr>
-            <tr><td class="dropdown-upper-rows">SIGN UP</td></tr>
+            <tr><td class="dropdown-upper-rows" v-if="parentName == 'API'" >HOME</td><td v-if="parentName !== 'API'" class="dropdown-upper-rows"><router-link to="/partners" class="color-white">BECOME A PARTNER</router-link></td></tr>
+            <tr><td class="dropdown-upper-rows"><router-link to="/signup" class="color-white">LOG IN</router-link></td></tr>
+            <tr><td class="dropdown-upper-rows"><router-link to="/signup" class="color-white">SIGN UP</router-link></td></tr>
+            <tr><td class="dropdown-upper-rows"><router-link to="/e-commerce" class="color-white">E-COMMERCE</router-link></td></tr>
+            <tr><td class="dropdown-upper-rows"><router-link to="/enterprises" class="color-white">ENTERPRISE</router-link></td></tr>
             </table>    
             </div>         
         </div>
+        
     </div>
 </template>
 

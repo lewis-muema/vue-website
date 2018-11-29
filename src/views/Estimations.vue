@@ -3,8 +3,8 @@
         <div class="estimate-container center-block block center-text bg-blue">
             <p class="price-header relative open-sans color-white text-center">Get a price estimate</p>
             <div class="form-container relative open-sans grid">
-            <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input no-borders" placeholder="Enter the pick up location">
-            <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input no-borders" placeholder="Enter the destination">
+            <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input no-borders open-sans" placeholder="Enter the pick up location">
+            <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input no-borders open-sans" placeholder="Enter the destination">
             <button class="price-submit bg-orange bc-orange open-sans center-block block relative color-white" @click="close">{{ btnval }}</button>
             </div>
             </div>

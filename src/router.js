@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About.vue'
-import VueHome from './views/VueHome.vue'
 import API from './views/API.vue'
 import Cities from './views/AllCities.vue'
 import Nairobi from './views/Nairobi.vue'
@@ -23,8 +21,8 @@ import Privacy from './views/Privacy'
 import DriverPrivacy from './views/DriverPrivacy'
 import HeadOfPartnerOperations from './views/HeadOfPartnerOperations'
 import JuniorOperationsAssociate from './views/JuniorOperationsAssociate'
-import Enterprise from './views/Enterprise'
-import Merchant from './views/Merchant'
+//import Enterprise from './views/Enterprise'
+//import Merchant from './views/Merchant'
 Vue.use(Router)
 
 export default new Router({
@@ -33,16 +31,6 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: About
-    },
-    {
-      path: '/vue',
-      name: 'about',
-      component: VueHome
     },
     {
       path: '/API',
@@ -145,14 +133,16 @@ export default new Router({
       component: JuniorOperationsAssociate
     },
     {
-      path: '/merchant',
-      name: 'merchant',
-      component: Merchant
+      path: '/e-commerce',
+      //name: 'merchant',
+      //component: Merchant
+      beforeEnter() {location.href = 'http://growth.sendyit.com/e-commerce'}
     },
     {
       path: '/enterprise',
-      name: 'enterprise',
-      component: Enterprise
+      //name: 'enterprise',
+      //component: Enterprise
+      beforeEnter() {location.href = 'http://growth.sendyit.com/enterprise'}
     },
     {
       path: '/signup',
@@ -201,7 +191,76 @@ export default new Router({
     {
       path: '/follow',
       beforeEnter() {location.href = 'https://twitter.com/SendyMobile?ref_src=twsrc%5Etfw'}
-    }   
+    },
+    {
+      path: '/onboarding',
+      beforeEnter() {location.href = 'https://partner.sendyit.com/onboarding_portal/'}
+    },
+    {
+      path: '/publicapi',
+      beforeEnter() {location.href = 'https://sendypublicapi.docs.apiary.io/#'}
+    }, 
+
+
+
+
+//old sites routes************************************************************************************************
+
+    {
+      path: '/default_controller',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/404_override',
+      name: 'home',
+      component: Home
+    }, 
+    {
+      path: '/personal',
+      name: 'home',
+      component: Home
+    },  
+    {
+      path: '/privacy/driver',
+      name: 'driverprivacy',
+      component: DriverPrivacy
+    }, 
+    {
+      path: '/terms/show',
+      name: 'terms',
+      component: Terms
+    }, 
+    {
+      path: '/policy',
+      name: 'terms',
+      component: Terms
+    },  
+    {
+      path: '/team',
+      name: 'careers',
+      component: Careers
+    },
+    {
+      path: '/career',
+      name: 'careers',
+      component: Careers
+    }, 
+    {
+      path: '/jobs',
+      name: 'careers',
+      component: Careers
+    }, 
+    {
+      path: '/riders',
+      name: 'partners',
+      component: Partners
+    }, 
+    {
+      path: '/insurance',
+      name: 'terms',
+      component: Terms
+    }
   ],
   mode: 'history'
 });

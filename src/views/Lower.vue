@@ -8,7 +8,7 @@
             <router-link to="/" class="lower-links">Home</router-link><br>
             <router-link to="/API" class="lower-links">API</router-link><br>
             <router-link to="/cities" class="lower-links">Cities</router-link><br>
-            <router-link to="/merchant" class="lower-links">Merchant</router-link><br>
+            <router-link to="/e-commerce" class="lower-links">E-Commerce</router-link><br>
             <router-link to="/enterprise" class="lower-links">Enterprise</router-link><br>
             <p class="copyright color-white relative" v-if="windowWidth > '768'">© Sendy 2018. All rights reserved.</p>
         </div>
@@ -39,19 +39,19 @@
         <div class="apps-bar" v-if="windowWidth > '768'">
             <span class="">
                     <router-link to="/playstore">
-                        <img class="playstore_home_view lower-playstore" src="https://images.sendyit.com/website/home/googleplayicon.png">
+                        <img class="playstore_home_view lower-playstore section" src="https://images.sendyit.com/website/home/googleplayicon.png">
                     </router-link>
                     </span>
                     <span class="">
                         <router-link to="/appstore">
-                            <img class="appstore_home_view" src="https://images.sendyit.com/website/home/appstoreicon.png">
+                            <img class="appstore_home_view section" src="https://images.sendyit.com/website/home/appstoreicon.png">
                         </router-link>
                     </span>
             <div class="social-btns">
             <iframe class="fbton" src="https://www.facebook.com/plugins/like.php?href=https://web.facebook.com/Sendyit/&amp;layout=button&amp;show_faces=false&amp;share=false&amp;width=50&amp;action=like&amp;font=verdana&amp;colorscheme=light" allowtransparency="true" frameborder="0" scrolling="no">
             </iframe>
             <div class="twitter-btn">
-            <router-link to="/follow" class="twitter-follow-button twitter-btn" data-show-screen-name="false" data-show-count="false">Follow @SendyMobile</router-link>
+            <router-link to="/follow" class="twitter-follow-button twitter-btn" data-show-screen-name="false" data-show-count="false"><img class="twtt" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/twitterr.png"></router-link>
             </div>
             </div>
             

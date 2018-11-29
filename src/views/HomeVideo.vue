@@ -6,24 +6,24 @@
         <p class="home-text-regular relative">Move anything<br>from point A to B at the<br>touch of a button.<br>Simply. Transparently.</p>
             <div class="get-started-button bg-orange bc-orange bottomY centerX flex">
                 <span class="">
-                    <router-link to="/getstarted"><button class="get-started-button bg-orange bc-orange bottomY centerX flex open-sans color-white" type="button">GET STARTED</button></router-link>
+                    <router-link to="/getstarted"><div class="get-started-button bg-orange bc-orange centerY centerX flex open-sans color-white" type="button">GET STARTED</div></router-link>
                 </span>
             </div>
             <div class="app-links">
                 <p class="app-links-text">Experience Sendy on any device</p>                
                     <span class="">
                         <router-link to="/playstore">
-                            <img class="playstore_home_view" src="https://images.sendyit.com/website/home/googleplayicon.png">
+                            <img class="playstore_home_view height" src="https://images.sendyit.com/website/home/googleplayicon.png">
                         </router-link>
                     </span>
                     <span class="">
                         <router-link to="/appstore">
-                            <img class="appstore_home_view" src="https://images.sendyit.com/website/home/appstoreicon.png">
+                            <img class="appstore_home_view height" src="https://images.sendyit.com/website/home/appstoreicon.png">
                         </router-link>
                     </span>
                     <span class="">
                         <router-link to="/signup">
-                            <img class="webplatform_home_view" src="https://images.sendyit.com/website/home/browsericon.png">
+                            <img class="webplatform_home_view height" src="https://images.sendyit.com/website/home/browsericon.png">
                         </router-link>
                     </span>  
             </div>
@@ -32,18 +32,20 @@
 <div class="video-section absolute overflow" v-if="windowWidth > '768'" :style= "{right: newLeft + '%' , width: newWidth + '%'}">
     <div class="phone-video-section absolute">
         <img class="home-video-show-mobile-image absolute" src="https://images.sendyit.com/website/home/mobile_frame_01.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16">
-            <video class="home-video-show-mobile-video absolute" loop="yes" muted="" autoplay="true" playsinline="" preload="true" src="https://images.sendyit.com/website/home/mobile_video_01.mp4?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" poster="https://images.sendyit.com/website/home/mobile_first_image_01.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" width="164.347826087px" __idm_id__="140516354"></video>
+        <img class="home-video-show-mobile-video absolute" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/mobile.png">
+            <!--<video class="home-video-show-mobile-video absolute" loop="yes" muted="" autoplay="true" playsinline="" preload="true" src="https://images.sendyit.com/website/home/mobile_video_01.mp4?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" poster="https://images.sendyit.com/website/home/mobile_first_image_01.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" width="164.347826087px" __idm_id__="140516354"></video>-->
     </div>
     <div class="desktop-video-section absolute">
         <img class="home-video-show-desktop-image absolute" src="https://images.sendyit.com/website/home/laptop_frame_01.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16">
-            <video class="home-video-show-desktop-video absolute" loop="yes" muted="" autoplay="true" playsinline="" preload="true" src="https://images.sendyit.com/website/home/laptop_video_01.mp4?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" poster="https://images.sendyit.com/website/home/laptop_first_image_01.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" width="687.4183976261px" __idm_id__="140516353"></video>
+        <img class="home-video-show-desktop-video absolute" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/laptop.png">
+            <!--<video class="home-video-show-desktop-video absolute" loop="yes" muted="" autoplay="true" playsinline="" preload="true" src="https://images.sendyit.com/website/home/laptop_video_01.mp4?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" poster="https://images.sendyit.com/website/home/laptop_first_image_01.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" width="687.4183976261px" __idm_id__="140516353"></video>-->
             
     </div>
 </div>
 <div class="text-section-mobile block center-block relative center-text color-white" v-if="windowWidth <= '768'">
     <h3 class="home-text-bold bold-mobile color-white">The Solution for <br>All your deliveries</h3>
     <p class="home-text-regular relative regular-mobile section">Move anything from point A to B at<br>the touch of a button.<br>Simply. Transparently.</p>
-    <router-link to="/getstarted"><button class="get-started-button open-sans block center-block bg-white color-black bc-white button-mobile" type="button">GET STARTED</button></router-link>
+    <router-link to="/getstarted"><div class="get-started-button centerY flex centerX open-sans center-block bg-white color-black bc-white button-mobile" type="button">GET STARTED</div></router-link>
 </div>
 </div>
 </template>
