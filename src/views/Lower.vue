@@ -8,7 +8,7 @@
             <router-link to="/" class="lower-links">Home</router-link><br>
             <router-link to="/API" class="lower-links">API</router-link><br>
             <router-link to="/cities" class="lower-links">Cities</router-link><br>
-            <router-link to="/merchant" class="lower-links">Merchant</router-link><br>
+            <router-link to="/e-commerce" class="lower-links">E-Commerce</router-link><br>
             <router-link to="/enterprise" class="lower-links">Enterprise</router-link><br>
             <p class="copyright color-white relative" v-if="windowWidth > '768'">© Sendy 2018. All rights reserved.</p>
         </div>

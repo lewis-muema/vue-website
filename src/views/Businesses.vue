@@ -5,7 +5,7 @@
     <span class= "arrows-biz relative flex centerX"><img src="https://images.sendyit.com/website/driver/left_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="previous" class="arrow-left"></span>
         <div class="biz-tabs-holder relative overflow">
         
-        <span class="biz-carousel">
+        <span class="biz-carousel" v-if="windowWidth > 1200">
         <transition :name ="direction">   
             <div v-if="pos == 1 && state == true" class="biz-imgholder">
             <img :src= "imgs1[0].url" class="biz-img">
@@ -33,6 +33,44 @@
             <img :src= "imgs3[4].url" class="biz-img">
             </div>
         </transition>
+        </span>
+
+        <span class="biz-carousel" v-if="windowWidth <= 1200">
+        <transition :name ="direction">   
+            <div v-if="pos == 1 && state == true" class="biz-imgholder">
+            <img :src= "imgs1[0].url" class="biz-img">
+            <img :src= "imgs1[1].url" class="biz-img">
+            <img :src= "imgs1[2].url" class="biz-img">
+            </div>
+        </transition>
+        <transition :name ="direction">
+            <div v-if="pos == 2 && state == true" class="biz-imgholder">
+            <img :src= "imgs1[3].url" class="biz-img">
+            <img :src= "imgs1[4].url" class="biz-img">
+            <img :src= "imgs2[0].url" class="biz-img">
+            </div>
+        </transition>
+        <transition :name ="direction">
+            <div v-if="pos == 3 && state == true" class="biz-imgholder">
+            <img :src= "imgs2[1].url" class="biz-img">
+            <img :src= "imgs2[2].url" class="biz-img">
+            <img :src= "imgs2[3].url" class="biz-img">
+            </div>
+        </transition>
+        <transition :name ="direction">
+            <div v-if="pos == 4 && state == true" class="biz-imgholder">
+            <img :src= "imgs2[4].url" class="biz-img">
+            <img :src= "imgs3[0].url" class="biz-img">
+            <img :src= "imgs3[1].url" class="biz-img">
+            </div>
+        </transition>
+        <transition :name ="direction">
+            <div v-if="pos == 5 && state == true" class="biz-imgholder">
+            <img :src= "imgs3[2].url" class="biz-img">
+            <img :src= "imgs3[3].url" class="biz-img">
+            <img :src= "imgs3[4].url" class="biz-img">
+            </div>
+        </transition>        
         </span>
         
         </div>
@@ -80,13 +118,24 @@ export default {
     methods: {
         next() {
             this.direction = 'slide-fade-left'
+            var newPos = this.pos + 1
+            if (this.windowWidth > 1200){
             if(this.pos < '3'){
-                var newPos = this.pos + 1
                 this.pos = newPos
             }
             else{
                 this.pos = 1
             }
+            }
+            else{
+            if(this.pos < '5'){
+                this.pos = newPos
+            }
+            else{
+                this.pos = 1
+            }
+            }
+            
             this.state = false
             var self = this;
             setTimeout(function(){
@@ -95,13 +144,24 @@ export default {
         },
         previous() {
             this.direction = 'slide-fade-right'
+            var newPos = this.pos - 1
+            if(this.windowWidth <= 1200){
             if(this.pos < '4' && this.pos > 1){
-                var newPos = this.pos - 1
                 this.pos = newPos
             }
             else{
                 this.pos = 3
             }
+            }
+            else{
+            if(this.pos < '6' && this.pos > 1){
+                this.pos = newPos
+            }
+            else{
+                this.pos = 5
+            }
+            }
+            
             this.state = false
             var self = this;
             setTimeout(function(){

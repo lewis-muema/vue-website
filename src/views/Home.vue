@@ -25,7 +25,7 @@
     </div>
     <!--start of enterprise section-->
     <div class="kitenge-divider"></div>
-    <div class="enterprise-section grid centerY" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%' , width: secWidth + '%'}">
+    <div class="enterprise-section grid centerY" :style= "{marginLeft: 'auto' , marginRight: 'auto' , width: secWidth + '%'}">
             <div class="enterprise-desc">
                 <p class="enterprise-desc-head">Grow your business with Sendy</p>
                 <p class="enterprise-desc-par">Logistics is fundamental to the success of a business. Whether you run an online shop or a manufacturing business, Sendy is the preferred logistics platform for helping you grow your business.</p>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="e-commerce-category">
-                <router-link to="/merchant">
+                <router-link to="/ecommerce">
                 <div class="boundary">
                 <img :src="baseURL + '/E-Commerce.png'" class="enterprise-category-image center-block block center-text">
                 <p class="enterprise-head center-block block center-text open-sans">E-commerce</p>
@@ -66,7 +66,7 @@
     <div class="kitenge-divider"></div>
     <!--start of services section-->
     <div class="services">
-        <div class="services-container flex centerY" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%' , width: secWidth + '%'}">
+        <div class="services-container flex centerY" :style= "{marginLeft: 'auto' , marginRight: 'auto' , width: secWidth + '%'}">
             <div class="services-row grid">
                 <div class="services-column services-cols" align="center">
                       <span>
@@ -110,7 +110,7 @@
             <div class="slides-column">
                 <p class="slides-header open-sans">Pick a <br>vehicle</p>
                     <div class="home-steps-des">
-                        <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://images.sendyit.com/website/screen_vehicle.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" alt="pick a vehicle">
+                        <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/first-screenshot.png" alt="pick a vehicle">
                             <div class="personal-text-content-body open-sans">
                                 <p>Deliver goods via motorcycle, pickup, van or truck.</p>
                             </div>
@@ -122,7 +122,7 @@
             <div class="slides-column">
                 <p class="slides-header">Book a <br>delivery</p>
                     <div class="home-steps-des">
-                        <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://images.sendyit.com/website/screen_book.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" alt="book a delivery">
+                        <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/second-screenshot.png" alt="book a delivery">
                             <div class="personal-text-content-body">
                                 <p>Select pickup and destination(s) and get a price quote.</p>
                             </div>
@@ -134,7 +134,7 @@
             <div class="slides-column">
                 <p class="slides-header">Track your <br>Driver</p>
                     <div class="home-steps-des">
-                        <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://images.sendyit.com/website/screen_track.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" alt="track your driver">
+                        <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/third-screenshot.png" alt="track your driver">
                             <div class="personal-text-content-body">
                                 <p>Track your Driver throughout the delivery in real time.</p>
                             </div>
@@ -253,14 +253,25 @@ computed: {
         this.newLeft = 19 - quotient
         this.newLeft2 = this.newLeft + 4
         this.newLeft3 = this.newLeft2 + 3
-        this.secWidth = 100 - (this.newLeft * 2)
+        if(this.windowWidth > 430){
+            this.secWidth = 100 - (this.newLeft * 2)
+        }
+        else{
+            this.secWidth = 98 - (this.newLeft * 2)
+        }        
         var quotient2 = (range * 30)/1194
         var estWidth = 50 + quotient2
         if (this.windowWidth > 1200){
         this.newWidth = estWidth
         }
+        else if(this.windowWidth <= 1200 && this.windowWidth > 768){
+        this.newWidth = 50
+        }
+        else if(this.windowWidth <= 768 && this.windowWidth > 430){
+        this.newWidth = 60  
+        }
         else{
-        this.newWidth = 33
+        this.newWidth = 90
         }
         var quotient3 = (range * 10)/1536
         if(this.windowWidth < 1100){
