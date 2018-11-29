@@ -43,12 +43,12 @@
                 </div>
             </div>
             <div class="e-commerce-category">
-                <router-link to="/ecommerce">
+                <router-link to="/e-commerce">
                 <div class="boundary">
                 <img :src="baseURL + '/E-Commerce.png'" class="enterprise-category-image center-block block center-text">
                 <p class="enterprise-head center-block block center-text open-sans">E-commerce</p>
                 <p class="enterprise-par center-block block center-text open-sans">Focus on your core business, and let us handle the stress of deliveries. Sendy is the platform for e-commerce door-to-door deliveries.</p>
-                <p><router-link to="/merchant" class="enterprise-link center-block block center-text color-orange">Learn More</router-link></p>
+                <p><router-link to="/e-commerce" class="enterprise-link center-block block center-text color-orange">Learn More</router-link></p>
                 </div>
                 </router-link>
             </div>
@@ -120,7 +120,7 @@
             <div class="kitenge-divider kitenge-fit"></div>
             </div>
             <div class="slides-column">
-                <p class="slides-header">Book a <br>delivery</p>
+                <p class="slides-header open-sans">Book a <br>delivery</p>
                     <div class="home-steps-des">
                         <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/second-screenshot.png" alt="book a delivery">
                             <div class="personal-text-content-body">
@@ -132,7 +132,7 @@
             <div class="kitenge-divider kitenge-fit"></div>
             </div>
             <div class="slides-column">
-                <p class="slides-header">Track your <br>Driver</p>
+                <p class="slides-header open-sans">Track your <br>Driver</p>
                     <div class="home-steps-des">
                         <img :style= "{ width : newWidth + '%' }" class="home_tutorial_image" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home2/third-screenshot.png" alt="track your driver">
                             <div class="personal-text-content-body">
