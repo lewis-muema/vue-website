@@ -136,13 +136,13 @@ export default new Router({
       path: '/e-commerce',
       //name: 'merchant',
       //component: Merchant
-      beforeEnter() {location.href = 'http://growth.sendyit.com/e-commerce'}
+      beforeEnter() {location.href = 'https://growth.sendyit.com/e-commerce'}
     },
     {
-      path: '/enterprises',
+      path: '/enterprise',
       //name: 'enterprise',
       //component: Enterprise
-      beforeEnter() {location.href = 'http://growth.sendyit.com'}
+      beforeEnter() {location.href = 'https://growth.sendyit.com'}
     },
     {
       path: '/signup',

@@ -29,11 +29,11 @@
             <tr><td class="dropdown-upper-rows"><router-link to="/signup" class="color-white">LOG IN</router-link></td></tr>
             <tr><td class="dropdown-upper-rows"><router-link to="/signup" class="color-white">SIGN UP</router-link></td></tr>
             <tr><td class="dropdown-upper-rows"><router-link to="/e-commerce" class="color-white">E-COMMERCE</router-link></td></tr>
-            <tr><td class="dropdown-upper-rows"><router-link to="/enterprises" class="color-white">ENTERPRISE</router-link></td></tr>
-            </table>    
-            </div>         
+            <tr><td class="dropdown-upper-rows"><router-link to="/enterprise" class="color-white">ENTERPRISE</router-link></td></tr>
+            </table>
+            </div>
         </div>
-        
+
     </div>
 </template>
 
@@ -55,7 +55,7 @@ export default {
     computed: {
         nameDisplayer() {
             return this.$store.state.parentName
-            
+
         }
     },
     created() {
@@ -63,7 +63,7 @@ export default {
         window.addEventListener('resize', this.handleResize)
             this.handleResize();
             this.detectAndroid();
-            this.detectIOS();  
+            this.detectIOS();
     },
     destroyed() {
     window.removeEventListener('resize', this.handleResize)
@@ -83,14 +83,14 @@ export default {
     toggleMenu() {
       if (this.showTable == false){
           this.dropName = "dropdown-down"
-          this.showTable = true   
+          this.showTable = true
       }
       else{
           this.dropName = "dropdown-up"
           setTimeout(() => {
               this.showTable = false
           }, 1000)
-          
+
       }
     }
     }
