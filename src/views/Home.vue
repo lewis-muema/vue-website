@@ -1,8 +1,8 @@
 <template>
     <div>
     <!--start of upper section-->
-    <Upper/>  
-     <!--start of home video section--> 
+    <Upper/>
+     <!--start of home video section-->
     <homeVideo/>
      <!--start of partners section-->
     <div class="partners-sect overflow bg-orange">
@@ -24,7 +24,7 @@
         </div>
     </div>
     <!--start of enterprise section-->
-    <div class="kitenge-divider"></div>
+    <!-- <div class="kitenge-divider"></div> -->
     <div class="enterprise-section grid centerY" :style= "{marginLeft: 'auto' , marginRight: 'auto' , width: secWidth + '%'}">
             <div class="enterprise-desc">
                 <p class="enterprise-desc-head">Grow your business with Sendy</p>
@@ -99,11 +99,11 @@
             </div>
     </div>
     <!--divider-->
-    <div class="kitenge-divider"></div>
+    <!-- <div class="kitenge-divider"></div> -->
     <!--start of estimations-->
     <Estimations/>
     <!--divider-->
-    <div class="kitenge-divider"></div>
+    <!-- <div class="kitenge-divider"></div> -->
     <!--start of slides section-->
     <div class="slides-section flex centerY">
         <div class="slides-container grid center-block center-text">
@@ -139,13 +139,13 @@
                                 <p>Track your Driver throughout the delivery in real time.</p>
                             </div>
                     </div>
-            </div>                      
+            </div>
         </div>
-    
+
     </div>
 
     <!--divider-->
-        <div class="kitenge-divider"></div>
+        <!-- <div class="kitenge-divider"></div> -->
     <!--start of qualities section-->
     <div class = "qualities-section overflow">
     <div class="qualities-row tab1 grid">
@@ -161,11 +161,11 @@
     </div>
     <div class="qualities-row tab1 grid">
         <div v-if="windowWidth <= '1200'" class="qualities-column-7 img-senior"></div>
-        <div class="qualities-column-5 qualities-tab bg-orange flex centerX centerY">   
+        <div class="qualities-column-5 qualities-tab bg-orange flex centerX centerY">
         <div class="qualities-text-container">
             <p class="qualities-heading open-sans color-white">Transparent</p>
             <p class="qualities-body open-sans color-white">Know where your <br>delivery is at all times.</p>
-        </div> 
+        </div>
         </div>
         <div v-if="windowWidth > '1200'" class="qualities-column-7 img-senior"></div>
     </div>
@@ -177,7 +177,7 @@
                 <div class="qualities-text-container">
                     <p class="qualities-heading open-sans color-white">User-Focused</p>
                     <p class="qualities-body open-sans color-white">Payment, pricing, and <br>platform options <br>tailored for your <br>business.</p>
-                </div> 
+                </div>
                 </div>
         </div>
 </div>
@@ -189,7 +189,7 @@
     <!--start of lower section-->
     <Lower/>
     <!--divider-->
-    <div class="kitenge-divider"></div>
+    <!-- <div class="kitenge-divider"></div> -->
     </div>
 </template>
 
@@ -233,11 +233,11 @@ computed: {
             this.$store.commit({
                 type: 'changeParentName',
                 pName: this.parentName
-            }); 
+            });
             window.addEventListener('resize', this.handleResize)
             this.handleResize();
             this.detectAndroid();
-            this.detectIOS();            
+            this.detectIOS();
     },
      destroyed() {
     window.removeEventListener('resize', this.handleResize)
@@ -258,7 +258,7 @@ computed: {
         }
         else{
             this.secWidth = 98 - (this.newLeft * 2)
-        }        
+        }
         var quotient2 = (range * 30)/1194
         var estWidth = 50 + quotient2
         if (this.windowWidth > 1200){
@@ -268,7 +268,7 @@ computed: {
         this.newWidth = 50
         }
         else if(this.windowWidth <= 768 && this.windowWidth > 430){
-        this.newWidth = 60  
+        this.newWidth = 60
         }
         else{
         this.newWidth = 90
@@ -280,18 +280,18 @@ computed: {
         else{
             this.imgWidth = 200 - quotient3
         }
-        
+
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"
     },
-    detectAndroid() { 
+    detectAndroid() {
     if( navigator.userAgent.match(/Android/i)){
         this.android = true
         this.IOS = false
         }
     },
-    detectIOS() { 
+    detectIOS() {
     if( navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i)){
         this.IOS = true
         this.android = false
