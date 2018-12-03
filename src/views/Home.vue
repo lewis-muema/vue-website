@@ -237,11 +237,6 @@ computed: {
             window.addEventListener('resize', this.handleResize)
             this.handleResize();
             this.detectAndroid();
-<<<<<<< HEAD
-            this.detectIOS();           
-=======
-            this.detectIOS();
->>>>>>> 667bbdca9fd457adac24e7d7e101703b65168096
     },
      destroyed() {
     window.removeEventListener('resize', this.handleResize)
