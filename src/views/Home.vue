@@ -237,13 +237,15 @@ computed: {
             window.addEventListener('resize', this.handleResize)
             this.handleResize();
             this.detectAndroid();
-            this.detectIOS();
     },
      destroyed() {
     window.removeEventListener('resize', this.handleResize)
     },
     mounted(){
         window.scrollTo(0, 0);
+    this.$nextTick(function () {
+        document.dispatchEvent(new Event('custom-render-trigger'))
+    })
     },
     methods: {
     handleResize() {

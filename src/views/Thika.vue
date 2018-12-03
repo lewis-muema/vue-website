@@ -34,6 +34,9 @@ computed: {
 },
 mounted(){
     window.scrollTo(0, 0);
+    this.$nextTick(function () {
+        document.dispatchEvent(new Event('custom-render-trigger'))
+    })
 },
 created() {
     this.$store.commit({
