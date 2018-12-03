@@ -142,7 +142,7 @@ export default new Router({
       path: '/enterprise',
       //name: 'enterprise',
       //component: Enterprise
-      beforeEnter() {location.href = 'https://growth.sendyit.com'}
+      beforeEnter() {location.href = 'https://growth.sendyit.com/enterprise'}
     },
     {
       path: '/signup',
