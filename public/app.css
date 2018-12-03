@@ -160,6 +160,7 @@ body{
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    grid-column: span 4;
 }
 
 .section__home{
