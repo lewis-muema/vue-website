@@ -40,10 +40,13 @@ export default {
             this.$store.commit({
                 type: 'changeParentName',
                 pName: this.parentName
-            }); 
+            });   
     },
     mounted(){
     window.scrollTo(0, 0);
+    this.$nextTick(function () {
+        document.dispatchEvent(new Event('custom-render-trigger'))
+    })
     },
 }
 </script>
