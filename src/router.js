@@ -136,13 +136,13 @@ export default new Router({
       path: '/e-commerce',
       //name: 'merchant',
       //component: Merchant
-      beforeEnter() {location.href = 'http://growth.sendyit.com/e-commerce'}
+      beforeEnter() {location.href = 'https://growth.sendyit.com/e-commerce'}
     },
     {
       path: '/enterprise',
       //name: 'enterprise',
       //component: Enterprise
-      beforeEnter() {location.href = 'http://growth.sendyit.com/enterprise'}
+      beforeEnter() {location.href = 'https://growth.sendyit.com'}
     },
     {
       path: '/signup',
@@ -199,7 +199,7 @@ export default new Router({
     {
       path: '/publicapi',
       beforeEnter() {location.href = 'https://sendypublicapi.docs.apiary.io/#'}
-    }, 
+    },
 
 
 
@@ -215,27 +215,27 @@ export default new Router({
       path: '/404_override',
       name: 'home',
       component: Home
-    }, 
+    },
     {
       path: '/personal',
       name: 'home',
       component: Home
-    },  
+    },
     {
       path: '/privacy/driver',
       name: 'driverprivacy',
       component: DriverPrivacy
-    }, 
+    },
     {
       path: '/terms/show',
       name: 'terms',
       component: Terms
-    }, 
+    },
     {
       path: '/policy',
       name: 'terms',
       component: Terms
-    },  
+    },
     {
       path: '/team',
       name: 'careers',
@@ -245,17 +245,17 @@ export default new Router({
       path: '/career',
       name: 'careers',
       component: Careers
-    }, 
+    },
     {
       path: '/jobs',
       name: 'careers',
       component: Careers
-    }, 
+    },
     {
       path: '/riders',
       name: 'partners',
       component: Partners
-    }, 
+    },
     {
       path: '/insurance',
       name: 'terms',
@@ -264,5 +264,3 @@ export default new Router({
   ],
   mode: 'history'
 });
-
-
