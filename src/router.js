@@ -9,18 +9,18 @@ import Mombasa from './views/Mombasa.vue'
 import Thika from './views/Thika.vue'
 import Partners from './views/Partners.vue'
 import Careers from './views/Careers.vue'
-import SeniorPortManager from './views/SeniorPortManager'
-import ClientRelationsManager from './views/ClientRelationsManager'
-import AndroidEngineer from './views/AndroidEngineer'
-import DataAnalyst from './views/DataAnalyst'
-import QualityAssuranceTester from './views/QualityAssuranceTester'
-import HeadOfFinance from './views/HeadOfFinance'
-import KisumuCityManager from './views/KisumuCityManager'
+import SeniorPortManager from './views/careers/SeniorPortManager'
+import ClientRelationsManager from './views/careers/ClientRelationsManager'
+import AndroidEngineer from './views/careers/AndroidEngineer'
+import DataAnalyst from './views/careers/DataAnalyst'
+import QualityAssuranceTester from './views/careers/QualityAssuranceTester'
+import HeadOfFinance from './views/careers/HeadOfFinance'
+import KisumuCityManager from './views/careers/KisumuCityManager'
 import Terms from './views/Terms'
 import Privacy from './views/Privacy'
 import DriverPrivacy from './views/DriverPrivacy'
-import HeadOfPartnerOperations from './views/HeadOfPartnerOperations'
-import JuniorOperationsAssociate from './views/JuniorOperationsAssociate'
+import HeadOfPartnerOperations from './views/careers/HeadOfPartnerOperations'
+import JuniorOperationsAssociate from './views/careers/JuniorOperationsAssociate'
 import accept from './components/accept';
 import approve from './components/approve';
 import apply from './components/apply';
@@ -202,7 +202,7 @@ export default new Router({
     },
     {
       path: '/driverslogin',
-      beforeEnter() {location.href = 'https://sendyit.com/partner'}
+      beforeEnter() {location.href = 'https://partner.sendyit.com'}
     },
     {
       path: '/follow',
@@ -333,6 +333,7 @@ export default new Router({
       path: '/letsgrow/:any',
       component: letsgrow
     }
+
   ],
   mode: 'history'
 });

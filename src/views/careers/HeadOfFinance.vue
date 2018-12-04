@@ -66,8 +66,8 @@
 </template>
 
 <script>
-import Upper from './Upper';
-import Lower from './Lower';
+import Upper from '../Upper';
+import Lower from '../Lower';
 export default {
 components: {
     Upper,

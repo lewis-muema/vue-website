@@ -6,11 +6,12 @@
 export default {
 data(){
         return {
-            confirm: this.$route.params.any
+            confirm1: this.$route.params.any1,
+            confirm2: this.$route.params.any2
         }
     },
     created(){
-            location.href = 'https://app.sendyit.com/biz/price/adjust/' + this.confirm
+            location.href = 'https://app.sendyit.com/biz/price/adjust/' + this.confirm1 + '/' + this.confirm2
         }
 }
 </script>
