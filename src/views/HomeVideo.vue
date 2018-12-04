@@ -2,7 +2,7 @@
 <div class="section section__home">
 
 <div class="section__text bottomY absolute" v-if="windowWidth > '768'" :style= "{left: newLeft + '%'}">
-    <h3 class="home-text-bold">The Solution for <br>All your deliveries</h3>
+    <h3 class="home-text-bold">The Solution For <br>All Your Deliveries</h3>
         <p class="home-text-regular relative">Move anything<br>from point A to B at the<br>touch of a button.<br>Simply. Transparently.</p>
             <div class="get-started-button bg-orange bc-orange bottomY centerX flex">
                 <span class="">
