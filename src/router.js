@@ -21,8 +21,24 @@ import Privacy from './views/Privacy'
 import DriverPrivacy from './views/DriverPrivacy'
 import HeadOfPartnerOperations from './views/HeadOfPartnerOperations'
 import JuniorOperationsAssociate from './views/JuniorOperationsAssociate'
+import accept from './components/accept';
+import approve from './components/approve';
+import apply from './components/apply';
+import blog from './components/blog';
+import confirm from './components/confirm';
+import fb from './components/fb';
+import growth_signup_with_phone from './components/growth_signup_with_phone';
+import invite from './components/invite';
+import letsgrow from './components/letsgrow';
+import onboard from './components/onboard';
+import pay from './components/pay';
+import rate from './components/rate';
+import track from './components/track';
+import verify from './components/verify';
+
 //import Enterprise from './views/Enterprise'
 //import Merchant from './views/Merchant'
+
 Vue.use(Router)
 
 export default new Router({
@@ -260,6 +276,62 @@ export default new Router({
       path: '/insurance',
       name: 'terms',
       component: Terms
+    },
+    { 
+      path: '/track/:any',
+      component: track
+    },
+    { 
+      path: '/invite/:any',
+      component: invite
+    },
+    { 
+      path: '/fb/:any',
+      component: fb
+    },
+    { 
+      path: '/rate/:any',
+      component: rate
+    },
+    { 
+      path: '/verify/:any',
+      component: verify
+    },
+    { 
+      path: '/onboard/:any',
+      component: onboard
+    },
+    { 
+      path: '/confirm/:any1/:any2',
+      component: confirm
+    },
+    { 
+      path: '/pay/:any',
+      component: pay
+    },
+    { 
+      path: '/apply/:any1',
+      component: apply
+    },
+    { 
+      path: '/approve/:any',
+      component: approve
+    },
+    { 
+      path: '/blog/:any',
+      component: blog
+    },
+    { 
+      path: '/growth_signup_with_phone/:any',
+      component: growth_signup_with_phone
+    },
+    { 
+      path: '/accept/:any',
+      component: accept
+    },
+    { 
+      path: '/letsgrow/:any',
+      component: letsgrow
     }
   ],
   mode: 'history'
