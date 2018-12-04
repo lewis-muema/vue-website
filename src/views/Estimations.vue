@@ -210,7 +210,14 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     this.place = this.autocomplete.getPlace()
     this.latPick = this.place.geometry.location.lat()
     this.lonPick = this.place.geometry.location.lng()
-    this.inputPick = this.place.name + ', ' + this.place.formatted_address
+    var firstword = this.place.name.replace(/ .*/,'');
+    var included = this.place.formatted_address.includes(firstword);
+    if (included == true){
+        this.inputPick = this.place.formatted_address
+    }
+    else{
+        this.inputPick = this.place.name + ', ' + this.place.formatted_address
+    }
     });
 
     this.autocomplete1 = new google.maps.places.Autocomplete(
@@ -224,7 +231,15 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     this.dest = this.autocomplete1.getPlace()
     this.latDest = this.dest.geometry.location.lat()
     this.lonDest = this.dest.geometry.location.lng()
-    this.inputDest = this.dest.name + ', ' + this.dest.formatted_address
+    var firstword1 = this.dest.name.replace(/ .*/,'');
+    var include = this.dest.formatted_address.includes(firstword1);
+    if(include == true){
+        this.inputDest = this.dest.formatted_address
+    }
+    else{
+        this.inputDest = this.dest.name + ', ' + this.dest.formatted_address
+    }
+    
     this.getDistance()
     });
     
