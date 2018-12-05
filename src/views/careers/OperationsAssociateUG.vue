@@ -2,7 +2,7 @@
     <div class="kisumu-city-manager">
         <Upper/>
         <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
-            <p class="job-desc-head">OPERATIONS ASSOCIATE<br>UGANDA</p>
+            <p class="job-desc-head">OPERATIONS ASSOCIATE UGANDA</p>
             <p class="jobs-listing">Logistics in Africa is broken! It’s super fragmented, informal and very costly, making it difficult for small business to trade in Africa. At Sendy we are on a mission to solve this problem - We have built the first efficient shared logistics platform for Africa that will create new possibilities for small businesses and transporters.<br>
                                     The Operations Associate will be responsible for Partner identification, recruitment, training/onboarding, retention and engagement. We are looking for a leader that can promote the Sendy brand through efficient Partners and grow Sendy into a leading regional courier business.
             </p>

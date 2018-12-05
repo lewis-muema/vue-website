@@ -2,7 +2,7 @@
     <div class="kisumu-city-manager">
         <Upper/>
         <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
-            <p class="job-desc-head">COUNTRY MANAGER<br>UGANDA</p>
+            <p class="job-desc-head">COUNTRY MANAGER UGANDA</p>
             <p class="jobs-listing">Logistics in Africa is broken! It’s super fragmented, informal and very costly, making it difficult for small business to trade in Africa. At Sendy we are on a mission to solve this problem - We have built the first efficient shared logistics platform for Africa that will create new possibilities for small businesses and transporters.<br>
             A Country Manager is an executive level position which oversees all of Sales, Partner Operations, & Support at a country level and reports directly to the Commercial Director.
             </p>
