@@ -2,7 +2,7 @@
     <div class="kisumu-city-manager">
         <Upper/>
         <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
-            <p class="job-desc-head">CUSTOMER & PARTNER SUPPORT<br>COUNTRY LEAD - UGANDA</p>
+            <p class="job-desc-head">CUSTOMER & PARTNER SUPPORT COUNTRY LEAD UGANDA</p>
             <p class="jobs-listing">Logistics in Africa is broken! It’s super fragmented, informal and very costly, making it difficult for small business to trade in Africa. At Sendy we are on a mission to solve this problem - We have built the first efficient shared logistics platform for Africa that will create new possibilities for small businesses and transporters.<br>
             </p>
             <p class="job-desc-head">ABOUT THE ROLE</p>

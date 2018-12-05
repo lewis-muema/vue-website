@@ -2,7 +2,7 @@
     <div class="kisumu-city-manager">
         <Upper/>
         <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
-            <p class="job-desc-head">JUNIOR SUPPORT MANAGER<br>UGANDA</p>
+            <p class="job-desc-head">JUNIOR SUPPORT MANAGER UGANDA</p>
             <p class="jobs-listing">Logistics in Africa is broken! It’s super fragmented, informal and very costly, making it difficult for small business to trade in Africa. At Sendy we are on a mission to solve this problem - We have built the first efficient shared logistics platform for Africa that will create new possibilities for small businesses and transporters.<br>
             This role is key in helping build the Sendy brand and delivering outstanding customer support. Sendy thrives on delivering top of the market service to both our Customers and Partners. We're a game-changing startup, providing quality, on-demand package deliveries, 24/7 and we’re looking for a Support Experience superstar to help with our support efforts and team strategy.<br>
             If you’re looking to make a real impact in your work then we want to hear from you!
