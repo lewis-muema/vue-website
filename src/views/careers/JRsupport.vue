@@ -2,50 +2,52 @@
     <div class="kisumu-city-manager">
         <Upper/>
         <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
-            <p class="job-desc-head">MARKETING ASSOCIATE<br>UGANDA</p>
+            <p class="job-desc-head">JUNIOR SUPPORT MANAGER<br>UGANDA</p>
             <p class="jobs-listing">Logistics in Africa is broken! It’s super fragmented, informal and very costly, making it difficult for small business to trade in Africa. At Sendy we are on a mission to solve this problem - We have built the first efficient shared logistics platform for Africa that will create new possibilities for small businesses and transporters.<br>
-                                    We’re looking for a Marketing Associate superstar to help lead and define our marketing initiatives. This role is about building the Sendy brand locally.
+            This role is key in helping build the Sendy brand and delivering outstanding customer support. Sendy thrives on delivering top of the market service to both our Customers and Partners. We're a game-changing startup, providing quality, on-demand package deliveries, 24/7 and we’re looking for a Support Experience superstar to help with our support efforts and team strategy.<br>
+            If you’re looking to make a real impact in your work then we want to hear from you!
             </p>
             <p class="job-desc-head">ABOUT THE ROLE</p>
             <p class="job-desc-par">Obsess about the customer</p>
             <ul class="job-desc-par">
-                <li class="jobs-listing">Strategize and execute an active and engaging social media plan across multiple platforms: Twitter, Facebook, LinkedIn, etc. and ensure consistent brand messaging across all channels.</li>
+                <li class="jobs-listing">Focus on the customers, champion and understand their needs and double up when they are delighted.</li>
+                <li class="jobs-listing">Provide ‘voice of the customers and partners’ to cross-functional teams, such as engineering, sales, marketing, growth and Operations to grow partner and customer retention (engagement, adoption and expansion).</li>
             </ul>
             <p class="job-desc-par">Grow together</p>
             <ul class="job-desc-par">
-                <li class="jobs-listing">Collaborate with leadership and external agencies to develop key messaging and specific advertising copy/design/packaging for campaigns across marketing channels.</li>
-                <li class="jobs-listing">Identify and plan relevant brand events to increase brand trial and usage.</li>
+                <li class="jobs-listing">Work closely with our Operations and Product Development teams to identify customer demands and pain points.</li>
             </ul>
             <p class="job-desc-par">Be flexible</p>
             <ul class="job-desc-par">
-                <li class="jobs-listing">A start-up personality; entrepreneurial, ambitious, independent, systematic attention to detail, structured thinker, goal-oriented, flexible and able to deal well with setbacks.</li>
+                <li class="jobs-listing">Provide support to Customers and partners – you're willing to do whatever it takes to get a resolution.</li>
+                <li class="jobs-listing">Monitor social media platforms and report to all queries within minutes.</li>
+
             </ul>
             <p class="job-desc-par">Continuously learn and Simplify processes</p>
             <ul class="job-desc-par">
-                <li class="jobs-listing">Collect and analyse market data as well as competitor analysis.</li>
-                <li class="jobs-listing">Assesses delivery and performance of each marketing campaign on a daily, weekly and monthly basis</li>
-                <li class="jobs-listing">Develop and execute effective online and offline marketing strategies and tests that deliver against Return on Investment (ROI) targets.</li>
+                <li class="jobs-listing">Manage all Customer & Partner concerns to ensure excellent customer experience.</li>
+                <li class="jobs-listing">Analyze statistics and compile accurate reports.</li>
+                <li class="jobs-listing">You’ll work towards your own targets as well as team goals to ensure continuous growth.</li>
             </ul>
             <p class="job-desc-par">Be open</p>
             <ul class="job-desc-par">
-                <li class="jobs-listing">Ensure transparent communication with all our partners, customers from terms and conditions to updates when things break.</li>
+                <li class="jobs-listing">Ensure transparent communication with all our customers and partners from the terms of conditions to updates when things break.</li>
                 <li class="jobs-listing">Drive a culture of being transparent within your team and the rest of the Sendy team.</li>
             </ul>
-            <p class="job-desc-head">ABOUT YOU</p>
+            <p class="job-desc-par">ABOUT YOU</p>
             <ul class="job-desc-par">
-                <li class="jobs-listing">Degree in Business Administration, Economics, Marketing, Sales, Advertising or similar preferred</li>
-                <li class="jobs-listing">3+ years experience Marketing and Brand management</li>
-                <li class="jobs-listing">Public Relations and Event Planning experience is a plus</li>
-                <li class="jobs-listing">Excellent written communication skills</li>
-                <li class="jobs-listing">Active online presence and familiarity with social media channels (Twitter, LinkedIn, Facebook, Wordpress, Instagram, Mailchimp)</li>
-                <li class="jobs-listing">Results-driven with exceptional detail and knowledge around Key performance metrics</li>
-                <li class="jobs-listing">Familiar with google analytics and other digital data analysis tools</li>
-                <li class="jobs-listing">Ability to not just think on your feet, but to think while running</li>
-                <li class="jobs-listing">Expert multi-tasker</li>
-                <li class="jobs-listing">Exceptional attention to detail and high quality deliverable outputs</li>
-                <li class="jobs-listing">Ability to take ownership and accountability of project timeline and results</li>
+                <li class="jobs-listing">Bachelor's degree</li>
+                <li class="jobs-listing">Strong Microsoft Office skills are essential (especially Excel).</li>
+                <li class="jobs-listing">Ability to read and analyse the numbers.</li>
+                <li class="jobs-listing">Fluency in English.</li>
+                <li class="jobs-listing">Previous customer service experience is a plus.</li>
+                <li class="jobs-listing">Meticulous punctuation and grammar.</li>
+                <li class="jobs-listing">Ability to communicate at all levels with internal/external clients by phone, live chat, social media channels, and email.</li>
+                <li class="jobs-listing">Expert multi-tasker.</li>
+                <li class="jobs-listing">Flexible working schedule, ability to hold down the fort at night and weekends.</li>
+                <li class="jobs-listing">Your desire to learn in a fast-paced startup environment is boundless.</li>
             </ul>
-            <p class="job-desc-head">WHAT WE OFFER</p>
+            <p class="job-desc-head">BENEFITS</p>
             <ul class="job-desc-par">
                 <li class="jobs-listing">Comprehensive Health Insurance - Inpatient / Outpatient / Dental / Optical.</li>
                 <li class="jobs-listing">Phone & computer</li>
@@ -74,7 +76,7 @@ components: {
 },
 data() {
     return {
-    parentName: 'MarketingAssociateUG',
+    parentName: 'JRsupport',
     windowWidth: null,
     newLeft: null
     }

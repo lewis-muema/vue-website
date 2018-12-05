@@ -10,13 +10,19 @@ import Thika from './views/Thika.vue'
 import Partners from './views/Partners.vue'
 import Careers from './views/Careers.vue'
 import SeniorPortManager from './views/careers/SeniorPortManager'
+import KisumuCityManager from './views/careers/KisumuCityManager'
 import ClientRelationsManager from './views/careers/ClientRelationsManager'
 import AndroidEngineer from './views/careers/AndroidEngineer'
 import DataAnalyst from './views/careers/DataAnalyst'
 import QualityAssuranceTester from './views/careers/QualityAssuranceTester'
 import HeadOfFinance from './views/careers/HeadOfFinance'
-import KisumuCityManager from './views/careers/KisumuCityManager'
-import Terms from './views/Terms'
+import ProductManager from './views/careers/ProductManager'
+import OperationsAssociate from './views/careers/OperationsAssociate'
+import MarketingAssociateUG from './views/careers/MarketingAssociateUG'
+import OperationsAssociateUG from './views/careers/OperationsAssociateUG'
+import CPS from './views/careers/CPS'
+import JRsupport from './views/careers/JRsupport'
+import GMUG from './views/careers/GMUG'
 import Privacy from './views/Privacy'
 import DriverPrivacy from './views/DriverPrivacy'
 import HeadOfPartnerOperations from './views/careers/HeadOfPartnerOperations'
@@ -35,6 +41,7 @@ import pay from './components/pay';
 import rate from './components/rate';
 import track from './components/track';
 import verify from './components/verify';
+import Terms from './views/Terms';
 
 //import Enterprise from './views/Enterprise'
 //import Merchant from './views/Merchant'
@@ -94,6 +101,26 @@ export default new Router({
       component: SeniorPortManager
     },
     {
+      path: '/careers/OperationsAssociate',
+      name: 'OperationsAssociate',
+      component: OperationsAssociate
+    },
+    {
+      path: '/careers/OperationsAssociateUG',
+      name: 'OperationsAssociateUG',
+      component: OperationsAssociateUG
+    },
+    {
+      path: '/careers/ProductManager',
+      name: 'ProductManager',
+      component: ProductManager
+    },
+    {
+      path: '/careers/MarketingAssociateUG',
+      name: 'MarketingAssociateUG',
+      component: MarketingAssociateUG
+    },
+    {
       path: '/careers/clientrelationsmanager',
       name: 'clientrelationsmanager',
       component: ClientRelationsManager
@@ -102,6 +129,21 @@ export default new Router({
       path: '/careers/androidengineer',
       name: 'androidengineer',
       component: AndroidEngineer
+    },
+    {
+      path: '/careers/customer&partnersupport',
+      name: 'CPS',
+      component: CPS
+    },
+    {
+      path: '/careers/jrsupportmanager',
+      name: 'JRsupport',
+      component: JRsupport
+    },
+    {
+      path: '/careers/countrygm',
+      name: 'GMUG',
+      component: GMUG
     },
     {
       path: '/careers/dataanalyst',
@@ -197,8 +239,8 @@ export default new Router({
       beforeEnter() {location.href = 'https://sendyit.com/blog'}
     },
     {
-      path: '/blog',
-      beforeEnter() {location.href = 'https://sendyit.com/blog'}
+      path: '/blogpage',
+      beforeEnter() {location.href = 'https://blog.sendyit.com'}
     },
     {
       path: '/driverslogin',
