@@ -3,6 +3,9 @@ body{
     margin: 0px; 
     font-family: 'Open sans', sans-serif; 
 }
+.weight400{
+    font-weight: 400;
+}
 .button{
     width: 120px;
     height: 40px;
@@ -1413,13 +1416,12 @@ a:hover {
 
 .jobs-container{
     border-style: solid;
-    border-width: 1.5px;
-    height: 625px;
+    border-width: 0.5px;
+    min-height: 550px;
     padding-top: 30px;
     margin-bottom: 50px;
     padding-right: 5%;
     padding-left: 5%;
-    
 }
 
 .jobs-col, .jobs-bold{
@@ -1430,22 +1432,24 @@ a:hover {
 .jobs-row{
     width: 100%;
     height: 49px;
-    font-size: 17px;
+    font-size: 14px;
     font-weight: 300;
 }
 
 .jobs-bold{
     height: 49px;
     font-size: 17px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 0px;
     margin-top: 0px;
 }
 
 .jobs-head{
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 800;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .jobs-loc{
@@ -1487,7 +1491,7 @@ a:hover {
 }
 
 .job-desc{
-    margin-top: 12%;
+    margin-top: 10%;
 }
 
 .job-desc-head{
@@ -1498,12 +1502,14 @@ a:hover {
 
 .job-desc-par{
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 600;
     line-height: 27px;
 }
 
 .jobs-listing{
     line-height: 33px;
+    font-weight: 300;
+    font-size: 15px;
 }
 
 .terms-par{

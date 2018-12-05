@@ -15,7 +15,7 @@
         <div class="lower-cols">
             <p class="lower-headers color-white open-sans">Company</p>
             <router-link to="/careers" class="lower-links">Careers</router-link><br>
-            <router-link to="/blog" class="lower-links">Blog</router-link><br>
+            <router-link to="/blogpage" class="lower-links">Blog</router-link><br>
             <router-link to="/partners" class="lower-links">Drivers</router-link><br>
             <router-link to="/driverslogin" class="lower-links">Driver login</router-link>
         </div>
@@ -106,7 +106,7 @@ export default {
     if(this.parentName == 'Home' || this.parentName == 'AllCities' || this.parentName == 'Nairobi' || this.parentName == 'Mombasa' || this.parentName == 'Kisumu' || this.parentName == 'Thika' || this.parentName == 'Partners' || this.parentName == 'Careers' || this.parentName == 'Merchant' || this.parentName == 'Enterprise'){
                 this.sectionTitle = 'lower-section-orange'
             }
-            else if(this.parentName == 'API' || this.parentName == 'SeniorPortManager' || this.parentName == 'ClientRelationsManager'  || this.parentName == 'AndroidEngineer'  || this.parentName == 'DataAnalyst' || this.parentName == 'QualityAssuranceTester' || this.parentName == 'HeadOfFinance' || this.parentName == 'KisumuCityManager' || this.parentName == 'Terms' || this.parentName == 'Privacy' || this.parentName == 'DriverPrivacy' || this.parentName == 'JuniorOperationsAssociate' || this.parentName == 'HeadOfPartnerOperations'){
+            else if(this.parentName == 'API' || this.parentName == 'SeniorPortManager' || this.parentName == 'ClientRelationsManager'  || this.parentName == 'AndroidEngineer'  || this.parentName == 'DataAnalyst' || this.parentName == 'QualityAssuranceTester' || this.parentName == 'HeadOfFinance' || this.parentName == 'KisumuCityManager' || this.parentName == 'Terms' || this.parentName == 'Privacy' || this.parentName == 'DriverPrivacy' || this.parentName == 'JuniorOperationsAssociate' || this.parentName == 'HeadOfPartnerOperations' || this.parentName == 'CPS' || this.parentName == 'GMUG' || this.parentName == 'JRsupport' || this.parentName == 'MarketingAssociateUG' || this.parentName == 'OperationsAssociateUG' || this.parentName == 'OperationsAssociate' || this.parentName == 'ProductManager'){
                 this.sectionTitle = 'lower-section-blue'
             }
         window.addEventListener('resize', this.handleResize)

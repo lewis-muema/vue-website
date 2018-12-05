@@ -2,9 +2,9 @@
     <div class="kisumu-city-manager">
         <Upper/>
         <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
-            <p class="job-desc-head">Head of Partner Operations</p><br>
-            <p class="job-desc-par">The Head of Partner Operations is a critical role responsible for Partners (Drivers) growth and retention. It takes a mixture of marketing creativity, analytical brains and pure hustle to bring Sendy’s operations to life quickly. We are looking for a leader that can manage an international team, promote the Sendy brand, hire local talent, tackle many different projects, and grow Sendy into a global Logistics and Transportation business.</p><br>
-            <p class="job-desc-head">About the Role</p>
+            <p class="job-desc-head">HEAD OF PARTNER OPERATIONS</p>
+            <p class="jobs-listing">The Head of Partner Operations is a critical role responsible for Partners (Drivers) growth and retention. It takes a mixture of marketing creativity, analytical brains and pure hustle to bring Sendy’s operations to life quickly. We are looking for a leader that can manage an international team, promote the Sendy brand, hire local talent, tackle many different projects, and grow Sendy into a global Logistics and Transportation business.</p>
+            <p class="job-desc-head">ABOUT THE ROLE</p>
             <ul class="job-desc-par">
                 <li class="jobs-listing">Build, lead and empower a team of Operations Managers and Analysts to grow Sendy in East Africa</li>
                 <li class="jobs-listing">Work closely with Product, Engineering, and Business teams to identify strategic partnership opportunities</li>
@@ -15,8 +15,8 @@
                 <li class="jobs-listing">Project manage all Driver Partnership initiatives and deliver to deadlines.</li>
                 <li class="jobs-listing">Own all responsibilities of vertical.</li>
                 <li class="jobs-listing">Strategize the future of Sendy Partnerships and help build that future.</li>
-            </ul><br>
-            <p class="job-desc-head">About You</p>
+            </ul>
+            <p class="job-desc-head">ABOUT YOU</p>
             <ul class="job-desc-par">
                 <li class="jobs-listing">5+ years Management level experience of operations management / management consulting / investment banking / strategy</li>
                 <li class="jobs-listing">Master's degree in Economics, Mathematics. Operations Management, Finance or similar field.</li>
@@ -27,19 +27,19 @@
                 <li class="jobs-listing">You are an excellent and influential communicator and use data to reinforce your positions and decisions.</li>
                 <li class="jobs-listing">Successfully executed operations, preferably with P&L ownership, is a plus.</li>
                 <li class="jobs-listing">You are highly competitive and has a unique drive to win.</li>
-            </ul><br>
-            <p class="job-desc-head">Benefits</p>
+            </ul>
+            <p class="job-desc-head">BENEFITS</p>
             <ul class="job-desc-par">
                 <li class="jobs-listing">Comprehensive Health Insurance - Inpatient / Outpatient / Dental / Optical.</li>
                 <li class="jobs-listing">Flexible vacation.</li>
                 <li class="jobs-listing">All Risk Insurance.</li>
                 <li class="jobs-listing">Opportunity for company stock options.</li>
-            </ul><br>
-            <p class="job-desc-head">MORE ON SENDY</p><br>
+            </ul>
+            <!--<p class="job-desc-head">MORE ON SENDY</p><br>
             <p class="job-desc-par"><a @click="redirect">Sendy</a> is THE delivery partner for moving packages in Kenya. Sendy provides an app and web platform that enables individuals and small businesses to connect with Riders and Drivers and request on-demand or scheduled courier services anytime, any day, 24/7.<br><br>
-            Partnership is the foundation of what we do. By partnering with Riders, Drivers, and Small Businesses, we empower individuals to grow their livelihood. We do this by building a platform that is Simple, Transparent, and User Centric.</p><br>
-            <p class="job-desc-head">APPLY</p><br>
-            <p class="job-desc-par">Please forward your CV to <a href="mailto:jobs@sendy.co.ke" target="_blank">jobs@sendy.co.ke.</a></p>
+            Partnership is the foundation of what we do. By partnering with Riders, Drivers, and Small Businesses, we empower individuals to grow their livelihood. We do this by building a platform that is Simple, Transparent, and User Centric.</p><br>-->
+            <p class="job-desc-head">APPLY</p>
+            <p class="jobs-listing">Please forward your CV to <a href="mailto:jobs@sendy.co.ke" target="_blank" class="color-blue">jobs@sendy.co.ke.</a></p>
             
         </div>
         <Lower/>
