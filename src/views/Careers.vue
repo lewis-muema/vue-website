@@ -103,14 +103,13 @@ data() {
     windowWidth: null,
     jobs: [
         {position: 'Head of Partner Operations', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/headofpartneroperations'},
-        {position: 'Junior Operations Associate', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/junioroperationsassociate'},
-        {position: 'Senior Port Manager', location: 'Nairobi, Kenya', department: 'Sales', path: '/careers/seniorportmanager'},
-        {position: 'Client Relations Manager', location: 'Nairobi, Kenya', department: 'Sales', path: '/careers/clientrelationsmanager'},
-        {position: 'Android Engineer', location: 'Nairobi, Kenya', department: 'Tech', path: '/careers/androidengineer'},
-        {position: 'Data Analyst', location: 'Nairobi, Kenya', department: 'Growth Hack', path: '/careers/dataanalyst'},
-        {position: 'Quality Assurance Tester', location: 'Nairobi, Kenya', department: 'Tech', path: '/careers/qualityassurancetester'},
-        {position: 'Head Of Finance', location: 'Nairobi, Kenya', department: 'Finance', path: '/careers/headoffinance'},
-        {position: 'Kisumu City Manager', location: 'Kisumu, Kenya', department: 'Operations', path: '/careers/kisumucitymanager'}
+        {position: 'Operations Associate', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/operationsassociate'},
+        {position: 'Product Manager', location: 'Nairobi, Kenya', department: 'Product', path: '/careers/productmanager'},
+        {position: 'Marketing Associate', location: 'Uganda', department: 'Marketing', path: '/careers/MarketingAssociateUG'},
+        {position: 'Country General Manager', location: 'Uganda', department: 'Management', path: '/careers/countrygm'},
+        {position: 'Junior Support Manager', location: 'Uganda', department: 'Support', path: '/careers/jrsupportmanager'},
+        {position: 'Operations Associate', location: 'Uganda', department: 'Operations', path: '/careers/OperationsAssociateUG'},
+        {position: 'Customer & Partner Support - Country Lead', location: 'Uganda', department: 'Support', path: '/careers/customer&partnersupport'}
     ]
     }
 },
