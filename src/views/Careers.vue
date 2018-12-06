@@ -102,11 +102,11 @@ data() {
     parentName: 'Careers',
     windowWidth: null,
     jobs: [
-        {position: 'Head of Partner Operations', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/headofpartneroperations'},
+        //{position: 'Head of Partner Operations', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/headofpartneroperations'},
         {position: 'Operations Associate', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/operationsassociate'},
         {position: 'Product Manager', location: 'Nairobi, Kenya', department: 'Product', path: '/careers/productmanager'},
         {position: 'Marketing Associate', location: 'Uganda', department: 'Marketing', path: '/careers/MarketingAssociateUG'},
-        {position: 'Country General Manager', location: 'Uganda', department: 'Management', path: '/careers/countrygm'},
+        //{position: 'Country General Manager', location: 'Uganda', department: 'Management', path: '/careers/countrygm'},
         {position: 'Junior Support Manager', location: 'Uganda', department: 'Support', path: '/careers/jrsupportmanager'},
         {position: 'Operations Associate', location: 'Uganda', department: 'Operations', path: '/careers/OperationsAssociateUG'},
         {position: 'Customer & Partner Support - Country Lead', location: 'Uganda', department: 'Support', path: '/careers/customer&partnersupport'}
