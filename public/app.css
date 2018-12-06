@@ -1414,14 +1414,14 @@ a:hover {
     margin-bottom: -5px;
 }
 
-.jobs-container{
+.jobs-container {
     border-style: solid;
     border-width: 0.5px;
-    min-height: 550px;
     padding-top: 30px;
     margin-bottom: 50px;
     padding-right: 5%;
     padding-left: 5%;
+    padding-bottom: 40px;
 }
 
 .jobs-col, .jobs-bold{

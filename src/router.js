@@ -27,20 +27,6 @@ import Privacy from './views/Privacy'
 import DriverPrivacy from './views/DriverPrivacy'
 import HeadOfPartnerOperations from './views/careers/HeadOfPartnerOperations'
 import JuniorOperationsAssociate from './views/careers/JuniorOperationsAssociate'
-import accept from './components/accept';
-import approve from './components/approve';
-import apply from './components/apply';
-import blog from './components/blog';
-import confirm from './components/confirm';
-import fb from './components/fb';
-import growth_signup_with_phone from './components/growth_signup_with_phone';
-import invite from './components/invite';
-import letsgrow from './components/letsgrow';
-import onboard from './components/onboard';
-import pay from './components/pay';
-import rate from './components/rate';
-import track from './components/track';
-import verify from './components/verify';
 import Terms from './views/Terms';
 
 //import Enterprise from './views/Enterprise'
@@ -321,61 +307,140 @@ export default new Router({
     },
     { 
       path: '/track/:any',
-      component: track
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/sendyconnect/track/' + from.params.any}
+    },
+    { 
+      path: '/track/',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/sendyconnect/track/'}
     },
     { 
       path: '/invite/:any',
-      component: invite
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/invite/u/1/' + from.params.any}
+    },
+    { 
+      path: '/invite/',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/invite/u/1/'}
     },
     { 
       path: '/fb/:any',
-      component: fb
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/mcommerce/details/' + from.params.any}
+    },
+    { 
+      path: '/fb/',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/mcommerce/details/'}
     },
     { 
       path: '/rate/:any',
-      component: rate
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/rate/details/' + from.params.any}
+    },
+    { 
+      path: '/rate/',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/rate/details/'}
     },
     { 
       path: '/verify/:any',
-      component: verify
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/sendyconnect/receipt/' + from.params.any}
+    },
+    { 
+      path: '/verify/',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/sendyconnect/receipt/'}
     },
     { 
       path: '/onboard/:any',
-      component: onboard
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/onboard/' + from.params.any}
     },
     { 
       path: '/confirm/:any1/:any2',
-      component: confirm
+      beforeEnter(from){location.href = 'https://partner.sendyit.com/external/confirm/action/' + from.params.any1 + '/' + from.params.any2}
+    },
+    { 
+      path: '/confirm/',
+      beforeEnter(){location.href = 'https://partner.sendyit.com/external/confirm/action/'}
     },
     { 
       path: '/pay/:any',
-      component: pay
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/external_pay/index/' + from.params.any}
     },
     { 
-      path: '/apply/:any1',
-      component: apply
+      path: '/pay/',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/external_pay/index/'}
+    },
+    { 
+      path: '/apply/:any',
+      beforeEnter(from){location.href = 'https://partner.sendyit.com/onboarding_portal/' + from.params.any}
+    },
+    { 
+      path: '/riders/apply/:any',
+      beforeEnter(from){location.href = 'https://partner.sendyit.com/onboarding_portal/' + from.params.any}
+    },
+    { 
+      path: '/apply',
+      beforeEnter(){location.href = 'https://partner.sendyit.com/onboarding_portal/'}
+    },
+    { 
+      path: '/riders/apply',
+      beforeEnter(){location.href = 'https://partner.sendyit.com/onboarding_portal/'}
+    },
+    { 
+      path: '/partners/apply',
+      beforeEnter(){location.href = 'https://partner.sendyit.com/onboarding_portal/'}
     },
     { 
       path: '/approve/:any',
-      component: approve
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/confirm_order/index/' + from.params.any}
+    },
+    { 
+      path: '/approve/',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/confirm_order/index/'}
     },
     { 
       path: '/blog/:any',
-      component: blog
+      beforeEnter(from){location.href = 'https://medium.com/sendy-ke/' + from.params.any}
+    },
+    { 
+      path: '/blog',
+      beforeEnter(){location.href = 'https://medium.com/sendy-ke/'}
     },
     { 
       path: '/growth_signup_with_phone/:any',
-      component: growth_signup_with_phone
+      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/growth/' + from.params.any}
+    },
+    { 
+      path: '/growth_signup',
+      beforeEnter(){location.href = 'https://app.sendyit.com/biz/growth/'}
+    },
+    { 
+      path: '/growth_signup_test',
+      beforeEnter(){location.href = 'https://apptest.sendyit.com/biz/growth/'}
     },
     { 
       path: '/accept/:any',
-      component: accept
+      beforeEnter(from){location.href = 'https://partner.sendyit.com/driverequest/' + from.params.any}
     },
     { 
       path: '/letsgrow/:any',
-      component: letsgrow
+      beforeEnter(){location.href = 'https://share.hsforms.com/12uJ1FBGYRzeuKtjY6MaTeQ2y4yv'}
+    },
+    { 
+      path: '/ambassador',
+      beforeEnter(){location.href = 'https://eportal.sendyit.com/ambassador/'}
+    },
+    { 
+      path: '/ambassadors',
+      beforeEnter(){location.href = 'https://eportal.sendyit.com/ambassador/'}
+    },
+    { 
+      path: '/owners',
+      beforeEnter(){location.href = 'https://partner.sendyit.com/'}
+    },
+    { 
+      path: '/partner',
+      beforeEnter(){location.href = 'https://partner.sendyit.com/'}
+    },
+    { 
+      path: '/letsgrow',
+      beforeEnter(){location.href = 'https://share.hsforms.com/12uJ1FBGYRzeuKtjY6MaTeQ2y4yv'}
     }
-
   ],
   mode: 'history'
 });
