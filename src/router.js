@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueAnalytics from 'vue-analytics'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import API from './views/API.vue'
@@ -31,6 +32,12 @@ import Terms from './views/Terms';
 
 //import Enterprise from './views/Enterprise'
 //import Merchant from './views/Merchant'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-50235468-1',
+  linkers: ['sendyit.com','sendy.co.ke', 'growth.sendyit.com', 'app.sendyit.com']
+})
+
 
 Vue.use(Router)
 
