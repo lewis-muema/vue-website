@@ -29,7 +29,11 @@ export default {
         Lower
     },
     methods: {
-        
+        track () {
+      this.$ga.page('/API')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
+    }
     },
     computed: {
         nameDisplayer() {
@@ -47,6 +51,7 @@ export default {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
+    this.track()
     },
 }
 </script>

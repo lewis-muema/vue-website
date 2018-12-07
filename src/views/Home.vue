@@ -246,6 +246,7 @@ computed: {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
+    this.track()
     },
     methods: {
     handleResize() {
@@ -298,6 +299,11 @@ computed: {
         this.IOS = true
         this.android = false
         }
+    },
+    track () {
+      this.$ga.page('/Home')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
     }
     }
 }

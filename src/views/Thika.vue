@@ -37,13 +37,21 @@ mounted(){
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
+    this.track()
 },
 created() {
     this.$store.commit({
         type: 'changeParentName',
             pName: this.parentName
         }); 
+    },
+methods: {
+    track () {
+      this.$ga.page('/Thika')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
     }
+}
 }
 </script>
 

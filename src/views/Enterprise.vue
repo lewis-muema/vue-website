@@ -115,6 +115,7 @@ mounted(){
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
+    this.track()
 },
 created() {
     this.$store.commit({
@@ -140,6 +141,11 @@ created() {
     },
     redirect2(){
         window.location = "https://sendyit.com/partners?_ga=2.130357068.293005447.1538032536-678579193.1537173565"
+    },
+    track () {
+      this.$ga.page('/Enterprise')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
     }
 }
 }
