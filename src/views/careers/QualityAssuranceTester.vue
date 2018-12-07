@@ -93,6 +93,7 @@ created() {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
+    this.track()
     },
     methods: {
     handleResize() {
@@ -108,6 +109,11 @@ created() {
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"
+    },
+    track () {
+      this.$ga.page('/Quality Assurance Tester')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
     }
 }
 }

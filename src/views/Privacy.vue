@@ -174,6 +174,7 @@ created() {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
+    this.track()
     },
     methods: {
     handleResize() {
@@ -195,6 +196,11 @@ created() {
     },
     redirect3(){
         window.location = "http://sendyit.com"
+    },
+    track () {
+      this.$ga.page('/Privacy')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
     }
 }
 }

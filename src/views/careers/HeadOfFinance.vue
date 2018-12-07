@@ -116,6 +116,11 @@ created() {
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"
+    },
+    track () {
+      this.$ga.page('/Head of Finance')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
     }
 }
 }

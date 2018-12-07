@@ -157,8 +157,14 @@ created() {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
+    this.track()
     },
     methods: {
+    track () {
+      this.$ga.page('/Partners')
+      this.$ga.require('GTM-56KF6PL')
+      this.$ga.send('pageview')
+    },
     handleResize() {
       this.windowWidth = window.innerWidth - 20;
       var range = 2560 - window.innerWidth
