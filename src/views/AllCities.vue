@@ -84,7 +84,6 @@ created() {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
-    this.track()
     },
     methods: {
     handleResize() {
@@ -93,11 +92,6 @@ created() {
         var quotient = (range * 13.5)/1536
         this.newWidth = 100 - (2 *(19 - quotient))
         this.newLeft = 19 - quotient
-    },
-    track () {
-      this.$ga.page('/Cities')
-      this.$ga.require('GTM-56KF6PL')
-      this.$ga.send('pageview')
     }
     }
 }

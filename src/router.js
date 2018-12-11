@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import VueAnalytics from 'vue-analytics'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import API from './views/API.vue'
@@ -21,6 +20,7 @@ import ProductManager from './views/careers/ProductManager'
 import OperationsAssociate from './views/careers/OperationsAssociate'
 import MarketingAssociateUG from './views/careers/MarketingAssociateUG'
 import OperationsAssociateUG from './views/careers/OperationsAssociateUG'
+import OperationsLeadUG from './views/careers/OperationsLeadUG'
 import CPS from './views/careers/CPS'
 import JRsupport from './views/careers/JRsupport'
 import GMUG from './views/careers/GMUG'
@@ -33,16 +33,12 @@ import Terms from './views/Terms';
 //import Enterprise from './views/Enterprise'
 //import Merchant from './views/Merchant'
 
-Vue.use(VueAnalytics, {
-  id: 'UA-50235468-1',
-  linkers: ['sendyit.com','sendy.co.ke', 'growth.sendyit.com', 'app.sendyit.com']
-})
 
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+routes : [
     {
       path: '/',
       name: 'home',
@@ -182,6 +178,11 @@ export default new Router({
       path: '/careers/junioroperationsassociate',
       name: 'junioroperationsassociate',
       component: JuniorOperationsAssociate
+    },
+    {
+      path: '/careers/operationsleadug',
+      name: 'operationsleadug',
+      component: OperationsLeadUG
     },
     {
       path: '/e-commerce',

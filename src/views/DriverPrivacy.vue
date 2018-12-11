@@ -70,6 +70,8 @@
 <script>
 import Upper from './Upper';
 import Lower from './Lower';
+
+
 export default {
 components: {
     Upper,
@@ -103,7 +105,7 @@ created() {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
-    this.track()
+    this.mixTrackPage()
     },
     methods: {
     handleResize() {
@@ -126,10 +128,12 @@ created() {
     redirect3(){
         window.location = "http://sendyit.com"
     },
-    track () {
-      this.$ga.page('/Drivers Privacy')
-      this.$ga.require('GTM-56KF6PL')
-      this.$ga.send('pageview')
+    mixTrackPage(){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track("Driver Privacy Page", {
+    "landing page version": "website",
+    });
     }
 }
 }

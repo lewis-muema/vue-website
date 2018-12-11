@@ -127,7 +127,6 @@ created() {
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
     })
-    this.track()
     },
     methods: {
     handleResize() {
@@ -147,10 +146,12 @@ created() {
     redirect2(){
         window.location = "http://sendy.co.ke/terms"
     },
-    track () {
-      this.$ga.page('/Terms and Conditions')
-      this.$ga.require('GTM-56KF6PL')
-      this.$ga.send('pageview')
+    mixTrackPage(){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track("Terms and Conditions Page", {
+    "landing page version": "website",
+    });
     }
 }
 }

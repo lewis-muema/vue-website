@@ -101,8 +101,8 @@ created() {
     window.scrollTo(0, 0);
         this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
+        this.mixTrackPage()
     })
-    this.track()
     },
     methods: {
     handleResize() {
@@ -119,10 +119,12 @@ created() {
     redirect(){
         window.location = "http://www.sendy.co.ke"
     },
-    track () {
-      this.$ga.page('/Junior Support Manager UG')
-      this.$ga.require('GTM-56KF6PL')
-      this.$ga.send('pageview')
+    mixTrackPage(){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track("Junior Support Manager Page", {
+    "landing page version": "website",
+    });
     }
 }
 }

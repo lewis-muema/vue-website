@@ -103,6 +103,7 @@ data() {
     windowWidth: null,
     jobs: [
         {position: 'Country General Manager', location: 'Uganda', department: 'Management', path: '/careers/countrygm'},
+        {position: 'Operations Lead', location: 'Uganda', department: 'Operations', path: '/careers/operationsleadug'},
         //{position: 'Head of Partner Operations', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/headofpartneroperations'},
         {position: 'Operations Associate', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/operationsassociate'},
         {position: 'Product Manager', location: 'Nairobi, Kenya', department: 'Product', path: '/careers/productmanager'},
@@ -122,8 +123,8 @@ mounted(){
     window.scrollTo(0, 0);
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
+    this.mixTrackPage()
     })
-    this.track()
 },
 created() {
     this.$store.commit({
@@ -140,10 +141,19 @@ created() {
     handleResize() {
       this.windowWidth = window.innerWidth;
     },
-    track () {
-      this.$ga.page('/careers')
-      this.$ga.require('GTM-56KF6PL')
-      this.$ga.send('pageview')
+    mixTrackPage(){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track("Careers Page", {
+    "landing page version": "website",
+    });
+    },
+    mixTrackElements(data){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track(data, {
+    "landing page version": "website",
+    });
     }
     }
     

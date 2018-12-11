@@ -156,15 +156,10 @@ created() {
     window.scrollTo(0, 0);
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
+        this.mixTrackPage()
     })
-    this.track()
     },
     methods: {
-    track () {
-      this.$ga.page('/Partners')
-      this.$ga.require('GTM-56KF6PL')
-      this.$ga.send('pageview')
-    },
     handleResize() {
       this.windowWidth = window.innerWidth - 20;
       var range = 2560 - window.innerWidth
@@ -234,6 +229,13 @@ created() {
             this.totalAmount = null
             this.error = 'Please select a city'
         }
+    },
+    mixTrackPage(){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track("Partners Page", {
+    "landing page version": "website",
+    });
     }
     }
     
