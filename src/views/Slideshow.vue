@@ -31,8 +31,8 @@
             <p class="slideshow-comments-head color-white" v-if="parentName == 'Careers'">Ready To Step Up?</p>
             <p class="slideshow-comments-par color-white" v-if="parentName == 'Partners'">Partner with Sendy!</p>
             <p class="slideshow-comments-par color-white" v-if="parentName == 'Careers'">Exceed expectations, one<br> delivery at a time.</p>
-            <router-link to="/onboarding" ><div class="slideshow-comments-button bc-orange bg-orange centerY centerX flex open-sans color-white sbtn" v-if="parentName == 'Partners'" >APPLY NOW</div></router-link>
-            <div class="slideshow-comments-button bc-orange bg-orange  centerX centerY flex open-sans color-white sbtn" v-if="parentName == 'Careers'" @click="scrollDown">JOIN</div>
+            <router-link to="/onboarding" ><div class="slideshow-comments-button bc-orange bg-orange centerY centerX flex open-sans color-white sbtn" v-if="parentName == 'Partners'" @click="mixTrackElements('Apply Now')">APPLY NOW</div></router-link>
+            <div class="slideshow-comments-button bc-orange bg-orange  centerX centerY flex open-sans color-white sbtn" v-if="parentName == 'Careers'" @click="scrollDown; mixTrackElements('Join Sendy')">JOIN</div>
             </div>
             <div class="pointer-holder absolute flex centerX">
                 <div class="pointer" @click="first"><div class="filler" v-if="pos == '1'" ></div></div>
@@ -137,6 +137,13 @@ created() {
         if (normalizedTime < 1) window.requestAnimationFrame(step);
     }
     window.requestAnimationFrame(step);
+    },
+    mixTrackElements(data){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track(data, {
+    "landing page version": "website",
+    });
     }
     }
 }

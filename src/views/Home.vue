@@ -13,7 +13,7 @@
             <p class="vehicle relative color-white" >Got a vehicle?</p>
             </td></tr>
             <tr><td>
-            <button class="become-partner-button bg-orange flex centerX bottomY relative open-sans color-white bc-white" v-if="windowWidth > '768'" type="button"><router-link to="/partners" class="color-white">BECOME A PARTNER</router-link></button>
+            <button class="become-partner-button bg-orange flex centerX bottomY relative open-sans color-white bc-white" v-if="windowWidth > '768'" type="button"><router-link to="/partners" class="color-white" @click="mixTrackElements('Drive With Sendy'); send_ga_event('Drive with Sendy Top of the page - landing page - website');">BECOME A PARTNER</router-link></button>
             </td></tr>
         </table>
         </div>
@@ -245,8 +245,8 @@ computed: {
         window.scrollTo(0, 0);
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
+        this.mixTrackPage()
     })
-    this.track()
     },
     methods: {
     handleResize() {
@@ -283,7 +283,6 @@ computed: {
         else{
             this.imgWidth = 200 - quotient3
         }
-
     },
     redirect(){
         window.location = "http://www.sendy.co.ke"
@@ -300,10 +299,19 @@ computed: {
         this.android = false
         }
     },
-    track () {
-      this.$ga.page('/Home')
-      this.$ga.require('GTM-56KF6PL')
-      this.$ga.send('pageview')
+    mixTrackPage(){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track("HomePage", {
+    "landing page version": "website",
+    });
+    },
+    mixTrackElements(data){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track(data, {
+    "landing page version": "website",
+    });
     }
     }
 }

@@ -76,9 +76,9 @@
         </div>
     <span class= "arrows-biz relative flex centerX"><img src="https://images.sendyit.com/website/driver/right_scroll_orange.png?v=1LeOeCUTAAAAAGs99manIwc7kghOUdgkr_rnuoCE16" @click="next" class="arrow-right"></span>
     </div>
-    <router-link to="/getstarted" v-if="windowWidth > '768'"><div class="get-started-button-bottom bg-orange bc-orange open-sans color-white center-block flex centerX centerY" type="button">GET STARTED</div></router-link>
-    <img v-if="windowWidth <= '768' && android == true" src="https://images.sendyit.com/website/home/googleplayicon.png" class="lower-playstore-button center-block block">
-    <img v-if="windowWidth <= '768' && IOS == true" src="https://images.sendyit.com/website/home/appstoreicon.png" class="lower-appstore-button center-block block">
+    <router-link to="/getstarted" v-if="windowWidth > '768'"><div class="get-started-button-bottom bg-orange bc-orange open-sans color-white center-block flex centerX centerY" type="button" @click="mixTrackElements('Get Started Footer'); send_ga_event('Get started Bottom of the page - landing page - website');">GET STARTED</div></router-link>
+    <img v-if="windowWidth <= '768' && android == true" src="https://images.sendyit.com/website/home/googleplayicon.png" class="lower-playstore-button center-block block" @click="mixTrackElements('Google Play Link - bottom');">
+    <img v-if="windowWidth <= '768' && IOS == true" src="https://images.sendyit.com/website/home/appstoreicon.png" class="lower-appstore-button center-block block" @click="mixTrackElements('Apple App Store Link - bottom');">
     </div>
 </template>
 
@@ -187,6 +187,13 @@ export default {
         runall(){
             this.detectAndroid();
             this.detectIOS();
+        },
+        mixTrackElements(data){
+        var mixpanel = require('mixpanel-browser');
+        mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+        mixpanel.track(data, {
+        "landing page version": "website",
+        });
         }
     },
     computed: {
