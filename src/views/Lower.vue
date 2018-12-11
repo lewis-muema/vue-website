@@ -59,12 +59,12 @@
             </td></tr>
             <tr><td>
         <div class="apps-bar" v-if="windowWidth <= '430' && parentName == 'API'">
-            <span class="" v-if="android == true">
+            <span class="" v-if="android == true" @click="mixTrackElements('Google Play Link')">
                     <router-link to="/playstore">
                         <img class="playstore_home_view lower-playstore" src="https://images.sendyit.com/website/home/googleplayicon.png">
                     </router-link>
                     </span>
-                    <span class="" v-if="IOS == true">
+                    <span class="" v-if="IOS == true" @click="mixTrackElements('Apple App Store Link')">
                         <router-link to="/appstore">
                             <img class="appstore_home_view" src="https://images.sendyit.com/website/home/appstoreicon.png">
                         </router-link>
@@ -140,6 +140,13 @@ export default {
         this.web = true
 
     }
+    },
+    mixTrackElements(data){
+    var mixpanel = require('mixpanel-browser');
+    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
+    mixpanel.track(data, {
+    "landing page version": "website",
+    });
     }
     }
 
