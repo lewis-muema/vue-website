@@ -315,11 +315,11 @@ routes : [
     },
     { 
       path: '/track/:any',
-      beforeEnter(from){location.href = 'http://app.sendyit.com/orders/tracking/' + from.params.any}
+      beforeEnter(from){location.href = 'https://app.sendyit.com/orders/tracking/' + from.params.any}
     },
     { 
       path: '/track/',
-      beforeEnter(){location.href = 'http://app.sendyit.com/orders/tracking/'}
+      beforeEnter(){location.href = 'https://app.sendyit.com/orders/tracking/'}
     },
     { 
       path: '/invite/:any',
