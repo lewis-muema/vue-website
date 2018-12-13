@@ -315,11 +315,11 @@ routes : [
     },
     { 
       path: '/track/:any',
-      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/sendyconnect/track/' + from.params.any}
+      beforeEnter(from){location.href = 'https://app.sendyit.com/orders/tracking/' + from.params.any}
     },
     { 
       path: '/track/',
-      beforeEnter(){location.href = 'https://app.sendyit.com/biz/sendyconnect/track/'}
+      beforeEnter(){location.href = 'https://app.sendyit.com/orders/tracking/'}
     },
     { 
       path: '/invite/:any',
@@ -339,19 +339,19 @@ routes : [
     },
     { 
       path: '/rate/:any',
-      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/rate/details/' + from.params.any}
+      beforeEnter(from){location.href = 'https://app.sendyit.com/orders/rating/' + from.params.any}
     },
     { 
       path: '/rate/',
-      beforeEnter(){location.href = 'https://app.sendyit.com/biz/rate/details/'}
+      beforeEnter(){location.href = 'https://app.sendyit.com/orders/rating/'}
     },
     { 
       path: '/verify/:any',
-      beforeEnter(from){location.href = 'https://app.sendyit.com/biz/sendyconnect/receipt/' + from.params.any}
+      beforeEnter(from){location.href = 'https://oldapp.sendyit.com/biz/sendyconnect/receipt/' + from.params.any}
     },
     { 
       path: '/verify/',
-      beforeEnter(){location.href = 'https://app.sendyit.com/biz/sendyconnect/receipt/'}
+      beforeEnter(){location.href = 'https://oldapp.sendyit.com/biz/sendyconnect/receipt/'}
     },
     { 
       path: '/onboard/:any',
