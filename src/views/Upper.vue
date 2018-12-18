@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class ='section section__upper flex centerY'>
-            <img class ='section__upper_img relative' src='https://sendyit.com/include/bits/Sendy_logo_3.png' :style= "{left: newLeft + '%'}">
+            <img class ='section__upper_img relative' src='https://images.sendyit.com/website/home2/sendy-logo-3.png' :style= "{left: newLeft + '%'}">
             <div class="section__upper_container flex rightX absolute centerY" :style= "{ width: newWidth + '%' , right : newLeft + '%'}">
             <div class="solutions-link">
             <p class="sols-text color-blue">SOLUTIONS </p>
