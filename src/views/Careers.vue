@@ -103,6 +103,7 @@ data() {
     windowWidth: null,
     jobs: [
         {position: 'Country General Manager', location: 'Uganda', department: 'Management', path: '/careers/countrygm'},
+        {position: 'Marketing Associate', location: 'Uganda', department: 'Marketing', path: '/careers/marketingaccountantug'},
         {position: 'Operations Lead', location: 'Uganda', department: 'Operations', path: '/careers/operationsleadug'},
         //{position: 'Head of Partner Operations', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/headofpartneroperations'},
         {position: 'Operations Associate', location: 'Nairobi, Kenya', department: 'Operations', path: '/careers/operationsassociate'},
