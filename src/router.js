@@ -28,6 +28,7 @@ import Privacy from './views/Privacy'
 import DriverPrivacy from './views/DriverPrivacy'
 import HeadOfPartnerOperations from './views/careers/HeadOfPartnerOperations'
 import JuniorOperationsAssociate from './views/careers/JuniorOperationsAssociate'
+import ManagementAccountantUG from './views/careers/ManagementAccountantUG'
 import Terms from './views/Terms';
 
 //import Enterprise from './views/Enterprise'
@@ -183,6 +184,11 @@ routes : [
       path: '/careers/operationsleadug',
       name: 'operationsleadug',
       component: OperationsLeadUG
+    },
+    {
+      path: '/careers/managementaccountantug',
+      name: 'managementaccountantug',
+      component: ManagementAccountantUG
     },
     {
       path: '/e-commerce',
