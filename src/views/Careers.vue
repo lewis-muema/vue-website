@@ -102,6 +102,7 @@ data() {
     parentName: 'Careers',
     windowWidth: null,
     jobs: [
+        {position: 'Front End Engineer', location: 'Nairobi, Kenya', department: 'Tech', path: '/careers/frontendengineer'},
         {position: 'Country General Manager', location: 'Uganda', department: 'Management', path: '/careers/countrygm'},
         {position: 'Management Accountant', location: 'Uganda', department: 'Management', path: '/careers/managementaccountantug'},
         {position: 'Operations Lead', location: 'Uganda', department: 'Operations', path: '/careers/operationsleadug'},
