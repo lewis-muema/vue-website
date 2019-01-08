@@ -30,7 +30,9 @@ import HeadOfPartnerOperations from './views/careers/HeadOfPartnerOperations'
 import JuniorOperationsAssociate from './views/careers/JuniorOperationsAssociate'
 import ManagementAccountantUG from './views/careers/ManagementAccountantUG'
 import FrontendEngineer from './views/careers/FrontendEngineer'
-import Terms from './views/Terms';
+import Terms from './views/Terms'
+import PriceRequest from './views/Estimations'
+import PartnerEarnings from './views/Earnings'
 
 //import Enterprise from './views/Enterprise'
 //import Merchant from './views/Merchant'
@@ -197,6 +199,16 @@ routes : [
       component: FrontendEngineer
     },
     {
+      path: '/pricerequest',
+      name: 'pricerequest',
+      component: PriceRequest
+    },
+    {
+      path: '/earnings',
+      name: 'earnings',
+      component: PartnerEarnings
+    },
+    {
       path: '/e-commerce',
       //name: 'merchant',
       //component: Merchant
@@ -264,6 +276,7 @@ routes : [
       path: '/publicapi',
       beforeEnter() {location.href = 'https://sendypublicapi.docs.apiary.io/#'}
     },
+
 
 
 
