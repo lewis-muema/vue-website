@@ -5,6 +5,7 @@
      <!--start of home video section-->
     <homeVideo/>
      <!--start of partners section-->
+    
     <div class="partners-sect overflow bg-orange">
         <div class="partner-col grid">
         <div class="partner-row flex centerY">
@@ -23,6 +24,7 @@
         </div>
         </div>
     </div>
+    
     <!--start of enterprise section-->
     <!-- <div class="kitenge-divider"></div> -->
     <div class="enterprise-section grid centerY" :style= "{marginLeft: 'auto' , marginRight: 'auto' , width: secWidth + '%'}">
