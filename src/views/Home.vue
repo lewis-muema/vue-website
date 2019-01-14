@@ -5,7 +5,6 @@
      <!--start of home video section-->
     <homeVideo/>
      <!--start of partners section-->
-    
     <div class="partners-sect overflow bg-orange">
         <div class="partner-col grid">
         <div class="partner-row flex centerY">
