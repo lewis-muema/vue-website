@@ -3,7 +3,7 @@
         <Upper/>
         <div class="job-desc" :style= "{marginLeft: newLeft + '%' , marginRight: newLeft + '%'}">
             <p class="job-desc-head">QUALITY ASSURANCE TESTER</p><br>
-            <p class="job-desc-par">We are looking for a QA Tester to assess software quality through manual and automated testing. In this role, you should have a keen eye for detail and excellent communication skills. If you are also competent in executing test cases and are passionate about quality, we’d like to meet you.</p><br>
+            <p class="jobs-listing">We are looking for a QA Tester to assess software quality through manual and automated testing. In this role, you should have a keen eye for detail and excellent communication skills. If you are also competent in executing test cases and are passionate about quality, we’d like to meet you.</p><br>
             <p class="job-desc-head">RESPONSIBILITIES</p><br>
             <ul class="job-desc-par">
                 <li class="jobs-listing">Review and analyze system specifications.</li>
@@ -45,10 +45,10 @@
                 <li class="jobs-listing">All Risk Insurance - on any personal items which you choose to use for work valued over 15,000kes each - aka Computer, Tablet, and/or Phone.</li>
             </ul><br>
             <p class="job-desc-head">MORE ON SENDY</p><br>
-            <p class="job-desc-par"><a @click="redirect">Sendy</a> is THE delivery partner for moving packages in Kenya. Sendy provides an app and web platform that enables individuals and small businesses to connect with Riders and Drivers and request on-demand or scheduled courier services anytime, any day, 24/7.<br><br>
+            <p class="jobs-listing"><a @click="redirect" class="color-blue">Sendy</a> is THE delivery partner for moving packages in Kenya. Sendy provides an app and web platform that enables individuals and small businesses to connect with Riders and Drivers and request on-demand or scheduled courier services anytime, any day, 24/7.<br><br>
             Partnership is the foundation of what we do. By partnering with Riders, Drivers, and Small Businesses, we empower individuals to grow their livelihood. We do this by building a platform that is Simple, Transparent, and User Centric.</p><br>
             <p class="job-desc-head">APPLY</p><br>
-            <p class="job-desc-par">Please forward your CV to <a href="mailto:jobs@sendy.co.ke" target="_blank">jobs@sendy.co.ke.</a></p>
+            <p class="jobs-listing">Please forward your CV to <a href="mailto:jobs@sendy.co.ke" target="_blank" class="color-blue">jobs@sendy.co.ke.</a></p>
             
         </div>
         <Lower/>

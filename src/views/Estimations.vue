@@ -50,7 +50,8 @@ export default {
             sectionHeight: 280,
             btnval: "GET PRICE", 
             price_request_response: [],
-            loading: false       
+            loading: false,
+            sourceURL: null       
         }
     },
     methods: {
@@ -67,6 +68,7 @@ export default {
         });
         this.price_request_response = new_array
         this.loading = false
+        
     },
     getDistance() {
         /*global google*/
@@ -191,13 +193,13 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     created() {
         this.parentName = this.nameDisplayer
         window.addEventListener('resize', this.handleResize)
-            this.handleResize(); 
+        this.handleResize(); 
+        this.sourceURL = document.referrer;
     },
     destroyed() {
     window.removeEventListener('resize', this.handleResize)
     },
     mounted() {
-
         /*global google*/
     this.autocomplete = new google.maps.places.Autocomplete(
       (this.$refs.autocomplete),
@@ -245,84 +247,6 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     
   },
   computed: {
-      getPriceBike() {
-          pricebike1 = '0'
-          pricebike2 = '0'
-          var pricebike1 = (parseFloat(this.distance) * 27) + 297
-          if(pricebike1){
-              var pricebike2 = Math.ceil(pricebike1 / 5) * 5
-          }
-          else{
-             pricebike2 = '0'
-          }
-          
-          return pricebike2
-      },
-      getPricePickup() {
-          pricePickup1 = '0'
-          pricePickup2 = '0'
-          var pricePickup1 = (parseFloat(this.distance) * 45) + 1495
-          if(pricePickup1){
-              var pricePickup2 = Math.ceil(pricePickup1 / 5) * 5
-          }
-          else{
-             pricePickup2 = '0'
-          }
-          
-          return pricePickup2
-      },
-      getPriceVan() {
-          priceVan1 = '0'
-          priceVan2 = '0'
-          var priceVan1 = (parseFloat(this.distance) * 45) + 1495
-          if(priceVan1){
-              var priceVan2 = Math.ceil(priceVan1 / 5) * 5
-          }
-          else{
-             priceVan2 = '0'
-          }
-          
-          return priceVan2
-      },
-      getPrice3t() {
-          price3t1 = '0'
-          price3t2 = '0'
-          var price3t1 = (parseFloat(this.distance) * 45) + 5145
-          if(price3t1){
-              var price3t2 = Math.ceil(price3t1 / 5) * 5
-          }
-          else{
-             price3t2 = '0'
-          }
-          
-          return price3t2
-      },
-      getPrice5t() {
-          price5t1 = '0'
-          price5t2 = '0'
-          var price5t1 = (parseFloat(this.distance) * 54) + 5633
-          if(price5t1){
-              var price5t2 = Math.ceil(price5t1 / 5) * 5
-          }
-          else{
-             price5t2 = '0'
-          }
-          
-          return price5t2
-      },
-      getPrice10t() {
-          price10t1 = '0'
-          price10t2 = '0'
-          var price10t1 = (parseFloat(this.distance) * 63) + 6422
-          if(price10t1){
-              var price10t2 = Math.ceil(price10t1 / 5) * 5 
-          }
-          else{
-             price10t2 = '0'
-          }
-          
-          return price10t2
-      }
   }
 }
 </script>
