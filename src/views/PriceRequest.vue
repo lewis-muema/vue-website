@@ -47,8 +47,7 @@ export default {
             sectionHeight: 280,
             btnval: "GET PRICE", 
             price_request_response: [],
-            loading: false,
-            sourceURL: null       
+            loading: false     
         }
     },
     methods: {
@@ -64,10 +63,7 @@ export default {
             });
         });
         this.price_request_response = new_array
-        this.loading = false
-        if(document.referrer){
-            window.parent.postMessage( "800" ,this.sourceURL);
-        }        
+        this.loading = false      
     },
     getDistance() {
         /*global google*/
@@ -243,9 +239,7 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     
     this.getDistance()
     });
-    if(document.referrer){
-        window.parent.postMessage(document.body.scrollHeight ,this.sourceURL);
-    }
+
     
   },
   computed: {
