@@ -122,6 +122,10 @@ body{
 .center-text{
     text-align: center;
 }
+
+.sans-pro{
+    font-family: 'Source Sans Pro', sans-serif;
+}
 /*blocks*********************************************************/
 
 /*elements*************************************************************************/
@@ -419,6 +423,14 @@ a:hover {
     opacity: 0;
   }
 
+.estimations-holder{
+    padding-top: 60px;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    min-height: 150px;
+}
+
 .vendor{
     margin-left: 15px;
     font-size: 20px;
@@ -432,7 +444,6 @@ a:hover {
 }
 
 .form-container{
-    top: 65px;
     width: 80%;
     font-size: 13px;
     grid-template-rows: 50px;
@@ -440,6 +451,7 @@ a:hover {
     margin-right: 10%;
     display: grid;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .est-input {
@@ -498,9 +510,7 @@ a:hover {
 }
 
 .price-request-row{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 100%;
 }
 
 .bold{
