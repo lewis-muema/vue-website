@@ -31,7 +31,7 @@ import JuniorOperationsAssociate from './views/careers/JuniorOperationsAssociate
 import ManagementAccountantUG from './views/careers/ManagementAccountantUG'
 import FrontendEngineer from './views/careers/FrontendEngineer'
 import Terms from './views/Terms'
-import PriceRequest from './views/Estimations'
+import PriceRequest from './views/PriceRequest2'
 import PartnerEarnings from './views/Earnings'
 
 //import Enterprise from './views/Enterprise'
@@ -221,8 +221,12 @@ routes : [
       beforeEnter() {location.href = 'https://growth.sendyit.com/enterprise'}
     },
     {
+      path: '/login',
+      beforeEnter() {location.href = 'https://app.sendyit.com/auth/'}
+    },
+    {
       path: '/signup',
-      beforeEnter() {location.href = 'https://app.sendyit.com/biz/sendy'}
+      beforeEnter() {location.href = 'https://app.sendyit.com/auth/sign_up/'}
     },
     {
       path: '/getstarted',
