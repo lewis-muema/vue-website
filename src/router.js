@@ -368,11 +368,11 @@ routes : [
     },
     { 
       path: '/rate/:any',
-      beforeEnter(from){location.href = 'https://app.sendyit.com/orders/rating/' + from.params.any}
+      beforeEnter(from){location.href = 'https://app.sendyit.com/external/rating/' + from.params.any}
     },
     { 
       path: '/rate/',
-      beforeEnter(){location.href = 'https://app.sendyit.com/orders/rating/'}
+      beforeEnter(){location.href = 'https://app.sendyit.com//external/rating/'}
     },
     { 
       path: '/verify/:any',
