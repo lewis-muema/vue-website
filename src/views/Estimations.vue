@@ -1,7 +1,7 @@
 <template>
     <div class="estimations-section bg-blue">
             <p class="price-header relative open-sans color-white center-text">Get a price estimate</p>
-        <pricerequest/>
+        <pricerequest/><!--call the imported component-->
     </div>
 </template>
 
