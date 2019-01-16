@@ -1,16 +1,15 @@
 <template>
     <div class = "earnings flex centerX centerY">
         <div class="earnings-container">
-        <p class="earnings-head center-text">How much can you make with sendy?</p>
         <div class="selectors grid">
-        <select class="selector-1 open-sans">
+        <select class="selector-1 sans-pro">
             <option value="City">City</option>
             <option value="Nairobi">Nairobi</option>
             <option value="Mombasa">Mombasa</option>
             <option value="Kisumu">Kisumu</option>
             <option value="Thika">Thika</option>
         </select>
-        <select class="selector-2 open-sans">
+        <select class="selector-2 sans-pro">
             <option value="none">Vehicle</option>
             <option value="Bike">Motorcycle</option>
             <option value="Tuktuk">Tuk-tuk</option>
@@ -22,7 +21,7 @@
             <option value="Fourteentruck">14T Truck</option>
             <option value="Twoseventruck">27T Truck</option>
         </select>
-        <select class="selector-3 open-sans" >
+        <select class="selector-3 sans-pro" >
             <option value= 0>Time</option>
             <option value= 1>1 week</option>
             <option value= 4>1 month</option>
@@ -31,11 +30,11 @@
             <option value= 154>1 year</option>
         </select>
         <div class="selector-4">
-        <button class="calculate-earnings color-white bg-orange bc-orange block center-block open-sans" @click="calculate">calculate</button>
+        <button class="calculate-earnings color-white bg-orange bc-orange block center-block sans-pro" @click="calculate">calculate</button>
         </div>
         </div>
-        <p class= "riders-pay-light center-text" v-if="totalAmount !== null">KES <span class="riders-pay"> &nbsp;{{ totalAmount }} /-</span> &nbsp; total</p>
-        <p class= "center-text color-orange" v-if="error !== null">{{ error }}</p>
+        <p class= "riders-pay-light center-text sans-pro" v-if="totalAmount !== null">KES <span class="riders-pay"> &nbsp;{{ totalAmount }} /-</span> &nbsp; total</p>
+        <p class= "center-text color-orange sans-pro" v-if="error !== null">{{ error }}</p>
         </div>
     </div>
 </template>
