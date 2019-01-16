@@ -372,7 +372,7 @@ routes : [
     },
     { 
       path: '/rate/',
-      beforeEnter(){location.href = 'https://app.sendyit.com//external/rating/'}
+      beforeEnter(){location.href = 'https://app.sendyit.com/external/rating/'}
     },
     { 
       path: '/verify/:any',
