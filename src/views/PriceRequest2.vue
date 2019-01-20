@@ -1,10 +1,18 @@
 <template>
-    <div class="estimations-holder bg-blue">
-            <div class="form-container open-sans grid">
+    <div class="estimations-holder-2 bg-blue" >
+            <div class="form-container open-sans grid" v-if="this.windowWidth > 1200">
                 <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the pick up location" id="pickup_name">
                         <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the destination" id="dest_name">
                         <button class="price-submit bg-orange bc-orange sans-pro center-block block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
                     <div class="price-loading bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
+                        <img class="glyphicon-refresh-animate"  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;">
+                    </div>
+            </div>
+            <div class="form-container open-sans grid" v-if="this.windowWidth <= 1200">
+                <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the pick up location" id="pickup_name">
+                        <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the destination" id="dest_name">
+                        <button class="price-submit-2 bg-orange bc-orange open-sans center-block block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
+                    <div class="price-loading-2 bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
                         <img class="glyphicon-refresh-animate"  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;">
                     </div>
             </div>
@@ -48,7 +56,8 @@ export default {
             btnval: "GET PRICE", 
             price_request_response: [],
             loading: false,
-            sourceURL: null       
+            sourceURL: null,
+            windowWidth: null     
         }
     },
     methods: {
@@ -65,11 +74,34 @@ export default {
         });
         this.price_request_response = new_array
         this.loading = false
+        this.btnval = "CLOSE"
         if(document.referrer){
-            window.parent.postMessage( "800" ,this.sourceURL);
-        }        
+            if(this.windowWidth > 1200){
+                if(this.price_request_response.length < 7){
+                    window.parent.postMessage( "800" ,this.sourceURL);
+                }
+                else{
+                    window.parent.postMessage( "970" ,this.sourceURL);
+                }
+                
+            }
+            else{
+                if(this.price_request_response.length < 6){
+                    window.parent.postMessage( "1410" ,this.sourceURL);
+                }
+                else if(this.price_request_response.length == 6){
+                    window.parent.postMessage( "1630" ,this.sourceURL);
+                }
+                else {
+                    window.parent.postMessage( "1830" ,this.sourceURL);
+                }
+            }
+        }      
     },
     getDistance() {
+        if(document.referrer){
+        window.parent.postMessage("285" ,this.sourceURL);
+        }
         /*global google*/
         var originLat = parseFloat(this.latPick)
         var originLon = parseFloat(this.lonPick)
@@ -169,8 +201,11 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     },
     close() {
         if(this.btnval == 'CLOSE'){
-            this.distance = 0
             this.btnval = 'GET PRICE'
+            this.price_request_response = []
+            if(document.referrer){
+                window.parent.postMessage("285" ,this.sourceURL);
+            }
         }
         else if(this.btnval == 'GET PRICE'){
             this.getDistance()
@@ -178,7 +213,7 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
         }
     },
     handleResize() {
-        //this.windowWidth = window.innerWidth;
+        this.windowWidth = window.innerWidth;
         //var range = 2560 - this.windowWidth
         //var quotient = (range * 13.5)/1536
         //this.newLeft = 19 - quotient
@@ -246,7 +281,6 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     if(document.referrer){
         window.parent.postMessage(document.body.scrollHeight ,this.sourceURL);
     }
-    
   },
   computed: {
 

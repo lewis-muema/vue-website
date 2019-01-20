@@ -8,6 +8,7 @@
                         <img class="glyphicon-refresh-animate"  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;">
                     </div>
             </div>
+
             <!--<p class="dist relative color-white" v-if="distance < 0">{{ distance }} Kms</p>-->
             <transition name="fade">
             <div class="display-dist" v-if="Array.isArray(price_request_response) && loading == false">
@@ -165,8 +166,8 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     },
     close() {
         if(this.btnval == 'CLOSE'){
-            this.distance = 0
             this.btnval = 'GET PRICE'
+            this.price_request_response = []
         }
         else if(this.btnval == 'GET PRICE'){
             this.getDistance()
