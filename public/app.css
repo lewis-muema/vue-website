@@ -444,6 +444,12 @@ a:hover {
     min-height: 150px;
 }
 
+#est{
+    background-color: white;
+    border-radius: 10px;
+    padding: 5%;
+}
+
 .estimations-holder-2{
     min-height: 225px;
 }
@@ -1454,9 +1460,6 @@ a:hover {
 
 .jobs{
     padding-top: 50px;
-    padding-left: 10%;
-    padding-right: 10%;
-    width: 80%;
 }
 
 .montage-row{
@@ -1495,7 +1498,7 @@ a:hover {
 
 .jobs-head{
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 800;
     margin-top: 15px;
     margin-bottom: 15px;
