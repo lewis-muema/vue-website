@@ -61,9 +61,9 @@
                 </div>
             </div>
         </div>
-        <div class="jobs">
-            <p class="jobs-head">Jobs</p>
-            <iframe id="est" style="width:100%;" scrolling= no  frameborder="0" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home/recruiterbox.html" ></iframe>
+        <div class="jobs bg-orange">
+            <p class="jobs-head color-white">Job Openings</p>
+            <iframe id="est" style="width:90%;" scrolling= no  frameborder="0" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home/recruiterbox.html" ></iframe>
             <!--<div class="jobs-container">
                 <p class="jobs-head">Jobs</p>
                     <p class="jobs-bold flex centerY">Position</p>
