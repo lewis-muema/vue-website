@@ -61,9 +61,10 @@
                 </div>
             </div>
         </div>
-        <div class="jobs">
-            
-            <div class="jobs-container">
+        <div class="jobs bg-orange">
+            <p class="jobs-head color-white">Job Openings</p>
+            <iframe id="est" style="width:90%;" scrolling= no  frameborder="0" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home/recruiterbox.html" ></iframe>
+            <!--<div class="jobs-container">
                 <p class="jobs-head">Jobs</p>
                     <p class="jobs-bold flex centerY">Position</p>
                     <p class="jobs-bold flex centerY jobs-loc" v-if="windowWidth > 430">Location</p>
@@ -80,7 +81,7 @@
                     </span>
                     </div>
                     
-                </div>
+                </div>-->
         </div>
         <Lower/>
         <div class="kitenge-divider"></div>
@@ -126,39 +127,44 @@ mounted(){
     window.scrollTo(0, 0);
     this.$nextTick(function () {
         document.dispatchEvent(new Event('custom-render-trigger'))
-    this.mixTrackPage()
+        this.mixTrackPage()
     })
+    window.addEventListener('message', alerter, false);
+        function alerter(event){
+            var myMsg = event.data;
+            document.getElementById('est').style.height = myMsg + 'px'     
+        }
 },
 created() {
     this.$store.commit({
         type: 'changeParentName',
-            pName: this.parentName
-        }); 
+        pName: this.parentName
+    }); 
     window.addEventListener('resize', this.handleResize)
-    this.handleResize();
-    },
-     destroyed() {
+        this.handleResize();
+},
+destroyed() {
     window.removeEventListener('resize', this.handleResize)
-    },
-    methods: {
+},
+methods: {
     handleResize() {
-      this.windowWidth = window.innerWidth;
+        this.windowWidth = window.innerWidth;
     },
     mixTrackPage(){
-    var mixpanel = require('mixpanel-browser');
-    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
-    mixpanel.track("Careers Page", {
-    "landing page version": "website",
-    });
+        var mixpanel = require('mixpanel-browser');
+        mixpanel.init('44f45c8f1e756ba049e6284def96ac7f');
+        mixpanel.track('Careers Page', {
+            'landing page version': 'website',
+        });
     },
     mixTrackElements(data){
-    var mixpanel = require('mixpanel-browser');
-    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
-    mixpanel.track(data, {
-    "landing page version": "website",
-    });
+        var mixpanel = require('mixpanel-browser');
+        mixpanel.init('44f45c8f1e756ba049e6284def96ac7f');
+        mixpanel.track(data, {
+            'landing page version': 'website',
+        });
     }
-    }
+}
     
 }
 </script>
