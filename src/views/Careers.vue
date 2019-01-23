@@ -61,9 +61,12 @@
                 </div>
             </div>
         </div>
-        <div class="jobs bg-orange">
+        <div class="jobs bg-orange" :style = "{width : sectionWidth + '%', paddingLeft : sectionMargin + '%', paddingRight : sectionMargin + '%'}" >
             <p class="jobs-head color-white">Job Openings</p>
-            <iframe id="est" style="width:90%;" scrolling= no  frameborder="0" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home/recruiterbox.html" ></iframe>
+
+            <iframe id="est" v-if="windowWidth > 425" style="width:90%;" scrolling= no  frameborder="0" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home/recruiterbox.html" ></iframe>
+            <iframe id="est" v-if="windowWidth <= 425 && windowWidth > 320" style="width:90%;" scrolling= no  frameborder="0" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home/recruiterbox-mobi.html" ></iframe>
+            <iframe id="est" v-if="windowWidth <= 320" style="width:90%;" scrolling= no  frameborder="0" src="https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/home/recruiterbox-mobi-2.html" ></iframe>
             <!--<div class="jobs-container">
                 <p class="jobs-head">Jobs</p>
                     <p class="jobs-bold flex centerY">Position</p>
@@ -115,7 +118,9 @@ data() {
         {position: 'Junior Support Manager', location: 'Uganda', department: 'Support', path: '/careers/jrsupportmanager'},
         {position: 'Operations Associate', location: 'Uganda', department: 'Operations', path: '/careers/OperationsAssociateUG'},
         {position: 'Customer & Partner Support - Country Lead', location: 'Uganda', department: 'Support', path: '/careers/customer&partnersupport'}
-    ]
+    ],
+    sectionWidth: null,
+    sectionMargin: null
     }
 },
 computed: {
@@ -149,6 +154,14 @@ destroyed() {
 methods: {
     handleResize() {
         this.windowWidth = window.innerWidth;
+        if(this.windowWidth > 425){
+            this.sectionWidth = 50
+            this.sectionMargin = 25
+        }
+        else if(this.windowWidth <= 425){
+            this.sectionWidth = 70
+            this.sectionMargin = 15
+        }
     },
     mixTrackPage(){
         var mixpanel = require('mixpanel-browser');
