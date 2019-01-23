@@ -1,5 +1,5 @@
 <template>
-    <div class = "earnings flex centerX centerY">
+    <div class = "earnings flex centerX centerY bg-orange">
         <div class="earnings-container">
         <div class="selectors grid">
         <select class="selector-1 sans-pro">
@@ -30,11 +30,11 @@
             <option value= 154>1 year</option>
         </select>
         <div class="selector-4">
-        <button class="calculate-earnings color-white bg-orange bc-orange block center-block sans-pro" @click="calculate">calculate</button>
+        <button class="calculate-earnings color-white bg-blue bc-blue block center-block sans-pro" @click="calculate">calculate</button>
         </div>
         </div>
-        <p class= "riders-pay-light center-text sans-pro" v-if="totalAmount !== null">KES <span class="riders-pay"> &nbsp;{{ totalAmount }} /-</span> &nbsp; total</p>
-        <p class= "center-text color-orange sans-pro" v-if="error !== null">{{ error }}</p>
+        <p class= "riders-pay-light center-text sans-pro color-white" v-if="totalAmount !== null">KES <span class="riders-pay"> &nbsp;{{ totalAmount }} /-</span> &nbsp; total</p>
+        <p class= "center-text color-white sans-pro" v-if="error !== null">{{ error }}</p>
         </div>
     </div>
 </template>
