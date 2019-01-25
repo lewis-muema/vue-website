@@ -1271,9 +1271,7 @@ a:hover {
 
 .selectors{
     grid-template-rows: 65px;
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 100%;
 }
 
 .selector-1, .selector-2, .selector-3{
