@@ -17,7 +17,7 @@
             <router-link to="/careers" class="lower-links">Careers</router-link><br>
             <router-link to="/blogpage" class="lower-links">Blog</router-link><br>
             <router-link to="/partners" class="lower-links">Drivers</router-link><br>
-            <router-link to="/driverslogin" class="lower-links">Driver login</router-link>
+            <router-link to="/driverslogin" class="lower-links">Owners login</router-link>
         </div>
         <div class="lower-cols">
             <p class="lower-headers color-white open-sans">Contact</p>

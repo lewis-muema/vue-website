@@ -81,6 +81,10 @@ body{
     border-color: #f57f20;
     border-style: solid;
 }
+.orange-hover:hover{
+    transition-duration: 0.2s;
+    background-color: #BC5000;
+}
 .color-blue{
     color: #1b7fc3;
 }
@@ -469,7 +473,7 @@ a:hover {
 .form-container{
     width: 80%;
     font-size: 13px;
-    grid-template-rows: 50px;
+    grid-template-rows: 40px;
     margin-left: 10%;
     margin-right: 10%;
     display: grid;
@@ -479,11 +483,11 @@ a:hover {
 
 .est-input {
     grid-column: span 4;
-    height: 40px;
+    height: 97%;
     border-radius: 5px;
     margin-left: 5%;
-    font-size: 13px;
-    padding-left: 9px;
+    font-size: 14px;
+    padding-left: 16px;
 }
 
 .est-input-2 {
@@ -491,21 +495,22 @@ a:hover {
     height: 40px;
     border-radius: 5px;
     margin-left: 10%;
-    font-size: 13px;
-    padding-left: 9px;
+    font-size: 14px;
+    padding-left: 16px;
     width: 80%;
     margin-bottom: 30px;
 }
 
-.price-submit{
+.price-submit {
     border-style: solid;
     border-radius: 5px;
-    width: 150px;
-    height: 45px;
+    width: 80%;
+    height: 100%;
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 100;
     grid-column: span 4;
+    margin-left: 5%;
 }
 
 .price-submit-2{
@@ -517,6 +522,8 @@ a:hover {
     text-transform: uppercase;
     font-weight: 100;
     grid-column: span 12;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .dist{
@@ -1275,9 +1282,9 @@ a:hover {
 }
 
 .selector-1, .selector-2, .selector-3{
-    height: 45px;
+    height: 40px;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 14px;
     border-style: solid;
     background-color: #fdfdfd;
     grid-column: span 3;
@@ -1285,6 +1292,10 @@ a:hover {
     border-color: #63a5a578;
     border-radius: 5px;
 
+}
+
+.selectors option{
+    font-size: 14px;
 }
 
 .riders-pay{
@@ -1306,10 +1317,10 @@ a:hover {
 
 .calculate-earnings{
     width: 130px;
-    height: 45px;
+    height: 40px;
     border-radius: 4px;
     font-weight: 300;
-    font-size: 19px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 

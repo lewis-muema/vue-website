@@ -3,7 +3,7 @@
             <div class="form-container open-sans grid" v-if="this.windowWidth > 1200">
                 <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the pick up location" id="pickup_name">
                         <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the destination" id="dest_name">
-                        <button class="price-submit bg-orange bc-orange sans-pro center-block block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
+                        <button class="price-submit bg-orange bc-orange sans-pro block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
                     <div class="price-loading bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
                         <img class="glyphicon-refresh-animate"  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;">
                     </div>
@@ -11,7 +11,7 @@
             <div class="form-container open-sans grid" v-if="this.windowWidth <= 1200">
                 <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the pick up location" id="pickup_name">
                         <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the destination" id="dest_name">
-                        <button class="price-submit-2 bg-orange bc-orange open-sans center-block block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
+                        <button class="price-submit-2 bg-orange bc-orange open-sans block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
                     <div class="price-loading-2 bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
                         <img class="glyphicon-refresh-animate"  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;">
                     </div>
@@ -62,19 +62,19 @@ export default {
     },
     methods: {
     getVendor(id){
-        return 'https://images.sendyit.com/website/home2/' + id + '.png'
+        return 'https://images.sendyit.com/website/home2/' + id + '.png';
     },
     transform_response(response){
         let new_array = [];
         response.values.economy_price_tiers.forEach(function(data){
             data.price_tiers.forEach(function(item){
                 console.log('item',item);
-                new_array.push(item)
+                new_array.push(item);
             });
         });
-        this.price_request_response = new_array
-        this.loading = false
-        this.btnval = "CLOSE"
+        this.price_request_response = new_array;
+        this.loading = false;
+        this.btnval = "CLOSE";
         if(document.referrer){
             if(this.windowWidth > 1200){
                 if(this.price_request_response.length < 7){
@@ -103,17 +103,15 @@ export default {
         window.parent.postMessage("285" ,this.sourceURL);
         }
         /*global google*/
-        var originLat = parseFloat(this.latPick)
-        var originLon = parseFloat(this.lonPick)
-        var destLat = parseFloat(this.latDest)
-        var destLon = parseFloat(this.lonDest)
-        var pick_points = originLat + ',' + originLon
-        var dest_points = destLat + ',' + destLon
-        //var p1 = new google.maps.LatLng(originLat, originLon);
-        //var p2 = new google.maps.LatLng(destLat, destLon);
-        var pickup_name = document.getElementById('pickup_name').value
-        var dest_name = document.getElementById('dest_name').value
-        var test_obj = {
+        let originLat = parseFloat(this.latPick);
+        let originLon = parseFloat(this.lonPick);
+        let destLat = parseFloat(this.latDest);
+        let destLon = parseFloat(this.lonDest);
+        let pick_points = originLat + ',' + originLon;
+        let dest_points = destLat + ',' + destLon;
+        let pickup_name = document.getElementById('pickup_name').value;
+        let dest_name = document.getElementById('dest_name').value;
+        let test_obj = {
                 "path" : [
                 {
                     "name" : pickup_name,
@@ -155,7 +153,7 @@ export default {
             
         }
         
-var payload = {
+let payload = {
   "values": {
     "path": (JSON.stringify(test_obj)),
     "name": "Sendy Finance",
@@ -180,7 +178,7 @@ var payload = {
   }
 }
 const axios = require('axios');
-this.loading = true
+this.loading = true;
 let self = this;
 
 axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multiple', (payload))
@@ -191,47 +189,36 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
   })
   .catch(function (error) {
     console.log(error);
-    self.loading = false
+    self.loading = false;
   });
-
-       // var length = (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2)
-       // this.distance = length
-       // this.btnval = 'CLOSE'
        
     },
     close() {
         if(this.btnval == 'CLOSE'){
-            this.btnval = 'GET PRICE'
-            this.price_request_response = []
+            this.btnval = 'GET PRICE';
+            this.price_request_response = [];
             if(document.referrer){
                 window.parent.postMessage("285" ,this.sourceURL);
             }
         }
         else if(this.btnval == 'GET PRICE'){
-            this.getDistance()
-            this.btnval = 'CLOSE'
+            this.getDistance();
+            this.btnval = 'CLOSE';
         }
     },
     handleResize() {
         this.windowWidth = window.innerWidth;
-        //var range = 2560 - this.windowWidth
-        //var quotient = (range * 13.5)/1536
-        //this.newLeft = 19 - quotient
-        //var quotient3 = (range * 20)/1120
-        //this.newRight = 85.5 - quotient3
-        //var quotient2 = (range * 19)/1120
-        //this.newWidth = 35 + quotient2
     }
     },
     
     created() {
-        this.parentName = this.nameDisplayer
-        window.addEventListener('resize', this.handleResize)
+        this.parentName = this.nameDisplayer;
+        window.addEventListener('resize', this.handleResize);
         this.handleResize(); 
         this.sourceURL = document.referrer;
     },
     destroyed() {
-    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener('resize', this.handleResize);
     },
     mounted() {
     /*global google*/
@@ -243,16 +230,16 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
             {'country': ['ke']});
     
     this.autocomplete.addListener('place_changed', () => {
-    this.place = this.autocomplete.getPlace()
-    this.latPick = this.place.geometry.location.lat()
-    this.lonPick = this.place.geometry.location.lng()
-    var firstword = this.place.name.replace(/ .*/,'');
-    var included = this.place.formatted_address.includes(firstword);
-    if (included == true){
-        this.inputPick = this.place.formatted_address
+    this.place = this.autocomplete.getPlace();
+    this.latPick = this.place.geometry.location.lat();
+    this.lonPick = this.place.geometry.location.lng();
+    let firstword = this.place.name.replace(/ .*/,'');
+    let included = this.place.formatted_address.includes(firstword);
+    if (included){
+        this.inputPick = this.place.formatted_address;
     }
     else{
-        this.inputPick = this.place.name + ', ' + this.place.formatted_address
+        this.inputPick = this.place.name + ', ' + this.place.formatted_address;
     }
     });
 
@@ -264,19 +251,19 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
             {'country': ['ke']});
     
     this.autocomplete1.addListener('place_changed', () => {
-    this.dest = this.autocomplete1.getPlace()
-    this.latDest = this.dest.geometry.location.lat()
-    this.lonDest = this.dest.geometry.location.lng()
-    var firstword1 = this.dest.name.replace(/ .*/,'');
-    var include = this.dest.formatted_address.includes(firstword1);
-    if(include == true){
-        this.inputDest = this.dest.formatted_address
+    this.dest = this.autocomplete1.getPlace();
+    this.latDest = this.dest.geometry.location.lat();
+    this.lonDest = this.dest.geometry.location.lng();
+    let firstword1 = this.dest.name.replace(/ .*/,'');
+    let include = this.dest.formatted_address.includes(firstword1);
+    if(include){
+        this.inputDest = this.dest.formatted_address;
     }
     else{
-        this.inputDest = this.dest.name + ', ' + this.dest.formatted_address
+        this.inputDest = this.dest.name + ', ' + this.dest.formatted_address;
     }
     
-    this.getDistance()
+    this.getDistance();
     });
     if(document.referrer){
         window.parent.postMessage(document.body.scrollHeight ,this.sourceURL);
