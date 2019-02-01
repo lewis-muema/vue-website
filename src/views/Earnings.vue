@@ -57,15 +57,15 @@ data() {
 },
 methods: {
     calculate(){
-        var city = document.getElementsByClassName('selector-1')
-        var vendor = document.getElementsByClassName('selector-2')
-        var period = document.getElementsByClassName('selector-3')
-        var namer = vendor[0].value
+        const city = document.getElementsByClassName('selector-1')
+        const vendor = document.getElementsByClassName('selector-2')
+        const period = document.getElementsByClassName('selector-3')
+        const namer = vendor[0].value
         if( city[0].value == 'Nairobi' || city[0].value == 'Thika'){
             if(namer !== 'none'){
                 if(period[0].value > 0){
-                    var total = eval('this.vendors1.' + namer)
-                    var newTotal = period[0].value * total
+                    let total = eval('this.vendors1.' + namer)
+                    let newTotal = period[0].value * total
                     this.error = null
                     this.totalAmount = newTotal
                 }
@@ -82,8 +82,8 @@ methods: {
         else if(city[0].value == 'Mombasa' || city[0].value == 'Kisumu'){
             if(namer !== 'none'){
                 if(period[0].value > 0){
-                    var total2 = eval('this.vendors2.' + namer)
-                    var newTotal2 = period[0].value * total2
+                    let total2 = eval('this.vendors2.' + namer)
+                    let newTotal2 = period[0].value * total2
                     this.error = null
                     this.totalAmount = newTotal2
                 }

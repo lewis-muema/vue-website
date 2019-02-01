@@ -103,17 +103,15 @@ export default {
         window.parent.postMessage("285" ,this.sourceURL);
         }
         /*global google*/
-        var originLat = parseFloat(this.latPick)
-        var originLon = parseFloat(this.lonPick)
-        var destLat = parseFloat(this.latDest)
-        var destLon = parseFloat(this.lonDest)
-        var pick_points = originLat + ',' + originLon
-        var dest_points = destLat + ',' + destLon
-        //var p1 = new google.maps.LatLng(originLat, originLon);
-        //var p2 = new google.maps.LatLng(destLat, destLon);
-        var pickup_name = document.getElementById('pickup_name').value
-        var dest_name = document.getElementById('dest_name').value
-        var test_obj = {
+        let originLat = parseFloat(this.latPick)
+        let originLon = parseFloat(this.lonPick)
+        let destLat = parseFloat(this.latDest)
+        let destLon = parseFloat(this.lonDest)
+        let pick_points = originLat + ',' + originLon
+        let dest_points = destLat + ',' + destLon
+        let pickup_name = document.getElementById('pickup_name').value
+        let dest_name = document.getElementById('dest_name').value
+        let test_obj = {
                 "path" : [
                 {
                     "name" : pickup_name,
@@ -155,7 +153,7 @@ export default {
             
         }
         
-var payload = {
+let payload = {
   "values": {
     "path": (JSON.stringify(test_obj)),
     "name": "Sendy Finance",
@@ -193,10 +191,6 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     console.log(error);
     self.loading = false
   });
-
-       // var length = (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2)
-       // this.distance = length
-       // this.btnval = 'CLOSE'
        
     },
     close() {
@@ -214,13 +208,6 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     },
     handleResize() {
         this.windowWidth = window.innerWidth;
-        //var range = 2560 - this.windowWidth
-        //var quotient = (range * 13.5)/1536
-        //this.newLeft = 19 - quotient
-        //var quotient3 = (range * 20)/1120
-        //this.newRight = 85.5 - quotient3
-        //var quotient2 = (range * 19)/1120
-        //this.newWidth = 35 + quotient2
     }
     },
     
@@ -246,8 +233,8 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     this.place = this.autocomplete.getPlace()
     this.latPick = this.place.geometry.location.lat()
     this.lonPick = this.place.geometry.location.lng()
-    var firstword = this.place.name.replace(/ .*/,'');
-    var included = this.place.formatted_address.includes(firstword);
+    let firstword = this.place.name.replace(/ .*/,'');
+    let included = this.place.formatted_address.includes(firstword);
     if (included == true){
         this.inputPick = this.place.formatted_address
     }
@@ -267,8 +254,8 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     this.dest = this.autocomplete1.getPlace()
     this.latDest = this.dest.geometry.location.lat()
     this.lonDest = this.dest.geometry.location.lng()
-    var firstword1 = this.dest.name.replace(/ .*/,'');
-    var include = this.dest.formatted_address.includes(firstword1);
+    let firstword1 = this.dest.name.replace(/ .*/,'');
+    let include = this.dest.formatted_address.includes(firstword1);
     if(include == true){
         this.inputDest = this.dest.formatted_address
     }
