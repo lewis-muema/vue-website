@@ -235,7 +235,7 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     this.lonPick = this.place.geometry.location.lng()
     let firstword = this.place.name.replace(/ .*/,'');
     let included = this.place.formatted_address.includes(firstword);
-    if (included == true){
+    if (included){
         this.inputPick = this.place.formatted_address
     }
     else{
@@ -256,7 +256,7 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     this.lonDest = this.dest.geometry.location.lng()
     let firstword1 = this.dest.name.replace(/ .*/,'');
     let include = this.dest.formatted_address.includes(firstword1);
-    if(include == true){
+    if(include){
         this.inputDest = this.dest.formatted_address
     }
     else{
