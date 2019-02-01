@@ -3,7 +3,7 @@
             <div class="form-container open-sans grid" v-if="this.windowWidth > 1200">
                 <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the pick up location" id="pickup_name">
                         <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the destination" id="dest_name">
-                        <button class="price-submit bg-orange bc-orange sans-pro center-block block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
+                        <button class="price-submit bg-orange bc-orange sans-pro block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
                     <div class="price-loading bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
                         <img class="glyphicon-refresh-animate"  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;">
                     </div>
@@ -11,7 +11,7 @@
             <div class="form-container open-sans grid" v-if="this.windowWidth <= 1200">
                 <input type="text" ref="autocomplete"  v-model="inputPick" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the pick up location" id="pickup_name">
                         <input type="text" ref="autocomplete1"  v-model="inputDest" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the destination" id="dest_name">
-                        <button class="price-submit-2 bg-orange bc-orange open-sans center-block block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
+                        <button class="price-submit-2 bg-orange bc-orange open-sans block relative color-white" @click="close" v-if="loading == false">{{ btnval }}</button>
                     <div class="price-loading-2 bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
                         <img class="glyphicon-refresh-animate"  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;">
                     </div>
