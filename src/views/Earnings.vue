@@ -57,49 +57,49 @@ data() {
 },
 methods: {
     calculate(){
-        const city = document.getElementsByClassName('selector-1')
-        const vendor = document.getElementsByClassName('selector-2')
-        const period = document.getElementsByClassName('selector-3')
-        const namer = vendor[0].value
-        if( city[0].value == 'Nairobi' || city[0].value == 'Thika'){
+        const city = document.getElementsByClassName('selector-1');
+        const vendor = document.getElementsByClassName('selector-2');
+        const period = document.getElementsByClassName('selector-3');
+        const namer = vendor[0].value;
+        if( city[0].value === 'Nairobi' || city[0].value === 'Thika'){
             if(namer !== 'none'){
                 if(period[0].value > 0){
-                    let total = eval('this.vendors1.' + namer)
-                    let newTotal = period[0].value * total
-                    this.error = null
-                    this.totalAmount = newTotal
+                    let total = eval('this.vendors1.' + namer);
+                    let newTotal = period[0].value * total;
+                    this.error = null;
+                    this.totalAmount = newTotal;
                 }
                 else{
-                    this.totalAmount = null
-                    this.error = 'Please select a time'
+                    this.totalAmount = null;
+                    this.error = 'Please select a time';
                 }
             }
             else{
-                this.totalAmount = null
-                this.error = 'Please select a vendor'
+                this.totalAmount = null;
+                this.error = 'Please select a vendor';
             }
         }
-        else if(city[0].value == 'Mombasa' || city[0].value == 'Kisumu'){
+        else if(city[0].value === 'Mombasa' || city[0].value === 'Kisumu'){
             if(namer !== 'none'){
                 if(period[0].value > 0){
-                    let total2 = eval('this.vendors2.' + namer)
-                    let newTotal2 = period[0].value * total2
-                    this.error = null
-                    this.totalAmount = newTotal2
+                    let total2 = eval('this.vendors2.' + namer);
+                    let newTotal2 = period[0].value * total2;
+                    this.error = null;
+                    this.totalAmount = newTotal2;
                 }
                 else{
-                    this.totalAmount = null
-                    this.error = 'Please select a time'
+                    this.totalAmount = null;
+                    this.error = 'Please select a time';
                 }
             }
             else{
-                this.totalAmount = null
-                this.error = 'Please select a vendor'
+                this.totalAmount = null;
+                this.error = 'Please select a vendor';
             }
         }
         else{
-            this.totalAmount = null
-            this.error = 'Please select a city'
+            this.totalAmount = null;
+            this.error = 'Please select a city';
         }
     }
 }

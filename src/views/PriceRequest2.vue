@@ -62,19 +62,19 @@ export default {
     },
     methods: {
     getVendor(id){
-        return 'https://images.sendyit.com/website/home2/' + id + '.png'
+        return 'https://images.sendyit.com/website/home2/' + id + '.png';
     },
     transform_response(response){
         let new_array = [];
         response.values.economy_price_tiers.forEach(function(data){
             data.price_tiers.forEach(function(item){
                 console.log('item',item);
-                new_array.push(item)
+                new_array.push(item);
             });
         });
-        this.price_request_response = new_array
-        this.loading = false
-        this.btnval = "CLOSE"
+        this.price_request_response = new_array;
+        this.loading = false;
+        this.btnval = "CLOSE";
         if(document.referrer){
             if(this.windowWidth > 1200){
                 if(this.price_request_response.length < 7){
@@ -103,14 +103,14 @@ export default {
         window.parent.postMessage("285" ,this.sourceURL);
         }
         /*global google*/
-        let originLat = parseFloat(this.latPick)
-        let originLon = parseFloat(this.lonPick)
-        let destLat = parseFloat(this.latDest)
-        let destLon = parseFloat(this.lonDest)
-        let pick_points = originLat + ',' + originLon
-        let dest_points = destLat + ',' + destLon
-        let pickup_name = document.getElementById('pickup_name').value
-        let dest_name = document.getElementById('dest_name').value
+        let originLat = parseFloat(this.latPick);
+        let originLon = parseFloat(this.lonPick);
+        let destLat = parseFloat(this.latDest);
+        let destLon = parseFloat(this.lonDest);
+        let pick_points = originLat + ',' + originLon;
+        let dest_points = destLat + ',' + destLon;
+        let pickup_name = document.getElementById('pickup_name').value;
+        let dest_name = document.getElementById('dest_name').value;
         let test_obj = {
                 "path" : [
                 {
@@ -178,7 +178,7 @@ let payload = {
   }
 }
 const axios = require('axios');
-this.loading = true
+this.loading = true;
 let self = this;
 
 axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multiple', (payload))
@@ -189,21 +189,21 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
   })
   .catch(function (error) {
     console.log(error);
-    self.loading = false
+    self.loading = false;
   });
        
     },
     close() {
         if(this.btnval == 'CLOSE'){
-            this.btnval = 'GET PRICE'
-            this.price_request_response = []
+            this.btnval = 'GET PRICE';
+            this.price_request_response = [];
             if(document.referrer){
                 window.parent.postMessage("285" ,this.sourceURL);
             }
         }
         else if(this.btnval == 'GET PRICE'){
-            this.getDistance()
-            this.btnval = 'CLOSE'
+            this.getDistance();
+            this.btnval = 'CLOSE';
         }
     },
     handleResize() {
@@ -212,13 +212,13 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
     },
     
     created() {
-        this.parentName = this.nameDisplayer
-        window.addEventListener('resize', this.handleResize)
+        this.parentName = this.nameDisplayer;
+        window.addEventListener('resize', this.handleResize);
         this.handleResize(); 
         this.sourceURL = document.referrer;
     },
     destroyed() {
-    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener('resize', this.handleResize);
     },
     mounted() {
     /*global google*/
@@ -230,16 +230,16 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
             {'country': ['ke']});
     
     this.autocomplete.addListener('place_changed', () => {
-    this.place = this.autocomplete.getPlace()
-    this.latPick = this.place.geometry.location.lat()
-    this.lonPick = this.place.geometry.location.lng()
+    this.place = this.autocomplete.getPlace();
+    this.latPick = this.place.geometry.location.lat();
+    this.lonPick = this.place.geometry.location.lng();
     let firstword = this.place.name.replace(/ .*/,'');
     let included = this.place.formatted_address.includes(firstword);
     if (included){
-        this.inputPick = this.place.formatted_address
+        this.inputPick = this.place.formatted_address;
     }
     else{
-        this.inputPick = this.place.name + ', ' + this.place.formatted_address
+        this.inputPick = this.place.name + ', ' + this.place.formatted_address;
     }
     });
 
@@ -251,19 +251,19 @@ axios.post('https://apitest.sendyit.com/parcel/index.php/api/v11/pricing_multipl
             {'country': ['ke']});
     
     this.autocomplete1.addListener('place_changed', () => {
-    this.dest = this.autocomplete1.getPlace()
-    this.latDest = this.dest.geometry.location.lat()
-    this.lonDest = this.dest.geometry.location.lng()
+    this.dest = this.autocomplete1.getPlace();
+    this.latDest = this.dest.geometry.location.lat();
+    this.lonDest = this.dest.geometry.location.lng();
     let firstword1 = this.dest.name.replace(/ .*/,'');
     let include = this.dest.formatted_address.includes(firstword1);
     if(include){
-        this.inputDest = this.dest.formatted_address
+        this.inputDest = this.dest.formatted_address;
     }
     else{
-        this.inputDest = this.dest.name + ', ' + this.dest.formatted_address
+        this.inputDest = this.dest.name + ', ' + this.dest.formatted_address;
     }
     
-    this.getDistance()
+    this.getDistance();
     });
     if(document.referrer){
         window.parent.postMessage(document.body.scrollHeight ,this.sourceURL);
