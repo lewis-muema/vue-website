@@ -230,7 +230,7 @@ routes : [
     },
     {
       path: '/getstarted',
-      beforeEnter() {location.href = 'https://apptest.sendyit.com/get_started'}
+      beforeEnter() {location.href = 'https://app.sendyit.com/auth/sign_up'}
     },
     {
       path: '/playstore',
