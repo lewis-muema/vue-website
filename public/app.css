@@ -2021,6 +2021,27 @@ a:hover {
     line-height: 29px;
 }
 
+.rbox-job-longdesc ul > li {
+    /* list-style: disc inside none; */
+    text-align: -webkit-match-parent;
+    padding-left: 1em;
+    /* text-indent: -0.7em; */
+    background: transparent none;
+}
+
+.rbox-job-longdesc ul, .rbox-job-longdesc ul > li {
+    margin-left: .5em;
+}
+.rbox-job-longdesc ul, .rbox-job-longdesc ul > li {
+    margin-left: 0;
+}
+.rbox-job-longdesc ul > li {
+    /* list-style: disc inside none; */
+    padding-left: 1em;
+    text-indent: -22px !important;
+    background: transparent none;
+}
+
 /*elements************************************************************************/
 
 @media only screen and (max-width: 1000px) {
