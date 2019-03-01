@@ -31,7 +31,7 @@
 
                 </div>
                 <div class="lower-btn" v-if="price_request_response.length > 1">
-                <router-link to="/getstarted"><div class="get-started-button bg-orange bc-orange centerY centerX flex sans-pro color-white" type="button">GET STARTED</div></router-link> 
+                <router-link to="/getstarted" target="_blank"><div class="get-started-button bg-orange bc-orange centerY centerX flex sans-pro color-white" type="button">GET STARTED</div></router-link> 
                 </div>
             </div>
             
