@@ -31,7 +31,7 @@ import JuniorOperationsAssociate from './views/careers/JuniorOperationsAssociate
 import ManagementAccountantUG from './views/careers/ManagementAccountantUG'
 import FrontendEngineer from './views/careers/FrontendEngineer'
 import Terms from './views/Terms'
-import PriceRequest from './views/PriceRequest2'
+import PriceRequest from './views/PriceRequest'
 import PartnerEarnings from './views/Earnings'
 
 //import Enterprise from './views/Enterprise'
