@@ -84,7 +84,7 @@
             <p class="job-desc-par"><u>International Sale of Goods</u> . Export and Import Control Laws and Regulations. You and SENDY hereby agree to opt out from and expressly exclude any applicability of the Uniform Information Transactions Act (UCITA). Services, Content, and product derived or obtained from SENDY Services may be subject to the KENYA export laws and the export or import laws of other countries. You agree to comply strictly with all such laws and, in particular, shall: (a) obtain any export, re‐export or import authorizations required by KENYA or your local laws; (b) not use Services, Content, or direct product from SENDY Services to design, develop or produce missile, chemical/biological, or nuclear weaponry; and (c) not provide Services, Content, or direct product from SENDY Services to prohibited countries and entities identified in the KENYA export regulations.</p><br>
             <p class="job-desc-par"><u>No Agency</u> . Nothing in these Terms and Conditions shall be construed as creating a partnership, contract of employment, agency, joint venture or franchise relationship between SENDY and You.</p><br>
             <p class="job-desc-par"><u>No Third Party Beneficiary</u> . You acknowledge and agree that, except as otherwise expressly provided in the Terms, there shall be no third party beneficiary to any agreement entered into with the Company.</p><br>
-            
+
         </div>
         <Lower/>
         <div class="kitenge-divider"></div>
@@ -92,69 +92,69 @@
 </template>
 
 <script>
+import mixpanel from 'mixpanel-browser';
 import Upper from './Upper';
 import Lower from './Lower';
+
 export default {
 components: {
     Upper,
-    Lower
+    Lower,
 },
 data() {
     return {
     parentName: 'Terms',
     windowWidth: null,
-    newLeft: null
-    }
+    newLeft: null,
+    };
 },
 computed: {
         nameDisplayer() {
             return this.$store.state.parentName;
-        }
+        },
 },
 created() {
     this.$store.commit({
         type: 'changeParentName',
-            pName: this.parentName
-        }); 
-    window.addEventListener('resize', this.handleResize)
+            pName: this.parentName,
+        });
+    window.addEventListener('resize', this.handleResize);
     this.handleResize();
     },
      destroyed() {
-    window.removeEventListener('resize', this.handleResize)
+    window.removeEventListener('resize', this.handleResize);
     },
-    mounted(){
+    mounted() {
     window.scrollTo(0, 0);
-    this.$nextTick(function () {
-        document.dispatchEvent(new Event('custom-render-trigger'))
-    })
+    this.$nextTick(() => {
+        document.dispatchEvent(new Event('custom-render-trigger'));
+    });
     },
     methods: {
     handleResize() {
       this.windowWidth = window.innerWidth - 20;
-        var range = 2560 - this.windowWidth
-        var quotient = (range * 13.5)/1536
-        if(window.innerWidth > 768){
-            this.newLeft = 19 - quotient
+        const range = 2560 - this.windowWidth;
+        const quotient = (range * 13.5) / 1536;
+        if (window.innerWidth > 768) {
+            this.newLeft = 19 - quotient;
+        } else {
+            this.newLeft = 19 - (quotient - 5);
         }
-        else{
-            this.newLeft = 19 - (quotient - 5)
-        }
     },
-    redirect(){
-        window.location = "http://www.sendy.co.ke"
+    redirect() {
+        window.location = 'http://www.sendy.co.ke';
     },
-    redirect2(){
-        window.location = "http://sendy.co.ke/terms"
+    redirect2() {
+        window.location = 'http://sendy.co.ke/terms';
     },
-    mixTrackPage(){
-    var mixpanel = require('mixpanel-browser');
-    mixpanel.init("44f45c8f1e756ba049e6284def96ac7f");
-    mixpanel.track("Terms and Conditions Page", {
-    "landing page version": "website",
+    mixTrackPage() {
+    mixpanel.init('44f45c8f1e756ba049e6284def96ac7f');
+    mixpanel.track('Terms and Conditions Page', {
+    'landing page version': 'website',
     });
-    }
-}
-}
+    },
+},
+};
 </script>
 
 <style>

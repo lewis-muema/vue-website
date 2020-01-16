@@ -1,18 +1,18 @@
 <template>
-    <div class = "earnings flex centerX centerY">
-        <div class="earnings-container">
-        <div class="selectors grid">
+  <div class="earnings flex centerX centerY">
+    <div class="earnings-container">
+      <div class="selectors grid">
         <select class="selector-1 sans-pro">
-            <optgroup>
+          <optgroup>
             <option value="City">City</option>
             <option value="Nairobi">Nairobi</option>
             <option value="Mombasa">Mombasa</option>
             <option value="Kisumu">Kisumu</option>
             <option value="Thika">Thika</option>
-            </optgroup>
+          </optgroup>
         </select>
         <select class="selector-2 sans-pro">
-            <optgroup>
+          <optgroup>
             <option value="none">Vehicle</option>
             <option value="Bike">Motorcycle</option>
             <option value="Tuktuk">Tuk-tuk</option>
@@ -23,89 +23,111 @@
             <option value="Tentruck">10T Truck</option>
             <option value="Fourteentruck">14T Truck</option>
             <option value="Twoseventruck">27T Truck</option>
-            </optgroup>
+          </optgroup>
         </select>
-        <select class="selector-3 sans-pro" >
-            <optgroup>
-            <option value= 0>Time</option>
-            <option value= 1>1 week</option>
-            <option value= 4>1 month</option>
-            <option value= 12>3 months</option>
-            <option value= 72>6 months</option>
-            <option value= 154>1 year</option>
-            </optgroup>
+        <select class="selector-3 sans-pro">
+          <optgroup>
+            <option value="0">Time</option>
+            <option value="1">1 week</option>
+            <option value="4">1 month</option>
+            <option value="12">3 months</option>
+            <option value="72">6 months</option>
+            <option value="154">1 year</option>
+          </optgroup>
         </select>
         <div class="selector-4">
-            <button class="calculate-earnings color-white bg-orange bc-orange block center-block sans-pro orange-hover" @click="calculate">calculate</button>
+          <button class="calculate-earnings color-white bg-orange bc-orange block center-block sans-pro orange-hover" @click="calculate">
+            calculate
+          </button>
         </div>
-        </div>
-        <p class= "riders-pay-light center-text sans-pro color-white" v-if="totalAmount !== null">KES <span class="riders-pay"> &nbsp;{{ totalAmount }} /-</span> &nbsp; total</p>
-        <p class= "center-text color-white sans-pro" v-if="error !== null">{{ error }}</p>
-        </div>
+      </div>
+      <p class="riders-pay-light center-text sans-pro color-white" v-if="totalAmount !== null">
+        KES <span class="riders-pay"> &nbsp;{{ totalAmount }} /-</span> &nbsp; total
+      </p>
+      <p class="center-text color-white sans-pro" v-if="error !== null">
+        {{ error }}
+      </p>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-data() {
-    return{
-    vendors1: {none: 0, Bike: 12500, Tuktuk: 12500, Pickup: 50000, Van: 50000, Threetruck: 50000, Fivetruck: 63750, Tentruck: 100000, Fourteentruck: 150000, Twoseventruck: 187500},
-    vendors2: {none: 0, Bike: 6250, Tuktuk: 6250, Pickup: 50000, Van: 50000, Threetruck: 50000, Fivetruck: 63750, Tentruck: 100000, Fourteentruck: 150000, Twoseventruck: 187500},
-    totalAmount: null,
-    error: null
-    }
-},
-methods: {
-    calculate(){
-        const city = document.getElementsByClassName('selector-1');
-        const vendor = document.getElementsByClassName('selector-2');
-        const period = document.getElementsByClassName('selector-3');
-        const namer = vendor[0].value;
-        if( city[0].value === 'Nairobi' || city[0].value === 'Thika'){
-            if(namer !== 'none'){
-                if(period[0].value > 0){
-                    let total = eval('this.vendors1.' + namer);
-                    let newTotal = period[0].value * total;
-                    this.error = null;
-                    this.totalAmount = newTotal;
-                }
-                else{
-                    this.totalAmount = null;
-                    this.error = 'Please select a time';
-                }
-            }
-            else{
-                this.totalAmount = null;
-                this.error = 'Please select a vendor';
-            }
-        }
-        else if(city[0].value === 'Mombasa' || city[0].value === 'Kisumu'){
-            if(namer !== 'none'){
-                if(period[0].value > 0){
-                    let total2 = eval('this.vendors2.' + namer);
-                    let newTotal2 = period[0].value * total2;
-                    this.error = null;
-                    this.totalAmount = newTotal2;
-                }
-                else{
-                    this.totalAmount = null;
-                    this.error = 'Please select a time';
-                }
-            }
-            else{
-                this.totalAmount = null;
-                this.error = 'Please select a vendor';
-            }
-        }
-        else{
+  data() {
+    return {
+      vendors1: {
+        none: 0,
+        Bike: 12500,
+        Tuktuk: 12500,
+        Pickup: 50000,
+        Van: 50000,
+        Threetruck: 50000,
+        Fivetruck: 63750,
+        Tentruck: 100000,
+        Fourteentruck: 150000,
+        Twoseventruck: 187500,
+      },
+      vendors2: {
+        none: 0,
+        Bike: 6250,
+        Tuktuk: 6250,
+        Pickup: 50000,
+        Van: 50000,
+        Threetruck: 50000,
+        Fivetruck: 63750,
+        Tentruck: 100000,
+        Fourteentruck: 150000,
+        Twoseventruck: 187500,
+      },
+      totalAmount: null,
+      error: null,
+    };
+  },
+  methods: {
+    calculate() {
+      const city = document.getElementsByClassName('selector-1');
+      const vendor = document.getElementsByClassName('selector-2');
+      const period = document.getElementsByClassName('selector-3');
+      const namer = vendor[0].value;
+      if (city[0].value === 'Nairobi' || city[0].value === 'Thika') {
+        if (namer !== 'none') {
+          if (period[0].value > 0) {
+            // eslint-disable-next-line no-eval
+            const total = eval(`this.vendors1.${namer}`);
+            const newTotal = period[0].value * total;
+            this.error = null;
+            this.totalAmount = newTotal;
+          } else {
             this.totalAmount = null;
-            this.error = 'Please select a city';
+            this.error = 'Please select a time';
+          }
+        } else {
+          this.totalAmount = null;
+          this.error = 'Please select a vendor';
         }
-    }
-}
-}
+      } else if (city[0].value === 'Mombasa' || city[0].value === 'Kisumu') {
+        if (namer !== 'none') {
+          if (period[0].value > 0) {
+            // eslint-disable-next-line no-eval
+            const total2 = eval(`this.vendors2.${namer}`);
+            const newTotal2 = period[0].value * total2;
+            this.error = null;
+            this.totalAmount = newTotal2;
+          } else {
+            this.totalAmount = null;
+            this.error = 'Please select a time';
+          }
+        } else {
+          this.totalAmount = null;
+          this.error = 'Please select a vendor';
+        }
+      } else {
+        this.totalAmount = null;
+        this.error = 'Please select a city';
+      }
+    },
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

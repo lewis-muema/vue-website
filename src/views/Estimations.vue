@@ -1,19 +1,20 @@
 <template>
-    <div class="estimations-section bg-blue">
-            <p class="price-header relative open-sans color-white center-text">Get a price estimate</p>
-        <pricerequest/><!--call the imported component-->
-    </div>
+  <div class="estimations-section bg-blue">
+    <p class="price-header relative open-sans color-white center-text">
+      Get a price estimate
+    </p>
+    <pricerequest /><!--call the imported component-->
+  </div>
 </template>
 
 <script>
-import pricerequest from './PriceRequest'
+import pricerequest from './PriceRequest';
+
 export default {
-    components: {
-        pricerequest
-    }
-}
+  components: {
+    pricerequest,
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

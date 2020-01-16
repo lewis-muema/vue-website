@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     'max-len': 'off',
     camelcase: 'off',
+    'import/extensions': 'off',
     'no-undef': 'off',
     'no-dupe-keys': 'off',
     'vue/no-dupe-keys': 'off',
