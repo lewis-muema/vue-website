@@ -80,6 +80,10 @@ body{
 .bg-orange{
     background-color: #f57f20;
 }
+.bg-green {
+    background-color: #43A047;
+    border-color: #43A047;
+}
 .grey {
     background-color: #9e9084;
     border-color: #9e9084;

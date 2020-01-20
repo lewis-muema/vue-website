@@ -41,8 +41,13 @@
             <p class="quotes-email vendors-select-par">Please enter an email address we can use to forward you the email</p>
             <input type="text" class="quotes-input" placeholder="Email Address" v-model="email" />
             <div class="lower-btn">
-              <button class="get-started-button bg-orange bc-orange centerY centerX flex sans-pro color-white" v-if="selectedVendor.length > 0 && email" @click="sendMail()">
-                SUBMIT
+              <button class="get-started-button centerY centerX flex sans-pro color-white" :class="sentStatus === 1 ? 'bg-green' : 'bg-orange bc-orange'" v-if="selectedVendor.length > 0 && email" @click="sendMail()">
+                <img v-if="submitLoading" class="glyphicon-refresh-animate" src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;" />
+                <span v-else>
+                  <span v-if="sentStatus === 0">SUBMIT</span>
+                  <span v-else-if="sentStatus === 1">SENT</span>
+                  <span v-else>NOT SENT</span>
+                </span>
               </button>
               <button class="get-started-button grey centerY centerX flex sans-pro color-white" disabled v-else>
                 SUBMIT
@@ -114,6 +119,8 @@ export default {
       email: '',
       pick_points: '',
       dest_points: '',
+      submitLoading: false,
+      sentStatus: 0,
     };
   },
   computed: {},
@@ -328,6 +335,7 @@ export default {
       return parArray;
     },
     sendMail() {
+      this.submitLoading = !this.submitLoading;
       // eslint-disable-next-line global-require
       const mandrill = require('node-mandrill')('41Mt3sU3hMibiUmKc_uj1A');
       mandrill(
@@ -341,15 +349,26 @@ export default {
           },
         },
         (error, response) => {
-          // uh oh, there was an error
-          if (error) console.log(JSON.stringify(error));
-          // everything's good, lets see what mandrill said
-          else console.log(response);
-          mixpanel.init('44f45c8f1e756ba049e6284def96ac7f');
-          mixpanel.track('Get a Quote', {
-            'landing page version': 'website',
-            'Client Email': this.email,
-          });
+          if (error) {
+            console.log(JSON.stringify(error));
+            this.submitLoading = !this.submitLoading;
+            this.sentStatus = 2;
+            setTimeout(() => {
+              this.sentStatus = 0;
+            }, 3000);
+          } else {
+            console.log(response);
+            this.sentStatus = 1;
+            setTimeout(() => {
+              this.sentStatus = 0;
+            }, 3000);
+            this.submitLoading = !this.submitLoading;
+            mixpanel.init('44f45c8f1e756ba049e6284def96ac7f');
+            mixpanel.track('Get a Quote', {
+              'landing page version': 'website',
+              'Client Email': this.email,
+            });
+          }
           // eslint-disable-next-line comma-dangle
         }
       );
