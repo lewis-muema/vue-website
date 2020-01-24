@@ -38,7 +38,7 @@
             </div>
           </div>
           <div v-if="price_request_response.length > 0">
-            <p class="quotes-email vendors-select-par" @click="submitMail()">Please enter an email address we can use to forward you the quote</p>
+            <p class="quotes-email vendors-select-par">Please enter an email address we can use to forward you the quote</p>
             <input type="text" class="quotes-input" placeholder="Email Address" v-model="email" />
             <div class="lower-btn">
               <button class="get-started-button centerY centerX flex sans-pro color-white" :class="sentStatus === 1 ? 'bg-green' : 'bg-orange bc-orange'" v-if="selectedVendor.length > 0 && email" @click="sendMail()">
