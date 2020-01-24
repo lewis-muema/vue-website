@@ -38,7 +38,7 @@
             </div>
           </div>
           <div v-if="price_request_response.length > 0">
-            <p class="quotes-email vendors-select-par">Please enter an email address we can use to forward you the quote</p>
+            <p class="quotes-email vendors-select-par" @click="submitMail()">Please enter an email address we can use to forward you the quote</p>
             <input type="text" class="quotes-input" placeholder="Email Address" v-model="email" />
             <div class="lower-btn">
               <button class="get-started-button centerY centerX flex sans-pro color-white" :class="sentStatus === 1 ? 'bg-green' : 'bg-orange bc-orange'" v-if="selectedVendor.length > 0 && email" @click="sendMail()">
@@ -87,7 +87,7 @@
         <div style="width: 100%; padding-bottom: 1px;">
           <img src="https://assets.website-files.com/5be92ce6e4a547dcc61b976c/5bee5f8167d34c2d19a34353_Kitengestrip_1560by30.png" alt="divider" style="width: 100%;" />
           <p style="text-align: center; font-size: 12px;">Create your free Sendy business account</p>
-          <a href="https://app.sendyit.com/auth/sign_up" style="display: block; margin: auto; padding: 15px; color: white; background: #f57f1e; border: 0; border-radius: 5px; font-size: 14px; font-weight: 600; margin-bottom: 20px; width: 110px; text-align: center;">Create account</a>
+          <a :href="`${baseUrl}/redirect/${email}`" style="display: block; margin: auto; padding: 15px; color: white; background: #f57f1e; border: 0; border-radius: 5px; font-size: 14px; font-weight: 600; margin-bottom: 20px; width: 110px; text-align: center;">Create account</a>
         </div>
       </div>
     </div>
@@ -121,6 +121,7 @@ export default {
       dest_points: '',
       submitLoading: false,
       sentStatus: 0,
+      baseUrl: '',
     };
   },
   computed: {},
@@ -130,6 +131,7 @@ export default {
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
     this.sourceURL = document.referrer;
+    this.baseUrl = window.location.origin;
   },
   destroyed() {
     window.removeEventListener('resize', this.handleResize);
@@ -350,28 +352,45 @@ export default {
         },
         (error, response) => {
           if (error) {
-            console.log(JSON.stringify(error));
             this.submitLoading = !this.submitLoading;
             this.sentStatus = 2;
             setTimeout(() => {
               this.sentStatus = 0;
             }, 3000);
           } else {
-            console.log(response);
             this.sentStatus = 1;
+            this.submitMail();
+            this.submitMixpanel();
             setTimeout(() => {
               this.sentStatus = 0;
             }, 3000);
             this.submitLoading = !this.submitLoading;
-            mixpanel.init('44f45c8f1e756ba049e6284def96ac7f');
-            mixpanel.track('Get a Quote', {
-              'landing page version': 'website',
-              'Client Email': this.email,
-            });
           }
           // eslint-disable-next-line comma-dangle
         }
       );
+    },
+    submitMail() {
+      // eslint-disable-next-line global-require
+      const Hubspot = require('hubspot');
+      const hubspot = new Hubspot({
+        apiKey: '25da8b1c-96c1-414c-bb74-ce8ffb5a5c07',
+        checkLimit: false, // (Optional) Specify whether to check the API limit on each call. Default: true
+      });
+      const email = {
+        fields: [{
+                name: 'email',
+                value: this.email,
+              }],
+      };
+      hubspot.forms.submit('4951975', 'c92dfacc-63e7-4995-8da7-396e574cea64', email);
+    },
+    submitMixpanel() {
+      mixpanel.init('44f45c8f1e756ba049e6284def96ac7f');
+      mixpanel.track('Get a Quote', {
+        'landing page version': 'website',
+        'Client Email': this.email,
+      });
     },
   },
 };

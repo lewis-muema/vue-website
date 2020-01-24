@@ -11,6 +11,7 @@
     "axios": "^0.18.1",
     "babel": "^6.23.0",
     "babel-loader": "^8.0.4",
+    "hubspot": "^2.3.7",
     "mixpanel-browser": "^2.24.0",
     "node-mandrill": "^1.0.1",
     "nodemailer": "^6.4.2",

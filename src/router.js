@@ -34,6 +34,7 @@ import FrontendEngineer from './views/careers/FrontendEngineer.vue';
 import Terms from './views/Terms.vue';
 import PriceRequest from './views/PriceRequest.vue';
 import PartnerEarnings from './views/Earnings.vue';
+import Redirect from './views/redirect.vue';
 
 Vue.use(Router);
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/API',
       name: 'API',
       component: API,
+    },
+    {
+      path: '/redirect/:any',
+      name: 'Redirect',
+      component: Redirect,
     },
     {
       path: '/cities',
