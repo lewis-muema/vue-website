@@ -10,6 +10,7 @@
           class="est-input no-borders sans-pro"
           placeholder="Enter the pick up location"
           id="pickup_name"
+          @click="postHeight(230)"
         />
         <input
           type="text"
@@ -19,6 +20,7 @@
           class="est-input no-borders sans-pro"
           placeholder="Enter the destination"
           id="dest_name"
+          @click="postHeight(230)"
         />
         <button
           class="price-submit bg-orange bc-orange sans-pro block relative color-white"
@@ -46,6 +48,7 @@
           class="est-input-2 no-borders open-sans"
           placeholder="Enter the pick up location"
           id="pickup_name"
+          @click="postHeight(230)"
         />
         <input
           type="text"
@@ -55,6 +58,7 @@
           class="est-input-2 no-borders open-sans"
           placeholder="Enter the destination"
           id="dest_name"
+          @click="postHeight(230)"
         />
         <button
           class="price-submit-2 bg-orange bc-orange open-sans block relative color-white"
@@ -247,6 +251,7 @@ export default {
     this.autocomplete.setComponentRestrictions({ country: ['ke', 'ug'] });
 
     this.autocomplete.addListener('place_changed', () => {
+      this.postHeight(document.body.scrollHeight);
       this.place = this.autocomplete.getPlace();
       this.latPick = this.place.geometry.location.lat();
       this.lonPick = this.place.geometry.location.lng();
@@ -263,6 +268,7 @@ export default {
     this.autocomplete1.setComponentRestrictions({ country: ['ke', 'ug'] });
 
     this.autocomplete1.addListener('place_changed', () => {
+      this.postHeight(document.body.scrollHeight);
       this.dest = this.autocomplete1.getPlace();
       this.latDest = this.dest.geometry.location.lat();
       this.lonDest = this.dest.geometry.location.lng();
@@ -283,6 +289,9 @@ export default {
   methods: {
     getVendor(id) {
       return `https://images.sendyit.com/website/home2/${id}.png`;
+    },
+    postHeight(height) {
+      window.parent.postMessage(height, this.sourceURL);
     },
     transform_response(response) {
       const new_array = [];
