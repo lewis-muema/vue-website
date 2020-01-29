@@ -2,31 +2,92 @@
   <div>
     <div class="estimations-holder-2 bg-blue">
       <div class="form-container open-sans grid" v-if="this.windowWidth > 1200">
-        <input type="text" ref="autocomplete" v-model="inputPick" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the pick up location" id="pickup_name" />
-        <input type="text" ref="autocomplete1" v-model="inputDest" onfocus="value = ''" class="est-input no-borders sans-pro" placeholder="Enter the destination" id="dest_name" />
-        <button class="price-submit bg-orange bc-orange sans-pro block relative color-white" @click="close" v-if="loading == false">
-          {{ btnval }}
-        </button>
-        <div class="price-loading bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
-          <img class="glyphicon-refresh-animate" src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;" />
+        <input
+          type="text"
+          ref="autocomplete"
+          v-model="inputPick"
+          onfocus="value = ''"
+          class="est-input no-borders sans-pro"
+          placeholder="Enter the pick up location"
+          id="pickup_name"
+        />
+        <input
+          type="text"
+          ref="autocomplete1"
+          v-model="inputDest"
+          onfocus="value = ''"
+          class="est-input no-borders sans-pro"
+          placeholder="Enter the destination"
+          id="dest_name"
+        />
+        <button
+          class="price-submit bg-orange bc-orange sans-pro block relative color-white"
+          @click="close"
+          v-if="loading == false"
+        >{{ btnval }}</button>
+        <div
+          class="price-loading bg-orange bc-orange open-sans center-block block relative color-white"
+          v-if="loading == true"
+        >
+          <img
+            class="glyphicon-refresh-animate"
+            src="https://images.sendyit.com/frontend_apps/loading-03-white.png?"
+            alt="loading..."
+            style="width:25px;"
+          />
         </div>
       </div>
       <div class="form-container open-sans grid" v-if="this.windowWidth <= 1200">
-        <input type="text" ref="autocomplete" v-model="inputPick" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the pick up location" id="pickup_name" />
-        <input type="text" ref="autocomplete1" v-model="inputDest" onfocus="value = ''" class="est-input-2 no-borders open-sans" placeholder="Enter the destination" id="dest_name" />
-        <button class="price-submit-2 bg-orange bc-orange open-sans block relative color-white" @click="close" v-if="loading == false">
-          {{ btnval }}
-        </button>
-        <div class="price-loading-2 bg-orange bc-orange open-sans center-block block relative color-white" v-if="loading == true">
-          <img class="glyphicon-refresh-animate" src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;" />
+        <input
+          type="text"
+          ref="autocomplete"
+          v-model="inputPick"
+          onfocus="value = ''"
+          class="est-input-2 no-borders open-sans"
+          placeholder="Enter the pick up location"
+          id="pickup_name"
+        />
+        <input
+          type="text"
+          ref="autocomplete1"
+          v-model="inputDest"
+          onfocus="value = ''"
+          class="est-input-2 no-borders open-sans"
+          placeholder="Enter the destination"
+          id="dest_name"
+        />
+        <button
+          class="price-submit-2 bg-orange bc-orange open-sans block relative color-white"
+          @click="close"
+          v-if="loading == false"
+        >{{ btnval }}</button>
+        <div
+          class="price-loading-2 bg-orange bc-orange open-sans center-block block relative color-white"
+          v-if="loading == true"
+        >
+          <img
+            class="glyphicon-refresh-animate"
+            src="https://images.sendyit.com/frontend_apps/loading-03-white.png?"
+            alt="loading..."
+            style="width:25px;"
+          />
         </div>
       </div>
       <!--<p class="dist relative color-white" v-if="distance < 0">{{ distance }} Kms</p>-->
       <transition name="fade">
         <div class="display-dist" v-if="Array.isArray(price_request_response) && loading == false">
-          <p class="vendors-select-par" v-if="price_request_response.length > 0">Please select the vehicles you would like a quote for:</p>
+          <p
+            class="vendors-select-par"
+            v-if="price_request_response.length > 0"
+          >Please select the vehicles you would like a quote for:</p>
           <div class="price-request-row grid">
-            <div class="price-request-column color-white" @click="selectVendor(index)" :class="selectedVendor.includes(index) ? 'bg-orange' : ''" v-for="(i, index) in price_request_response" :key="i.vendor_id">
+            <div
+              class="price-request-column color-white"
+              @click="selectVendor(index)"
+              :class="selectedVendor.includes(index) ? 'bg-orange' : ''"
+              v-for="(i, index) in price_request_response"
+              :key="i.vendor_id"
+            >
               <p class="vendor sans-pro">{{ i.vendor_name }}</p>
               <img class="vendor-img img-height" :src="getVendor(i.vendor_id)" />
               <!-- <div class="price-holder grid">
@@ -34,24 +95,39 @@
               <p class="price color-white relative bold sans-pro">
                 {{ i.cost }}
               </p>
-            </div> -->
+              </div>-->
             </div>
           </div>
           <div v-if="price_request_response.length > 0">
-            <p class="quotes-email vendors-select-par">Please enter an email address we can use to forward you the quote</p>
+            <p
+              class="quotes-email vendors-select-par"
+            >Please enter an email address we can use to forward you the quote</p>
             <input type="text" class="quotes-input" placeholder="Email Address" v-model="email" />
             <div class="lower-btn">
-              <button class="get-started-button centerY centerX flex sans-pro color-white" :class="sentStatus === 1 ? 'bg-green' : 'bg-orange bc-orange'" v-if="selectedVendor.length > 0 && email" @click="sendMail()">
-                <img v-if="submitLoading" class="glyphicon-refresh-animate" src="https://images.sendyit.com/frontend_apps/loading-03-white.png?" alt="loading..." style="width:25px;" />
+              <button
+                class="get-started-button centerY centerX flex sans-pro color-white"
+                :class="sentStatus === 1 ? 'bg-green' : 'bg-orange bc-orange'"
+                v-if="selectedVendor.length > 0 && email"
+                @click="sendMail()"
+              >
+                <img
+                  v-if="submitLoading"
+                  class="glyphicon-refresh-animate"
+                  src="https://images.sendyit.com/frontend_apps/loading-03-white.png?"
+                  alt="loading..."
+                  style="width:25px;"
+                />
                 <span v-else>
                   <span v-if="sentStatus === 0">SUBMIT</span>
                   <span v-else-if="sentStatus === 1">SENT</span>
                   <span v-else>NOT SENT</span>
                 </span>
               </button>
-              <button class="get-started-button grey centerY centerX flex sans-pro color-white" disabled v-else>
-                SUBMIT
-              </button>
+              <button
+                class="get-started-button grey centerY centerX flex sans-pro color-white"
+                disabled
+                v-else
+              >SUBMIT</button>
             </div>
           </div>
         </div>
@@ -59,7 +135,11 @@
     </div>
     <div id="quote-template" style="display: none;">
       <div style="width: 500px; box-shadow: 5px 10px 18px #88888880; color: black;">
-        <img src="https://assets.website-files.com/5be92ce6e4a547dcc61b976c/5be9403d1f965bbd0373f29e_sendy%20logo%20hi.png" alt="logo" style="width: 165px; margin: auto; display: block;" />
+        <img
+          src="https://assets.website-files.com/5be92ce6e4a547dcc61b976c/5be9403d1f965bbd0373f29e_sendy%20logo%20hi.png"
+          alt="logo"
+          style="width: 165px; margin: auto; display: block;"
+        />
         <p style="margin-left: 10px; font-size: 14px;">Here is your Sendy quote!</p>
         <div style="margin-left: 10px; font-size: 12px; display: flex;">
           <div style="width: 20%;">Order Pickup:</div>
@@ -69,25 +149,50 @@
           <div style="width: 20%;">Destination:</div>
           <div style="width: 80%;">{{ inputDest }}</div>
         </div>
-        <img :src="createStaticMapUrl()" class="map" v-if="this.pick_points && this.dest_points" style="width: 96%; padding: 2%;" />
+        <img
+          :src="createStaticMapUrl()"
+          class="map"
+          v-if="this.pick_points && this.dest_points"
+          style="width: 96%; padding: 2%;"
+        />
         <div style="padding: 3px;">
-          <div style="display: flex; margin-bottom: 10px; width: 50%; height: 120px; float: left;" v-for="(vendor, x) in selectedVendor" :key="x">
-            <img :src="`https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/vendors/colored/${price_request_response[vendor].vendor_id}.jpeg`" style="width: 50px; height: 50px;" />
+          <div
+            style="display: flex; margin-bottom: 10px; width: 50%; height: 120px; float: left;"
+            v-for="(vendor, x) in selectedVendor"
+            :key="x"
+          >
+            <img
+              :src="`https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/vendors/colored/${price_request_response[vendor].vendor_id}.jpeg`"
+              style="width: 50px; height: 50px;"
+            />
             <div style="width: 100%; margin-left: 10px;">
               <div style="width: 100%; height: 20px;">
-                <div style="margin: 0; margin-bottom: 2px; font-size: 12px; width: max-content; float: left;">{{ price_request_response[vendor].vendor_name }}</div>
-                <div style="font-size: 13px; text-align: right; padding-right: 10px; text-align: right; width: max-content; float: right;">{{ `${price_request_response[vendor].currency} ${price_request_response[vendor].cost}` }}</div>
+                <div
+                  style="margin: 0; margin-bottom: 2px; font-size: 12px; width: max-content; float: left;"
+                >{{ price_request_response[vendor].vendor_name }}</div>
+                <div
+                  style="font-size: 13px; text-align: right; padding-right: 10px; text-align: right; width: max-content; float: right;"
+                >{{ `${price_request_response[vendor].currency} ${price_request_response[vendor].cost}` }}</div>
               </div>
-              <p style="margin: 0; font-size: 9px;" v-for="(row, index) in parseHTML(price_request_response[vendor].tier_description)" :key="index">
-                {{ row }}
-              </p>
+              <p
+                style="margin: 0; font-size: 9px;"
+                v-for="(row, index) in parseHTML(price_request_response[vendor].tier_description)"
+                :key="index"
+              >{{ row }}</p>
             </div>
           </div>
         </div>
         <div style="width: 100%; padding-bottom: 1px;">
-          <img src="https://assets.website-files.com/5be92ce6e4a547dcc61b976c/5bee5f8167d34c2d19a34353_Kitengestrip_1560by30.png" alt="divider" style="width: 100%;" />
+          <img
+            src="https://assets.website-files.com/5be92ce6e4a547dcc61b976c/5bee5f8167d34c2d19a34353_Kitengestrip_1560by30.png"
+            alt="divider"
+            style="width: 100%;"
+          />
           <p style="text-align: center; font-size: 12px;">Create your free Sendy business account</p>
-          <a :href="`${baseUrl}/redirect/${email}`" style="display: block; margin: auto; padding: 15px; color: white; background: #f57f1e; border: 0; border-radius: 5px; font-size: 14px; font-weight: 600; margin-bottom: 20px; width: 110px; text-align: center;">Create account</a>
+          <a
+            :href="`${baseUrl}/redirect/${email}`"
+            style="display: block; margin: auto; padding: 15px; color: white; background: #f57f1e; border: 0; border-radius: 5px; font-size: 14px; font-weight: 600; margin-bottom: 20px; width: 110px; text-align: center;"
+          >Create account</a>
         </div>
       </div>
     </div>
@@ -320,6 +425,14 @@ export default {
         this.selectedVendor = this.selectedVendor.filter(item => item !== i);
       }
     },
+    vendorNames() {
+      let vendorNames = 'Vendors: ';
+      this.selectedVendor.forEach((row, i) => {
+        vendorNames = `${vendorNames} ${this.price_request_response[row].vendor_name},`;
+      });
+
+      return vendorNames;
+    },
     createStaticMapUrl() {
       const google_key = 'AIzaSyAB963lJdUXP05F3DtURdwAZpuwpjOoS6w';
       return `https://maps.googleapis.com/maps/api/staticmap?path=color:0x2c82c5|weight:5|${this.pick_points}|${this.dest_points}&size=500x200&markers=color:0xF17F3A%7Clabel:P%7C
@@ -378,10 +491,24 @@ export default {
         checkLimit: false, // (Optional) Specify whether to check the API limit on each call. Default: true
       });
       const email = {
-        fields: [{
-                name: 'email',
-                value: this.email,
-              }],
+        fields: [
+          {
+            name: 'email',
+            value: this.email,
+          },
+          {
+            name: 'pickup',
+            value: this.inputPick,
+          },
+          {
+            name: 'destination',
+            value: this.inputDest,
+          },
+          {
+            name: 'vendors',
+            value: this.vendorNames(),
+          },
+        ],
       };
       hubspot.forms.submit('4951975', 'c92dfacc-63e7-4995-8da7-396e574cea64', email);
     },
