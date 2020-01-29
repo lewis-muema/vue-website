@@ -297,24 +297,24 @@ export default {
       if (document.referrer) {
         if (this.windowWidth > 1200) {
           if (this.price_request_response.length < 7) {
-            window.parent.postMessage('800', this.sourceURL);
+            window.parent.postMessage('600', this.sourceURL);
           } else {
-            window.parent.postMessage('970', this.sourceURL);
+            window.parent.postMessage('720', this.sourceURL);
           }
         } else {
           if (this.price_request_response.length < 6) {
-            window.parent.postMessage('1410', this.sourceURL);
+            window.parent.postMessage('1110', this.sourceURL);
           } else if (this.price_request_response.length === 6) {
-            window.parent.postMessage('1630', this.sourceURL);
+            window.parent.postMessage('1230', this.sourceURL);
           } else {
-            window.parent.postMessage('1830', this.sourceURL);
+            window.parent.postMessage('1350', this.sourceURL);
           }
         }
       }
     },
     getDistance() {
       if (document.referrer) {
-        window.parent.postMessage('285', this.sourceURL);
+        window.parent.postMessage('200', this.sourceURL);
       }
       /* global google */
       const originLat = parseFloat(this.latPick);
@@ -408,7 +408,7 @@ export default {
         this.btnval = 'GET PRICE';
         this.price_request_response = [];
         if (document.referrer) {
-          window.parent.postMessage('285', this.sourceURL);
+          window.parent.postMessage('200', this.sourceURL);
         }
       } else if (this.btnval === 'GET PRICE') {
         this.getDistance();
