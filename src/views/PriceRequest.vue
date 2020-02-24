@@ -310,15 +310,15 @@ export default {
           if (this.price_request_response.length < 7) {
             window.parent.postMessage('600', this.sourceURL);
           } else {
-            window.parent.postMessage('720', this.sourceURL);
+            window.parent.postMessage('800', this.sourceURL);
           }
         } else {
           if (this.price_request_response.length < 6) {
-            window.parent.postMessage('1110', this.sourceURL);
+            window.parent.postMessage('1200', this.sourceURL);
           } else if (this.price_request_response.length === 6) {
-            window.parent.postMessage('1230', this.sourceURL);
+            window.parent.postMessage('1300', this.sourceURL);
           } else {
-            window.parent.postMessage('1350', this.sourceURL);
+            window.parent.postMessage('11400', this.sourceURL);
           }
         }
       }
