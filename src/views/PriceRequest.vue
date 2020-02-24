@@ -318,7 +318,7 @@ export default {
           } else if (this.price_request_response.length === 6) {
             window.parent.postMessage('1300', this.sourceURL);
           } else {
-            window.parent.postMessage('11400', this.sourceURL);
+            window.parent.postMessage('1400', this.sourceURL);
           }
         }
       }
