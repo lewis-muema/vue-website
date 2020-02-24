@@ -107,11 +107,12 @@
               class="quotes-email vendors-select-par"
             >Please enter an email address we can use to forward you the quote</p>
             <input type="text" class="quotes-input" placeholder="Email Address" v-model="email" />
+            <input type="text" class="quotes-input" placeholder="Phone No" v-model="phoneNo" />
             <div class="lower-btn">
               <button
                 class="get-started-button centerY centerX flex sans-pro color-white"
                 :class="sentStatus === 1 ? 'bg-green' : 'bg-orange bc-orange'"
-                v-if="selectedVendor.length > 0 && email"
+                v-if="selectedVendor.length > 0 && email && phoneNo"
                 @click="sendMail()"
               >
                 <img
@@ -231,6 +232,7 @@ export default {
       submitLoading: false,
       sentStatus: 0,
       baseUrl: '',
+      phoneNo: '',
     };
   },
   computed: {},
@@ -504,6 +506,10 @@ export default {
           {
             name: 'email',
             value: this.email,
+          },
+          {
+            name: 'phone',
+            value: this.phoneNo,
           },
           {
             name: 'pickup',
