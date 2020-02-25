@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="estimations-holder-2 bg-blue">
+    <div class="estimations-holder-2">
       <div class="form-container open-sans grid" v-if="this.windowWidth > 1200">
         <input
           type="text"
@@ -105,7 +105,7 @@
           <div v-if="price_request_response.length > 0">
             <p
               class="quotes-email vendors-select-par"
-            >Please enter an email address we can use to forward you the quote</p>
+            >Please enter an email address and phone number we can use to forward you the quote</p>
             <input type="text" class="quotes-input" placeholder="Email Address" v-model="email" />
             <input type="text" class="quotes-input" placeholder="Phone No" v-model="phoneNo" />
             <div class="lower-btn">
