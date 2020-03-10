@@ -206,6 +206,7 @@
 
 <script>
 import mixpanel from 'mixpanel-browser';
+import _ from 'lodash';
 
 export default {
   data() {
@@ -236,7 +237,14 @@ export default {
     };
   },
   computed: {},
-
+  watch: {
+    email(data) {
+      this.debounceEmailInput(data);
+    },
+    phoneNo(data) {
+      this.debouncePhoneInput(data);
+    },
+  },
   created() {
     this.parentName = this.nameDisplayer;
     window.addEventListener('resize', this.handleResize);
@@ -289,6 +297,14 @@ export default {
     }
   },
   methods: {
+    // eslint-disable-next-line func-names
+    debounceEmailInput: _.debounce(function (data) {
+      this.send_ga_event('Add email - Get a quote', data);
+    }, 2000),
+    // eslint-disable-next-line func-names
+    debouncePhoneInput: _.debounce(function (data) {
+      this.send_ga_event('Add phone number - Get a quote', data);
+    }, 2000),
     getVendor(id) {
       return `https://images.sendyit.com/website/home2/${id}.png`;
     },
@@ -408,6 +424,7 @@ export default {
         .post('https://api.sendyit.com/parcel/index.php/api/v11/pricing_multiple', payload)
         .then(response => {
           self.transform_response(response.data);
+          self.send_ga_event('Price request - Get a quote', '');
         })
         .catch(error => {
           console.log(error);
@@ -432,8 +449,10 @@ export default {
     selectVendor(i) {
       if (!this.selectedVendor.includes(i)) {
         this.selectedVendor.push(i);
+        this.send_ga_event('Add vendor - Get a quote', this.price_request_response[i].vendor_name);
       } else {
         this.selectedVendor = this.selectedVendor.filter(item => item !== i);
+        this.send_ga_event('Remove vendor - Get a quote', this.price_request_response[i].vendor_name);
       }
     },
     vendorNames() {
@@ -485,6 +504,7 @@ export default {
             this.sentStatus = 1;
             this.submitMail();
             this.submitMixpanel();
+            this.send_ga_event('Send quote email - Get a quote', '');
             setTimeout(() => {
               this.sentStatus = 0;
             }, 3000);
@@ -532,6 +552,14 @@ export default {
       mixpanel.track('Get a Quote', {
         'landing page version': 'website',
         'Client Email': this.email,
+      });
+    },
+    send_ga_event(label, data) {
+      this.$ga.event({
+        eventCategory: 'Button-click',
+        eventAction: 'Click',
+        eventLabel: label,
+        eventValue: data,
       });
     },
   },
