@@ -14,7 +14,7 @@ export default {
                 'App URL': 'https://app.sendyit.com/auth/sign_up',
                 Email: this.$route.params.any,
             });
-            window.location.href = 'https://app.sendyit.com/auth/sign_up';
+            window.location.href = 'https://app.sendyit.com/auth/sign_up?utm_medium=email&utm_source=newsletter&utm_campaign=20200406&utm_content=on-demand-lGHE-leads-L-en&utm_term=KE-WK15-get-a-quote';
         },
     },
 };
