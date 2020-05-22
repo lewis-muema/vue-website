@@ -324,15 +324,13 @@ export default {
       if (document.referrer) {
         if (this.windowWidth > 1200) {
           if (this.price_request_response.length < 7) {
-            window.parent.postMessage('600', this.sourceURL);
+            window.parent.postMessage('700', this.sourceURL);
           } else {
             window.parent.postMessage('800', this.sourceURL);
           }
         } else {
           if (this.price_request_response.length < 6) {
             window.parent.postMessage('1200', this.sourceURL);
-          } else if (this.price_request_response.length === 6) {
-            window.parent.postMessage('1300', this.sourceURL);
           } else {
             window.parent.postMessage('1400', this.sourceURL);
           }
