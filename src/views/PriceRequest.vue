@@ -330,9 +330,9 @@ export default {
           }
         } else {
           if (this.price_request_response.length < 6) {
-            window.parent.postMessage('1200', this.sourceURL);
+            window.parent.postMessage('1600', this.sourceURL);
           } else {
-            window.parent.postMessage('1400', this.sourceURL);
+            window.parent.postMessage('1800', this.sourceURL);
           }
         }
       }
