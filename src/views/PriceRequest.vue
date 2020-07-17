@@ -94,6 +94,10 @@
             >
               <p class="vendor sans-pro">{{ i.vendor_name }}</p>
               <img class="vendor-img img-height" :src="getVendor(i.vendor_id)" />
+              <img
+              :src="`https://s3-eu-west-1.amazonaws.com/images.sendyit.com/website/vendors/colored/${i.vendor_id}.jpeg`"
+              class="vendor-img-colored img-height"
+            />
               <!-- <div class="price-holder grid">
               <p class="kes sans-pro">KES</p>
               <p class="price color-white relative bold sans-pro">

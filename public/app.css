@@ -603,6 +603,15 @@ a:hover {
     margin-right: 10px;
     margin-top: auto;
     margin-bottom: auto;
+    display: block;
+}
+
+.vendor-img-colored {
+    margin-left: auto;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: none;
 }
 
 .slides-container{
